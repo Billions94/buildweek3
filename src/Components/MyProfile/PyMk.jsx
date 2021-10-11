@@ -24,7 +24,7 @@ const PyMk = () => {
           <h1>Loading....</h1>
         ) : (data.map(person => (
           <li className="d-flex pymk-li" key={person.id}>
-            <a className="d-flex">
+            <a className="d-flex pymk-a">
             <img className="roundpic" src={person.image} alt=""  width="50px" height="50px"/>
           <div class="ml-2">
           <h3 className="text-dark text-left pymkh6p"><strong>{person.name}</strong> <strong>{person.surname}</strong></h3>

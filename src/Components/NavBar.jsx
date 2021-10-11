@@ -97,7 +97,7 @@ const NavBar = () => {
               </li>
             </div>
             <div className="pt-2">
-                <a className="link-color"href="#" >Try premium for free</a>
+                <a className="link-color navbar-li"href="#" >Try premium for free</a>
             </div>
           </ul>
         </div>

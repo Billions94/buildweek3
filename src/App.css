@@ -133,7 +133,7 @@
 
 .jumbobtn-open-to:hover {
   outline: 2px solid grey;
-  background-color: rgb(30, 30, 121);
+  background-color: rgb(33, 93, 172);
 } 
 
 .jumbobtn:hover {
@@ -145,6 +145,16 @@
   background-color: transparent !important;
   outline: none !important;
   border: none !important;
+}
+
+.jumbo-a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.opened-to-work {
+  border-radius: 10px;
+  background-color: rgb(231, 226, 221);
 }
 
 
@@ -165,6 +175,10 @@
   flex-direction: column;
 }
 
+.pymk-a:hover {
+  cursor: pointer;
+}
+
 .pymkh6p {
   font-style: normal;
   font-size: 12px;
@@ -176,6 +190,11 @@
   background-color: transparent;
   border: 1px solid grey;
   border-radius: 20px;
+  height: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 95px;
+  /* line-height: -3rem; */
 }
 
 .pymkbtn:hover {
@@ -309,7 +328,7 @@
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
   overflow: hidden;
   outline: none;
@@ -320,12 +339,31 @@
   background-color: lightgray;
   background-repeat: no-repeat;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
   overflow: hidden;
   outline: none;
   transition: background-color 0.5s linear;
 }
+
+.profile-btn {
+  background-color: transparent;
+  border-radius: 50px;
+  border: none;
+}
+
+.profile-btn:hover {
+  background-color: rgb(187, 187, 187);
+  border-radius: 50px;
+  background-color:  linear;
+}
+
+.profile-btn:focus, .profile-btn:active {
+  background-color: rgb(187, 187, 187);
+  border-radius: 50px;
+  background-color: linear;
+}
+
 
 #profile-pic {
   position: absolute;
