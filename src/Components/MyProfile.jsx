@@ -1,7 +1,24 @@
 import { Container, Row, Col } from "react-bootstrap";
 import MyJumbotron from "../Components/MyProfile/MyJumbotron";
+import Skills from "../Components/MyProfile/Skills";
+import { useState, useEffect } from "react";
+import { fetchInfo } from "../lib";
 
 const MyProfile = () => {
+  const [data, setData] = useState([]);
+  const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchInfo(myUrl);
+      setData(data);
+      console.log(data);
+    };
+    fetchData();
+  }, []);
+
+  console.log(`hey it's me`);
+
   return (
     <>
       {/*Main Container*/}
@@ -15,20 +32,19 @@ const MyProfile = () => {
                 <Col md={12}>
                   <MyJumbotron />
                 </Col>
-
                 {/*Your Dashboard Section*/}
                 <Col
                   md={12}
-                  className="mt-3 section-container"
+                  className="mt-2 section-container"
                   id="dashboard-container"
                   style={{ width: "auto" }}
                 >
                   <section className="col-12" id="dashboard">
                     <div className="info-container">
-                      <div>
+                      <div className="text-left">
                         <h3 className=" dashboard-title">Your Dashboard</h3>
                       </div>
-                      <div className="section-container d-flex d-inline">
+                      <div className="section-container d-flex justify-content-between">
                         <a className="dashboard-data">
                           <span className=" d-flex d-inline-block dashboard-figure">
                             0
@@ -60,52 +76,102 @@ const MyProfile = () => {
                           </span>
                         </a>
                       </div>
-                      <div className="section-container" id="dashboard-options">
-                        <div className="d-flex d-inline-block">
-                          <i class="bi bi-people-fill"></i>
-                          <p>
-                            Creator Mode:<span>off</span>
-                          </p>
-                          <p>
-                            Grow your audience and get discovered by
-                            highlighting content on your profile.
-                          </p>
+                      <div
+                        className="section-container mt-2"
+                        id="dashboard-options"
+                      >
+                        <div className="d-flex justify-content-left align-items-center">
+                          <i class=" mr-2 bi bi-people-fill"></i>
+                          <div className="d-flex-column  d-inline-block m-0">
+                            <p className="m-0">
+                              Creator Mode:
+                              <span style={{ fontStyle: "italic" }}>off</span>
+                            </p>
+                            <p>
+                              Grow your audience and get discovered by
+                              highlighting content on your profile.
+                            </p>
+                          </div>
                         </div>
-                        <div className="d-flex d-inline-block">
-                          <i class="bi bi-people-fill"></i>
-                          <p>
-                            Creator Mode:<span>off</span>
-                          </p>
-                          <p>
-                            Grow your audience and get discovered by
-                            highlighting content on your profile.
-                          </p>
+                        <div className="d-flex justify-content-left align-items-center">
+                          <i class=" mr-2 bi bi-people-fill"></i>
+                          <div className="d-flex-column  d-inline-block m-0">
+                            <p className="m-0">Manage Connections</p>
+                            <p>Manage your connections, events and iterests.</p>
+                          </div>
                         </div>
-                        <div className="d-flex d-inline-block">
-                          <i class="bi bi-people-fill"></i>
-                          <p>
-                            Creator Mode:<span>off</span>
-                          </p>
-                          <p>
-                            Grow your audience and get discovered by
-                            highlighting content on your profile.
-                          </p>
+                        <div className="d-flex justify-content-left align-items-center">
+                          <i class="mr-2 bi bi-cash"></i>
+                          <div className=" d-flex-column  d-inline-block m-0">
+                            <p className="m-0">Salary Insights</p>
+                            <p>
+                              See how your salary compares to others in the
+                              community.
+                            </p>
+                          </div>
                         </div>
-                        <div className="d-flex d-inline-block">
-                          <i class="bi bi-people-fill"></i>
-                          <p>
-                            Creator Mode:<span>off</span>
-                          </p>
-                          <p>
-                            Grow your audience and get discovered by
-                            highlighting content on your profile.
-                          </p>
+                        <div className="d-flex justify-content-left align-items-center">
+                          <i class=" mr-2 bi bi-bookmark-fill"></i>
+                          <div className="d-flex-column  d-inline-block m-0">
+                            <p className="m-0">My Items</p>
+                            <p>Keep track of your jobs courses and articles.</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </section>
                 </Col>
                 {/*Your Dashboard END*/}
+                {/*About Section*/}
+                <Col md={12}>
+                  <div className="section-container mt-3">
+                    <div className="d-flex d-inline-block justify-content-between">
+                      <h4>About</h4>
+                      <i class=" profile-button bi bi-pencil"></i>
+                    </div>
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse id libero ac est egestas tincidunt. Proin
+                        nec interdum massa. Orci varius natoque penatibus et
+                        magnis dis parturient montes, nascetur ridiculus mus
+                      </p>
+                    </div>
+                  </div>
+                </Col>
+                {/*About Section END*/}
+
+                {/*Activity Section*/}
+                <Col md={12}>
+                  <div className="section-container mt-3">
+                    <div className="text-left">
+                      <div className="d-flex d-inline-block justify-content-between">
+                        <h4>Activity</h4>
+                        <button className="profile-button">Start a post</button>
+                      </div>
+                      <p style={{ color: "blue", cursor: "pointer" }}>
+                        11 followers
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse id libero ac est egestas tincidunt. Proin
+                        nec interdum massa. Orci varius natoque penatibus et
+                        magnis dis parturient montes, nascetur ridiculus mus
+                      </p>
+                    </div>
+                  </div>
+                </Col>
+                {/*Activity Section END*/}
+
+                {/*Skills section Start*/}
+
+                <Col md={12}>
+                  <Skills />
+                </Col>
+
+                {/*Skills section End*/}
               </Row>
             </Container>
           </Col>
@@ -125,9 +191,11 @@ const MyProfile = () => {
                     <p>{"Add profile in another language"}</p>
                     <i class="bi bi-question-circle-fill"></i>
                   </div>
-                  {/*edit section right column END*/}
+                </div>
+                {/*edit section right column END*/}
 
-                  {/*People also viewed section */}
+                {/*People also viewed section */}
+                <div>
                   <div className="mt-2 section-container">
                     <div className="alsoViewed">
                       <h4>People also viewed</h4>

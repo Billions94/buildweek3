@@ -1,27 +1,12 @@
-import { useState, useEffect } from "react";
-import { fetchInfo } from "../lib";
+
+import {Link} from "react-router-dom"
 
 const NavBar = () => {
 
-
-    const [data, setData] = useState([]);
-    const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        const data = await fetchInfo(myUrl);
-        setData(data);
-        console.log(data);
-      };
-      fetchData();
-    }, []);
-  
-    console.log(`hey it's me`);
-
   return (
     <div className="navbar-container">
-        <div className="">
-      <nav className="navbar col-10 navbar-expand-lg navbar-light bg-light">
+        <div className="col-12">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img src="./assets/linkedin.png" alt="" />
         </a>

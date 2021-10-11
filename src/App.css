@@ -108,9 +108,10 @@
 }
 
 .section-container {
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #ffffff;
   padding: 12px;
+  border: 1px solid, lightgray;
 }
 #dashboard-container {
   width: auto;
@@ -122,6 +123,7 @@
 }
 #dashboard-options {
   color: black;
+  text-align: left;
 }
 .dashboard-data:hover {
   text-decoration: underline;
@@ -130,10 +132,30 @@
 .info-container {
   width: 100%;
 }
+.profile-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: background-color 0.5s linear;
+}
+.profile-button:hover {
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: background-color 0.5s linear;
+}
 
 #profile-pic {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 25px;
   border-radius: 50%;
 }
@@ -143,4 +165,12 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 40%;
+}
+
+#skills {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
 }

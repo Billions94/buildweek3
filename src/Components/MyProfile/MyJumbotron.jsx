@@ -8,8 +8,7 @@ const MyJumbotron = () => {
     <>
       <Jumbotron
         fluid
-        className="rounded-lg bg-white"
-        style={{ height: "100%" }}
+        className="rounded-lg bg-white p-0"
         id="jumbotron-banner"
       >
         <Row>
@@ -22,9 +21,11 @@ const MyJumbotron = () => {
           />
         </Row>
         <Row>
-          <Col>
-            <h5 style={{ marginTop: "60%" }}>Ma Real Name</h5>
-            <p>This is a simple placeholder, job, loacation et ecetera</p>
+          <Col className="text-left mt-3 p-4">
+            <h5 style={{ marginTop: "70%" }}>Ma Real Name</h5>
+            <p className="mb-0">
+              This is a simple placeholder, job, loacation et ecetera
+            </p>
             <br />
             <p>
               <Button variant="primary" className="rounded-pill mx-1">
@@ -43,17 +44,18 @@ const MyJumbotron = () => {
                 More
               </Button>
             </p>
-            <div className="border border-secondary rounded-lg text-left p-2 m-2">
-              <p>
+            <div className="border border-secondary rounded-lg text-left p-2">
+              <p className="mb-0">
                 <b>Show recruiters you’re open to work</b> — you control who
                 sees this. <br />
-                <a>Get started</a>
+                <span style={{ color: "blue", cursor: "pointer" }}>Get started</span>
               </p>
             </div>
           </Col>
           <Col>
-            <p style={{ marginTop: "50%" }}>
-              <b>Strive School Ladys and Gentelman</b>
+            <p style={{ marginTop: "82%" }}>
+              <img src="https://strive.school/favicon.ico" width="25" />
+              <b> Strive School</b>
             </p>
           </Col>
         </Row>
