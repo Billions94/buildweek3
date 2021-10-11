@@ -196,9 +196,9 @@
   line-height: 20px;
 }
 
-.pymkdiv {
+/* .pymkdiv {
   margin-left: -145px;
-}
+} */
 
 
 /*------------------------------My Profile CSS-----------------------------*/
@@ -325,6 +325,15 @@
   overflow: hidden;
   outline: none;
   transition: background-color 0.5s linear;
+}
+
+.bi-pencil{
+  margin:-6px;
+}
+
+.pencil-button {
+  width: 40px;
+  height: 40px;
 }
 
 #profile-pic {

@@ -158,7 +158,7 @@ const MyProfile = () => {
                   <div className="section-container mt-3">
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
-                      <i class=" profile-button bi bi-pencil"></i>
+                      <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>
                     </div>
                     <div>
                       <p>
