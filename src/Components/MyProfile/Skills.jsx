@@ -33,7 +33,7 @@ const Skills = () => {
       <hr />
       <Row>
         <Col className="text-left pl-5">
-          <span className=" bg-light rounded-pill p-2"> JavaScript 100%</span>
+          <span className=" bg-light rounded-pill p-2"> HTML 100%</span>
         </Col>
         <Col>
           <p>
@@ -45,7 +45,7 @@ const Skills = () => {
       <hr />
       <Row>
         <Col className="text-left pl-5">
-          <span className=" bg-light rounded-pill p-2"> JavaScript 100%</span>
+          <span className=" bg-light rounded-pill p-2"> CSS 200%</span>
         </Col>
         <Col>
           <p>
@@ -56,14 +56,14 @@ const Skills = () => {
       </Row>
       <hr />
       <Row>
-        {" "}
-        <p className="text-center">
-          See 1000 more skills
-          <img
+        <Col>
+          <p  className="text-center">
+            See 1000 more skills 
+            <img
             src="https://img.icons8.com/ios-filled/50/000000/expand-arrow--v1.png"
-            width="20"
-          />
-        </p>
+            width="20" />
+          </p>
+        </Col>
       </Row>
     </div>
   );

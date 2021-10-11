@@ -3,6 +3,7 @@ import MyJumbotron from "../Components/MyProfile/MyJumbotron";
 import Skills from "../Components/MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
+import PyMk from "./MyProfile/PyMk";
 
 const MyProfile = () => {
   const [data, setData] = useState([]);
@@ -209,6 +210,9 @@ const MyProfile = () => {
                       <ul>{/*Insert generated content here!!*/}</ul>
                     </div>
                   </div>
+                </div>
+                <div>
+                <PyMk />
                 </div>
               </Container>
             </Row>

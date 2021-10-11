@@ -46,10 +46,12 @@
   justify-content: center;
   padding-left: 0;
   padding-right: 0;
+  background-color: white;
 }
 
 .navbar {
   height: 55px;
+  background-color: white;
 }
 
 .xx::after {
@@ -102,6 +104,9 @@
 }
 
 /*------------------------------My Profile CSS-----------------------------*/
+.roundpic {
+  border-radius: 50%;
+}
 
 .alsoViewed {
   padding: 24px, 16px, 12px;

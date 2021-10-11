@@ -20,11 +20,17 @@ const PyMk = () => {
 
   return (
     <>
-      <div className="col-4">
+      <div className="">
         {!data ? (
           <h1>Loading....</h1>
         ) : (data.map(person => (
-          <li key={person.id} class="list-group-item">{person.name}</li>
+          <div key={person.id}>
+            <div className="d-flex">
+            <img className="roundpic" src={person.image} alt=""  width="60px"/>
+          <a class="list-group-item ml-2">{person.name} {person.surname}</a>
+            </div>
+          <a href="#">{person.email}</a>
+          </div>
         ))
           
         )}
