@@ -326,15 +326,34 @@
   outline: none;
   transition: background-color 0.5s linear;
 }
+.pencil-button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: background-color 0.4s linear;
+}
+
+.pencil-button:hover {
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: background-color 0.4s linear;
+}
 
 .bi-pencil{
   margin:-6px;
 }
 
-.pencil-button {
-  width: 40px;
-  height: 40px;
-}
 
 #profile-pic {
   position: absolute;
