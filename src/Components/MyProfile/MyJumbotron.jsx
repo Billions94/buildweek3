@@ -28,18 +28,18 @@ const MyJumbotron = () => {
             </p>
             <br />
             <p>
-              <Button variant="primary" className="rounded-pill mx-1">
+              <Button variant="primary" className="jumbobtn-open-to">
                 Open to
               </Button>
               <Button
                 variant="white"
-                className="rounded-pill mx-1 border border-secondary"
+                className="jumbobtn ml-2"
               >
                 Add section
               </Button>
               <Button
                 variant="white"
-                className="rounded-pill mx-1 border border-secondary"
+                className="jumbobtn ml-2"
               >
                 More
               </Button>
