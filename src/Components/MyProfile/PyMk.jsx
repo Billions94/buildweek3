@@ -5,7 +5,7 @@ const PyMk = () => {
   const [data, setData] = useState([]);
   const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
 
-  const random = Math.floor(Math.random() * 20);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,23 +19,26 @@ const PyMk = () => {
   console.log(`hey it's me`, data);
 
   return (
-    <>
-      <div className="">
+      <>
         {!data ? (
           <h1>Loading....</h1>
         ) : (data.map(person => (
-          <div key={person.id}>
-            <div className="d-flex">
-            <img className="roundpic" src={person.image} alt=""  width="60px"/>
-          <a class="list-group-item ml-2">{person.name} {person.surname}</a>
-            </div>
-          <a href="#">{person.email}</a>
+          <li className="d-flex pymk-li" key={person.id}>
+            <a className="d-flex">
+            <img className="roundpic" src={person.image} alt=""  width="50px" height="50px"/>
+          <div class="ml-2">
+          <h3 className="text-dark text-left pymkh6p"><strong>{person.name}</strong> <strong>{person.surname}</strong></h3>
+          <p className="text-muted text-left pymkh6p">{person.title}</p>
           </div>
+            </a>
+          <div className="mb-2 pymkdiv">
+          <button class="btn btn-primary pymkbtn text-muted ml-5"><span className="pymkbtnspan">Message</span></button>
+          </div>
+          </li>
         ))
           
         )}
-      </div>
-    </>
+      </>
   );
 };
 

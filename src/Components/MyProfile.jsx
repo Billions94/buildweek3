@@ -23,13 +23,13 @@ const MyProfile = () => {
   return (
     <>
       {/*Main Container*/}
-      <Container>
+      <Container className="mt-5">
         <Row>
           {/*Larger central Column*/}
           <Col md={8}>
             {/*Main feed*/}
             <Container fluid>
-              <Row className="pt-2">
+              <Row >
                 <Col md={12}>
                   <MyJumbotron />
                 </Col>
@@ -43,81 +43,79 @@ const MyProfile = () => {
                   <section className="col-12" id="dashboard">
                     <div className="info-container">
                       <div className="text-left">
-                        <h3 className=" dashboard-title">Your Dashboard</h3>
+                        <h3 className="dashboard-title">Your Dashboard</h3>
+                        <p className="text-muted dashboard-p"><em>private to you</em></p>
                       </div>
-                      <div className="section-container d-flex justify-content-between">
-                        <a className="dashboard-data">
+                      <div className="section-container p-0 d-flex justify-content-between">
+                        <a className="dashboard-data1">
                           <span className=" d-flex d-inline-block dashboard-figure">
                             0
                           </span>
-                          <span className="d-flex d-inline-block">
+                          <span className="d-flex text-dark d-inline-block">
                             Who viewed your profile
                           </span>
                         </a>
                         <a
                           className="dashboard-data"
-                          style={{ borderLeft: "1px solid black" }}
                         >
                           <span className=" d-flex d-inline-block dashboard-figure">
                             0
                           </span>
-                          <span className="d-flex d-inline-block">
-                            Who viewed your profile
+                          <span className="d-flex text-dark d-inline-block">
+                            Post views
                           </span>
                         </a>
                         <a
                           className="dashboard-data"
-                          style={{ borderLeft: "1px solid black" }}
                         >
                           <span className="d-flex d-inline-block dashboard-figure">
                             0
                           </span>
-                          <span className="d-flex d-inline-block">
-                            Who viewed your profile
+                          <span className="d-flex text-dark d-inline-block">
+                            Search appearances
                           </span>
                         </a>
                       </div>
                       <div
-                        className="section-container mt-2"
+                        className="section-container p-0 mt-3 mb-4 list-group list-group-flush"
                         id="dashboard-options"
                       >
-                        <div className="d-flex justify-content-left align-items-center">
-                          <i class=" mr-2 bi bi-people-fill"></i>
-                          <div className="d-flex-column  d-inline-block m-0">
-                            <p className="m-0">
-                              Creator Mode:
-                              <span style={{ fontStyle: "italic" }}>off</span>
-                            </p>
-                            <p>
+                        <a className="d-flex justify-content-left align-items-center list-group-item ">
+                          <i class="text-muted mr-2 mb-6 bi bi-people-fill"></i>
+                          <a className="d-flex-column text-dark d-inline-block m-0">
+                            <h6 className="dashboard-h6 m-0">
+                              Creator Mode: <span className="text-muted ">off</span>
+                            </h6>
+                            <p className="text-muted mb-0">
                               Grow your audience and get discovered by
                               highlighting content on your profile.
                             </p>
-                          </div>
-                        </div>
-                        <div className="d-flex justify-content-left align-items-center">
-                          <i class=" mr-2 bi bi-people-fill"></i>
-                          <div className="d-flex-column  d-inline-block m-0">
-                            <p className="m-0">Manage Connections</p>
-                            <p>Manage your connections, events and iterests.</p>
-                          </div>
-                        </div>
-                        <div className="d-flex justify-content-left align-items-center">
-                          <i class="mr-2 bi bi-cash"></i>
-                          <div className=" d-flex-column  d-inline-block m-0">
-                            <p className="m-0">Salary Insights</p>
-                            <p>
+                          </a>
+                        </a>
+                        <a className="d-flex justify-content-left align-items-center list-group-item  ">
+                          <i class="text-muted mr-2 mb-6 bi bi-people-fill"></i> 
+                          <a className="d-flex-column text-dark d-inline-block m-0 ">
+                            <h6 className="dashboard-h6 m-0">Manage Connections</h6>
+                            <p className="text-muted mb-0">Manage your connections, events and iterests.</p>
+                          </a>
+                        </a>
+                        <a className="d-flex justify-content-left align-items-center list-group-item  ">
+                          <i class="text-muted mr-2 mb-6 bi bi-cash"></i>
+                          <a className=" d-flex-column text-dark d-inline-block m-0 ">
+                            <h6 className="dashboard-h6 m-0">Salary Insights</h6>
+                            <p className="text-muted mb-0">
                               See how your salary compares to others in the
                               community.
                             </p>
-                          </div>
-                        </div>
-                        <div className="d-flex justify-content-left align-items-center">
-                          <i class=" mr-2 bi bi-bookmark-fill"></i>
-                          <div className="d-flex-column  d-inline-block m-0">
-                            <p className="m-0">My Items</p>
-                            <p>Keep track of your jobs courses and articles.</p>
-                          </div>
-                        </div>
+                          </a>
+                        </a>
+                        <a className="d-flex justify-content-left align-items-center list-group-item  ">
+                          <i class="text-muted mr-2 mb-6 bi bi-bookmark-fill"></i>
+                          <a className="d-flex-column text-dark d-inline-block m-0 ">
+                            <h6 className="dashboard-h6 m-0">My Items</h6>
+                            <p className="text-muted mb-0">Keep track of your jobs courses and articles.</p>
+                          </a>
+                        </a>
                       </div>
                     </div>
                   </section>
@@ -180,15 +178,14 @@ const MyProfile = () => {
           {/*Smaller right Column start*/}
           <Col md={4}>
             <Row>
-              <Container fluid>
+              <Container fluid >
                 {/*edit section right column*/}
-                <div className="section-container">
-                  <div className=" d-flex justify-content-between">
+                <div className="section-container list-group list-group-flush">
+                  <div className=" d-flex justify-content-between list-group-item">
                     <p>{"Edit public profile & URL"}</p>
                     <i class="bi bi-question-circle-fill"></i>
                   </div>
-                  <hr style={{ width: "90%" }} />
-                  <div className=" d-flex justify-content-between">
+                  <div className=" d-flex justify-content-between list-group-item">
                     <p>{"Add profile in another language"}</p>
                     <i class="bi bi-question-circle-fill"></i>
                   </div>
@@ -199,20 +196,23 @@ const MyProfile = () => {
                 <div>
                   <div className="mt-2 section-container">
                     <div className="alsoViewed">
-                      <h4>People also viewed</h4>
+                      <h4 className="myprofileh4 text-left">People also viewed</h4>
                       <ul>{/*Insert generated content here!!*/}</ul>
                     </div>
                   </div>
                   {/*People also viewed section END */}
                   <div className="mt-2 section-container">
                     <div className="alsoViewed">
-                      <h4>People you may know</h4>
-                      <ul>{/*Insert generated content here!!*/}</ul>
+                      <h4 className="myprofileh4 text-left mb-3">People you may know</h4>
+                      <ul className="ul">
+                       
+                        <PyMk />
+                                            
+                      </ul>
                     </div>
                   </div>
                 </div>
                 <div>
-                <PyMk />
                 </div>
               </Container>
             </Row>
