@@ -5,7 +5,7 @@ const NavBar = () => {
 
   return (
     <div className="navbar-container">
-        <div className="col-12">
+        <div className="">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img src="./assets/linkedin.png" alt="" />
@@ -24,7 +24,7 @@ const NavBar = () => {
         <div id="input-container">
           <i id="input-icon" class="bi bi-search"></i>
           <input
-            className="ml-3 liked-search"
+            className="ml-3 search"
             type="text"
             placeholder="Search"
           />
@@ -35,47 +35,47 @@ const NavBar = () => {
         >
           <ul className="navbar-nav mr-auto">
             <div>
-              <li className="nav-item active">
-              <img className="pt-2" src="./assets/home.png" alt="" width="22px"/>
+              <li className="nav-item active navbar-li">
+              <img className="pt-2 ml-1" src="./assets/home.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
-                  Home <span className="sr-only">(current)</span>
+                 <span> Home </span>
                 </a>
               </li>
             </div>
             <div>
-              <li className="nav-item active">
-              <img className="pt-2" src="./assets/network.png" alt="" width="22px"/>
+              <li className="nav-item active navbar-li">
+              <img className="pt-2 ml-1" src="./assets/network.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
-                  Network <span className="sr-only">(current)</span>
+                   <span>Network</span>
                 </a>
               </li>
             </div>
             <div>
-              <li className="nav-item active">
-              <img className="pt-2" src="./assets/briefcase.png" alt="" width="22px"/>
+              <li className="nav-item active navbar-li">
+              <img className="pt-2 ml-2" src="./assets/briefcase.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
-                  Jobs <span className="sr-only">(current)</span>
+                   <span>Jobs</span>
                 </a>
               </li>
             </div>
             <div>
-              <li className="nav-item active">
+              <li className="nav-item active navbar-li">
               <img className="pt-2" src="./assets/chat.png" alt=""  width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
-                  Messaging <span className="sr-only">(current)</span>
+                   <span>Messaging</span>
                 </a>
               </li>
             </div>
             <div>
-              <li className="nav-item active ">
+              <li className="nav-item active navbar-li">
               <img className="pt-2" src="./assets/notification.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
-                  Notifications <span className="sr-only">(current)</span>
+                   <span>Notifications</span>
                 </a>
               </li>
             </div>
-            <div className="xx">
-              <img src="./assets/alex.jpeg" alt="" width="24px" />
+            <div className="xx ">
+              <img className="pt-3" src="./assets/alex.jpeg" alt="" width="24px" />
               {/* <DropdownButton
                 menuAlign="right"
                 title=""
@@ -89,10 +89,10 @@ const NavBar = () => {
               </DropdownButton> */}
             </div>
             <div className="ml-5 pt-2">
-                <li className="nav-item active ">
-                <img src="./assets/thumbnails.png" alt="" />
+                <li className="nav-item active navbar-li">
+                <img className="ml-2" src="./assets/thumbnails.png" alt="" width="22px" />
                 <a className="nav-link pt-0 ml-2" href="#">
-                  Work <span className="sr-only">(current)</span>
+                   <span>Work</span>
                 </a>
               </li>
             </div>

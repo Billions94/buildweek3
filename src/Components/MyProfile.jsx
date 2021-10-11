@@ -189,12 +189,12 @@ const MyProfile = () => {
             <Row>
               <Container fluid>
                 {/*edit section right column*/}
-                <div className="section-container list-group list-group-flush">
-                  <div className=" d-flex justify-content-between list-group-item">
+                <div className="section-container pt-0 pb-0 list-group list-group-flush">
+                  <div className=" d-flex justify-content-between list-pad1 list-group-item">
                     <p>{"Edit public profile & URL"}</p>
                     <i class="bi bi-question-circle-fill"></i>
                   </div>
-                  <div className=" d-flex justify-content-between list-group-item">
+                  <div className=" d-flex justify-content-between list-pad2 list-group-item">
                     <p>{"Add profile in another language"}</p>
                     <i class="bi bi-question-circle-fill"></i>
                   </div>
