@@ -208,9 +208,19 @@ const MyProfile = () => {
                 </div>
                 {/*edit section right column END*/}
 
+                {/* ad section */}
+                  <div className="mt-3 profile-ad list-group">
+                    <div className="list-group-item  p-0">
+                    <a href="https://www.linkedin.com/jobs/?trk=consumer_jobs_global_fallback">
+                    <img  src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" alt="" />
+                    </a>
+                    </div>
+                  </div>
+                {/* ad section */}
+
                 {/*People also viewed section */}
                 <div>
-                  <div className="mt-2 section-container">
+                  <div className="mt-3 section-container">
                     <div className="alsoViewed">
                       <h4 className="myprofileh4 text-left">
                         People also viewed

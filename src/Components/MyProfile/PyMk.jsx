@@ -27,8 +27,8 @@ const PyMk = () => {
             <a className="d-flex pymk-a">
             <img className="roundpic" src={person.image} alt=""  width="50px" height="50px"/>
           <div class="ml-2">
-          <h3 className="text-dark text-left pymkh6p"><strong>{person.name}</strong> <strong>{person.surname}</strong></h3>
-          <p className="text-muted text-left pymkh6p">{person.title}</p>
+          <h3 className="text-dark m-0 text-left pymkh6p"><strong>{person.name}</strong> <strong>{person.surname}</strong></h3>
+          <p className="text-muted mb-0 text-left  pymkh6p">{person.title}</p>
           </div>
             </a>
           <div className="mb-2 pymkdiv">
