@@ -14,7 +14,7 @@ const MyJumbotron = () => {
         <Row>
           <img
             id="profile-pic"
-            src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fcdn2.f-cdn.com%2Fppic%2F75814888%2Flogo%2F17261130%2FkjtlA%2Fprofile_logo_.png&sp=1633952420T7dc1c68651c0733dd25853ea3f811721bb86c1a915e380c67dcebc4c640ed515"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNdh_lxtlEr00s_eTQExT-4e2eN1rDREDTQ&usqp=CAU"
             alt="ProfilePicture"
             width="130"
             height="130"

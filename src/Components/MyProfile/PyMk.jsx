@@ -26,7 +26,6 @@ const PyMk = () => {
           <li className="d-flex pymk-li" key={person.id}>
 
             <div class="d-flex-column align-items-center">
-            <a className="d-flex">
 
             <a className="d-flex pymk-a">
 

@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import linkedinlogo from "public/assets/LI-Logo.png"
+
 
 const MyFooter = () => {
   return (
