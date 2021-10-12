@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import MyProfile from "./Components/MyProfile";
+import MyFooter from "./Components/MyFooter";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <div>
           <Route path="/me" exact component={MyProfile} />
         </div>
+        <MyFooter/>
       </Router>
     </div>
   );

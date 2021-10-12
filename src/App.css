@@ -119,6 +119,65 @@
   color: rgb(121, 78, 15);
 }
 
+/*------------------------------Footer CSS------------------------------*/
+.footer-link{
+  color: #00000099;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 10px
+}
+.footer-link:hover{
+  color: #0A66C2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-copyright{
+  font-size: 12px;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  color: #00000099;
+}
+
+.footer-settings{
+  color: #00000099;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 10px
+
+}
+
+.footer-settings:hover{
+  color: #0A66C2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer-settings-small{
+  color: #00000099;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 10px
+
+}
+
+select.languages{
+  width: 120%;
+}
+
+
+
+
+
+
 /*------------------------------Jumbotron CSS------------------------------*/
 .jumbobtn-open-to {
   border: 1px solid grey;
@@ -198,7 +257,7 @@
 }
 
 .pymkbtn:hover {
-  outline: 2px solid grey;
+  outline: 1px solid grey;
   background-color: rgb(221, 218, 218);
 }
 
@@ -215,9 +274,9 @@
   line-height: 20px;
 }
 
-.pymkdiv {
+/* .pymkdiv {
   margin-left: -145px;
-}
+} */
 
 
 /*------------------------------My Profile CSS-----------------------------*/
@@ -365,6 +424,34 @@
   outline: none;
   transition: background-color 0.5s linear;
 }
+.pencil-button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: background-color 0.4s linear;
+}
+
+.pencil-button:hover {
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: background-color 0.4s linear;
+}
+
+.bi-pencil{
+  margin:-6px;
+}
+
 
 .profile-btn {
   background-color: transparent;

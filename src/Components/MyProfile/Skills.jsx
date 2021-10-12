@@ -4,16 +4,18 @@ import Col from "react-bootstrap/Col";
 const Skills = () => {
   return (
     <div id="skills">
-      <Row>
-        <Col>
-          <h5> Featured Skills & Endorsements</h5>
-        </Col>
-        <Col>
-          <p>
-            {" "}
-            Add a new skill{" "}
-            <button className="btn profile-btn"><i class="text-dark bi bi-pencil"></i></button>
-          </p>
+
+      <Row className="mb-3">
+        <Col className="d-flex justify-content-between">
+          <h5 > Featured Skills & Endorsements</h5>
+          <div>
+            <button className="profile-button">
+            <span className="mr-3">
+            Add a new skill
+            </span>
+            </button>
+            <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>
+          </div>
         </Col>
       </Row>
       <Row>
@@ -54,11 +56,12 @@ const Skills = () => {
       <hr />
       <Row>
         <Col>
-          <p  className="text-center">
-            See 1000 more skills 
+          <p className="text-center">
+            See 1000 more skills
             <img
-            src="https://img.icons8.com/ios-filled/50/000000/expand-arrow--v1.png"
-            width="20" />
+              src="https://img.icons8.com/ios-filled/50/000000/expand-arrow--v1.png"
+              width="20"
+            />
           </p>
         </Col>
       </Row>
