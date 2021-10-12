@@ -5,10 +5,14 @@ import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { ResponsiveEmbed } from "react-bootstrap";
+import TextField from "@mui/material/TextField";
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import {DesktopDatePicker} from "@mui/lab";
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 const ModalPop = () => {
   const [lgShow, setLgShow] = useState(false);
-  //   const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   const validationSchema = yup.object().shape({
     role: yup.string().required("Title is required"),
@@ -24,20 +28,21 @@ const ModalPop = () => {
     description: yup.string().required("Confirm Password is required"),
   });
 
-  const { values, handleChange, handleSubmit, errors } = useFormik({
+  const { values, handleChange, handleSubmit, errors , setFieldValue} = useFormik({
     initialValues: {
       role: "",
       company: "",
-      startDate: "",
-      endDate: "",
+      startDate: new Date(),
+      endDate: new Date(),
       description: "",
       area: "",
     },
     onSubmit: async (values) => {
       try {
         const response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/profile/:userId/experiences`,
+          `https://striveschool-api.herokuapp.com/api/profile/6163f550a890cc0015cf07e3/experiences`,
           {
+              method: "POST",
             body: JSON.stringify(values),
             headers: {
               "Content-Type": "application/json",
@@ -46,7 +51,7 @@ const ModalPop = () => {
             },
           }
         );
-        // console.log(response)
+        console.log(response);
       } catch (e) {
         console.log(e);
       }
@@ -140,10 +145,22 @@ const ModalPop = () => {
                 type="checkbox"
                 label="I'm currently working in this  role"
                 // onClick={() => setChecked(true)}
+                value={checked}
+                onChange={(e) => setChecked(e.target.checked)}
               />
 
               <div className="d-flex">
-                <Form.Group>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DesktopDatePicker
+                  label="Start Date"
+                 
+                  value={values.startDate}
+                  onChange={(date)=>  setFieldValue("startDate", date)}
+                  name="startDate"
+                  renderInput={(params) => <TextField {...params} />}
+                />
+                </LocalizationProvider>
+                {/* <Form.Group>
                   <Form.Label className="text-muted dateMY">
                     Start date
                   </Form.Label>
@@ -168,6 +185,8 @@ const ModalPop = () => {
                     <option>December</option>
                   </Form.Control>
                 </Form.Group>
+                
+                
                 <Form.Group
                   className="ml-2 dateMY"
                   style={{ marginTop: "32px" }}
@@ -192,10 +211,21 @@ const ModalPop = () => {
                     <option>2011</option>
                   </Form.Control>
                 </Form.Group>
+              */}
               </div>
 
-              <div className="d-flex ">
-                <Form.Group>
+              {checked && (
+                <div className="d-flex ">
+                     <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <DesktopDatePicker
+                    label="End date"
+                   
+                    value={values.endDate}
+                    onChange={(date)=>  setFieldValue("startDate", date)}
+                    name="endDate"
+                    renderInput={(params) => <TextField {...params} />}
+                  /> </LocalizationProvider>
+                  {/* <Form.Group>
                   <Form.Label className="text-muted dateMY">
                     End date
                   </Form.Label>
@@ -244,7 +274,9 @@ const ModalPop = () => {
                     <option>2011</option>
                   </Form.Control>
                 </Form.Group>
-              </div>
+              */}
+                </div>
+              )}
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
               <Form.Label className="text-muted">Headline</Form.Label>
@@ -263,15 +295,15 @@ const ModalPop = () => {
               <label for="description" className="text-muted">
                 Description
               </label>
-              <textarea
+              <Form.Control
+                as="textarea"
                 name="description"
                 value={values.description}
                 onChange={handleChange}
                 id="description"
-                name="w3review"
                 rows="4"
                 cols="81"
-              ></textarea>
+              />
               <Form.Text className="text-muted text-right">0/2,000</Form.Text>
             </Form.Group>
             <Button
