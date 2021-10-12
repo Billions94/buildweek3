@@ -6,38 +6,25 @@ import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
 
-import  {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom";
 
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import Modal from "./Modal";
 
-
 const MyProfile = () => {
-  const params = useParams()
-  console.log({params})
-  const  [ user, setUser] = useState(null)
-  const [data, setData] = useState([]);
-  const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
+  const params = useParams();
+
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchInfo(myUrl);
-      setData(data);
-      console.log(data);
+    const fetchUser = async (id) => {
+      const url = `https://striveschool-api.herokuapp.com/api/profile/${id}`;
+      const data = await fetchInfo(url);
+      console.log({ data });
+      setUser(data);
     };
-    fetchData();
-  }, []);
-
-  console.log(`hey it's me`);
-
-  useEffect(()=>{
-    const fetchData = async () => {
-      const data = await fetchInfo(`https://striveschool-api.herokuapp.com/api/profile/`);
-    
-    };
-    fetchData();
-
-  }, [])
+    fetchUser(params.id);
+  }, [params.id]);
 
   return (
     <>
@@ -63,7 +50,7 @@ const MyProfile = () => {
             <Container fluid>
               <Row>
                 <Col md={12} className="p-0">
-                  <MyJumbotron />
+                  {user && <MyJumbotron user={user} />}
                 </Col>
                 {/*Your Dashboard Section*/}
                 <Col
@@ -191,10 +178,9 @@ const MyProfile = () => {
                       <button className="profile-button pencil-button">
                         <i class="bi bi-pencil"></i>
                       </button>
-                      <Modal />
                     </div>
                     <div>
-                      <DisplayExp />
+                      <DisplayExp user={user} />
                     </div>
                   </div>
                 </Col>
@@ -252,9 +238,8 @@ const MyProfile = () => {
                       <ul className="ul">
                         {/*Insert generated content here!!*/}
                         <PyMk />
-                                <>
-                                <SecondPYMK/>
-                                </>
+
+                        <SecondPYMK />
                       </ul>
                     </div>
                   </div>
@@ -268,9 +253,9 @@ const MyProfile = () => {
                       <ul className="ul">
                         {/* <PyMk /> */}
                         <PyMk />
-                         <>
-                        <SecondPYMK/>
-                         </>
+                        <>
+                          <SecondPYMK />
+                        </>
                       </ul>
                     </div>
                   </div>

@@ -3,7 +3,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const MyJumbotron = () => {
+const MyJumbotron = ({ user }) => {
   return (
     <>
       <Jumbotron
@@ -20,45 +20,44 @@ const MyJumbotron = () => {
             height="130"
           />
         </Row>
-        <Row>
-          <Col className="text-left mt-3 p-4">
-            <h5 style={{ marginTop: "70%" }}>Ma Real Name</h5>
-            <p className="mb-0">
-              This is a simple placeholder, job, loacation et ecetera
-            </p>
+        <Row className="p-2" style={{ marginTop: "250px" }}>
+          <Col className="text-left ">
+            <h5>{user.name}</h5>
+            <p className="mb-0">{user.title}</p>
             <br />
             <p>
               <Button variant="primary" className="jumbobtn-open-to">
                 Open to
               </Button>
-              <Button
-                variant="white"
-                className="jumbobtn ml-2"
-              >
+              <Button variant="white" className="jumbobtn ml-2">
                 Add section
               </Button>
-              <Button
-                variant="white"
-                className="jumbobtn ml-2"
-              >
+              <Button variant="white" className="jumbobtn ml-2">
                 More
               </Button>
             </p>
             <div className="opened-to-work text-left p-2">
               <div className="mb-0">
-                <b className="text-dark jumbo-a">Show recruiters you’re open to work</b> 
+                <b className="text-dark jumbo-a">
+                  Show recruiters you’re open to work
+                </b>
                 <br />
-                 <span className="text-dark jumbo-a">you control who sees this</span> 
+                <span className="text-dark jumbo-a">
+                  you control who sees this
+                </span>
                 <br />
-                <a href="" style={{ color: "rgb(33, 93, 172)", cursor: "pointer" }}>Get started</a>
+                <a
+                  href=""
+                  style={{ color: "rgb(33, 93, 172)", cursor: "pointer" }}
+                >
+                  Get started
+                </a>
               </div>
             </div>
           </Col>
-          <Col>
-            <p style={{ marginTop: "82%" }}>
-              <img src="https://strive.school/favicon.ico" width="25" />
-              <b> Strive School</b>
-            </p>
+          <Col className="text-right ">
+            <img src="https://strive.school/favicon.ico" width="25" />
+            <b> Strive School</b>
           </Col>
         </Row>
       </Jumbotron>

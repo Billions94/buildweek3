@@ -6,11 +6,11 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { ResponsiveEmbed } from "react-bootstrap";
 import TextField from "@mui/material/TextField";
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import {DesktopDatePicker} from "@mui/lab";
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { DesktopDatePicker } from "@mui/lab";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
 
-const ModalPop = () => {
+const ModalPop = ({ user, fetchExp }) => {
   const [lgShow, setLgShow] = useState(false);
   const [checked, setChecked] = useState(false);
 
@@ -25,38 +25,48 @@ const ModalPop = () => {
       .string()
 
       .required("End date is required"),
-    description: yup.string().required("Confirm Password is required"),
+    description: yup.string().required("Confirm Password is required")
   });
 
-  const { values, handleChange, handleSubmit, errors , setFieldValue} = useFormik({
+  const {
+    values,
+    handleChange,
+    handleSubmit,
+    errors,
+    setFieldValue
+  } = useFormik({
     initialValues: {
       role: "",
       company: "",
       startDate: new Date(),
       endDate: new Date(),
       description: "",
-      area: "",
+      area: ""
     },
     onSubmit: async (values) => {
       try {
         const response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/profile/6163f550a890cc0015cf07e3/experiences`,
+          `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`,
           {
-              method: "POST",
+            method: "POST",
             body: JSON.stringify(values),
             headers: {
               "Content-Type": "application/json",
               Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
-            },
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o"
+            }
           }
         );
         console.log(response);
+        if (response.ok) {
+          fetchExp();
+          setLgShow(false);
+        }
       } catch (e) {
         console.log(e);
       }
     },
-    validationSchema: validationSchema,
+    validationSchema: validationSchema
   });
 
   return (
@@ -65,7 +75,7 @@ const ModalPop = () => {
         <i class="bi bi-plus-lg bi-css text-dark "></i>
       </div>
       <Modal
-        className="modal"
+        // className="modal"
         size="lg"
         show={lgShow}
         onHide={() => setLgShow(false)}
@@ -77,7 +87,7 @@ const ModalPop = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="p-0">
-          <Form className="px-4" style={{ height: "700px", overflowY: "auto" }}>
+          <Form className="px-4">
             <Form.Group controlId="formBasicEmail">
               <Form.Label className="text-muted">Title*</Form.Label>
               <Form.Control
@@ -150,15 +160,14 @@ const ModalPop = () => {
               />
 
               <div className="d-flex">
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DesktopDatePicker
-                  label="Start Date"
-                 
-                  value={values.startDate}
-                  onChange={(date)=>  setFieldValue("startDate", date)}
-                  name="startDate"
-                  renderInput={(params) => <TextField {...params} />}
-                />
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <DesktopDatePicker
+                    label="Start Date"
+                    value={values.startDate}
+                    onChange={(date) => setFieldValue("startDate", date)}
+                    name="startDate"
+                    renderInput={(params) => <TextField {...params} />}
+                  />
                 </LocalizationProvider>
                 {/* <Form.Group>
                   <Form.Label className="text-muted dateMY">
@@ -216,15 +225,15 @@ const ModalPop = () => {
 
               {checked && (
                 <div className="d-flex ">
-                     <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DesktopDatePicker
-                    label="End date"
-                   
-                    value={values.endDate}
-                    onChange={(date)=>  setFieldValue("startDate", date)}
-                    name="endDate"
-                    renderInput={(params) => <TextField {...params} />}
-                  /> </LocalizationProvider>
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DesktopDatePicker
+                      label="End date"
+                      value={values.endDate}
+                      onChange={(date) => setFieldValue("startDate", date)}
+                      name="endDate"
+                      renderInput={(params) => <TextField {...params} />}
+                    />{" "}
+                  </LocalizationProvider>
                   {/* <Form.Group>
                   <Form.Label className="text-muted dateMY">
                     End date
