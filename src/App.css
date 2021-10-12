@@ -217,6 +217,9 @@
   background-color: rgb(231, 226, 221);
 }
 
+.location-text{
+  font-size: 12px;
+  color: #00000099
 /*------------------------------Modal CSS-----------------------------*/
 .modal {
   /* overflow: scroll; */
@@ -489,6 +492,23 @@
   background-color: linear;
 }
 
+.show-more-btn{
+  background-color: #a9aaac;
+  border: none;
+  color: #00000099;
+  width: 110%;
+  height: 5vh;
+}
+.show-more-btn:focus,
+.show-more-btn:active,
+.show-more-btn:hover{
+  background-color: #a9aaac !important;
+  border: none !important; 
+  color: #00000099 !important;
+  text-decoration: none;
+  outline: none !important;
+  box-shadow: none;
+}
 
 #profile-pic {
   position: absolute;
@@ -510,4 +530,12 @@
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 10px;
+}
+
+
+.flipped{
+  transform: rotate(180deg);
+}
+.righted{
+  transform: rotate(180deg);
 }
