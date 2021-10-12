@@ -4,7 +4,7 @@ import Skills from "../Components/MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
-import Modal from './Modal'
+import Modal from "./Modal";
 
 const MyProfile = () => {
   const [data, setData] = useState([]);
@@ -23,13 +23,19 @@ const MyProfile = () => {
 
   return (
     <>
-    <div className="mt-3">
-    <a href="https://www.talent.io/p/en-de/home?utm_source=linkedin&utm_medium=cpc&utm_campaign=%5BLI%5D-DE-Germany-Candidates-Frontend-TA&li_fat_id=713b0a02-5b8e-4676-9f0c-592df8135a78" 
-    className="ad text-center text-dark">
-      <a className="text-primary">Frontend Entwickle</a> 
-    🚨  7000 Unternehmen suchen auf talent.io neue Mitarbeiter·innen. €60k to €120k </a>
-    <span className="ml-2">Ad <span className="ad-span">...</span></span>
-    </div>
+      <div className="mt-3">
+        <a
+          href="https://www.talent.io/p/en-de/home?utm_source=linkedin&utm_medium=cpc&utm_campaign=%5BLI%5D-DE-Germany-Candidates-Frontend-TA&li_fat_id=713b0a02-5b8e-4676-9f0c-592df8135a78"
+          className="ad text-center text-dark"
+        >
+          <a className="text-primary">Frontend Entwickle</a>
+          🚨 7000 Unternehmen suchen auf talent.io neue Mitarbeiter·innen. €60k
+          to €120k{" "}
+        </a>
+        <span className="ml-2">
+          Ad <span className="ad-span">...</span>
+        </span>
+      </div>
       {/*Main Container*/}
       <Container className="mt-3">
         <Row>
@@ -145,9 +151,7 @@ const MyProfile = () => {
                         <h4>Activity</h4>
                         <button className="profile-button">Start a post</button>
                       </div>
-                      <p className="text-muted">
-                        11 followers
-                      </p>
+                      <p className="text-muted">11 followers</p>
                     </div>
                     <div>
                       <p>
@@ -166,8 +170,10 @@ const MyProfile = () => {
                   <div className="section-container mt-3">
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
-                      <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>
-                       <Modal />                
+                      <button className="profile-button pencil-button">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <Modal />
                     </div>
                     <div>
                       <p>
@@ -211,13 +217,16 @@ const MyProfile = () => {
                 {/*edit section right column END*/}
 
                 {/* ad section */}
-                  <div className="mt-3 profile-ad list-group">
-                    <div className="list-group-item  p-0">
+                <div className="mt-3 profile-ad list-group">
+                  <div className="list-group-item  p-0">
                     <a href="https://www.linkedin.com/jobs/?trk=consumer_jobs_global_fallback">
-                    <img  src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" alt="" />
+                      <img
+                        src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
+                        alt=""
+                      />
                     </a>
-                    </div>
                   </div>
+                </div>
                 {/* ad section */}
 
                 {/*People also viewed section */}
@@ -239,9 +248,7 @@ const MyProfile = () => {
                       <h4 className="myprofileh4 text-left mb-3">
                         People you may know
                       </h4>
-                      <ul className="ul">
-                        {/* <PyMk /> */}
-                      </ul>
+                      <ul className="ul">{/* <PyMk /> */}</ul>
                     </div>
                   </div>
                 </div>
