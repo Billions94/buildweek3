@@ -12,10 +12,7 @@ const Skills = () => {
           <p>
             {" "}
             Add a new skill{" "}
-            <img
-              src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-pen-fine-arts-kiranshastry-gradient-kiranshastry.png"
-              width="20"
-            />
+            <button className="btn profile-btn"><i class="text-dark bi bi-pencil"></i></button>
           </p>
         </Col>
       </Row>
