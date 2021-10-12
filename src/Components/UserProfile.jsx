@@ -8,6 +8,7 @@ import PyMk from "./MyProfile/PyMk";
 import UserProfileJumbotron from "./UserProfile/UserProfileJumbotron";
 import SecondPYMK from "./MyProfile/SecondPYMK";
 
+
 const UserProfile = (props) => {
   const [data, setData] = useState([]);
   const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
@@ -195,3 +196,5 @@ const UserProfile = (props) => {
 };
 
 export default UserProfile;
+
+

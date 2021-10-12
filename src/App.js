@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import MyProfile from "./Components/MyProfile";
 import MyFooter from "./Components/MyFooter";
+import UserProfile from "./Components/UserProfile"
 
 
 
@@ -14,6 +15,8 @@ function App() {
         <NavBar />
         <div>
           <Route path="/me" exact component={MyProfile} />
+          <Route path="/user/:id" exact component={UserProfile} />
+
         </div>
         <MyFooter/>
       </Router>
