@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import MyJumbotron from "../Components/MyProfile/MyJumbotron";
+import DisplayExp from "../Components/MyProfile/DisplayExp";
 import Skills from "../Components/MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
@@ -176,12 +177,7 @@ const MyProfile = () => {
                       <Modal />
                     </div>
                     <div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Suspendisse id libero ac est egestas tincidunt. Proin
-                        nec interdum massa. Orci varius natoque penatibus et
-                        magnis dis parturient montes, nascetur ridiculus mus
-                      </p>
+                      <DisplayExp />
                     </div>
                   </div>
                 </Col>
