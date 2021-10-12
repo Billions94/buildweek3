@@ -5,8 +5,12 @@ import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
 import Modal from './Modal'
+import  {useParams} from "react-router-dom"
 
 const MyProfile = () => {
+  const params = useParams()
+  console.log({params})
+  const  [ user, setUser] = useState(null)
   const [data, setData] = useState([]);
   const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
 
@@ -20,6 +24,15 @@ const MyProfile = () => {
   }, []);
 
   console.log(`hey it's me`);
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      const data = await fetchInfo(`https://striveschool-api.herokuapp.com/api/profile/`);
+    
+    };
+    fetchData();
+
+  }, [])
 
   return (
     <>

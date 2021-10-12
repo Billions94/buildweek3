@@ -13,7 +13,7 @@ function App() {
       <Router>
         <NavBar />
         <div>
-          <Route path="/me" exact component={MyProfile} />
+          <Route path="/profile/:id" exact component={MyProfile} />
         </div>
         <MyFooter/>
       </Router>
