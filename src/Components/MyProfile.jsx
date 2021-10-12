@@ -4,6 +4,7 @@ import Skills from "../Components/MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
+import Modal from './Modal'
 
 const MyProfile = () => {
   const [data, setData] = useState([]);
@@ -165,7 +166,8 @@ const MyProfile = () => {
                   <div className="section-container mt-3">
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
-                      <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>                     
+                      <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>
+                       <Modal />                
                     </div>
                     <div>
                       <p>
