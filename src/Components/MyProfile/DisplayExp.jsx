@@ -26,7 +26,7 @@ const DisplayExp = () => {
           <h6>{exp.role}</h6>
           <p>{exp.company}</p>
           <p>
-            {exp.startDate.getUTCDate()} - {exp.endDate}
+            {exp.startDate} - {exp.endDate}
           </p>
           <p>{exp.area}</p>
           <br />
