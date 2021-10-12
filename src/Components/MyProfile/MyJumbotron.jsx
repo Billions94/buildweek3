@@ -44,12 +44,14 @@ const MyJumbotron = () => {
                 More
               </Button>
             </p>
-            <div className="border border-secondary rounded-lg text-left p-2">
-              <p className="mb-0">
-                <b>Show recruiters you’re open to work</b> — you control who
-                sees this. <br />
-                <span style={{ color: "blue", cursor: "pointer" }}>Get started</span>
-              </p>
+            <div className="opened-to-work text-left p-2">
+              <div className="mb-0">
+                <b className="text-dark jumbo-a">Show recruiters you’re open to work</b> 
+                <br />
+                 <span className="text-dark jumbo-a">you control who sees this</span> 
+                <br />
+                <a href="" style={{ color: "rgb(33, 93, 172)", cursor: "pointer" }}>Get started</a>
+              </div>
             </div>
           </Col>
           <Col>

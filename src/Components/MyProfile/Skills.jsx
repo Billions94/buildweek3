@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 const Skills = () => {
   return (
     <div id="skills">
+
       <Row className="mb-3">
         <Col className="d-flex justify-content-between">
           <h5 > Featured Skills & Endorsements</h5>

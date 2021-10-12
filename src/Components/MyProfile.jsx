@@ -22,8 +22,15 @@ const MyProfile = () => {
 
   return (
     <>
+    <div className="mt-3">
+    <a href="https://www.talent.io/p/en-de/home?utm_source=linkedin&utm_medium=cpc&utm_campaign=%5BLI%5D-DE-Germany-Candidates-Frontend-TA&li_fat_id=713b0a02-5b8e-4676-9f0c-592df8135a78" 
+    className="ad text-center text-dark">
+      <a className="text-primary">Frontend Entwickle</a> 
+    🚨  7000 Unternehmen suchen auf talent.io neue Mitarbeiter·innen. €60k to €120k </a>
+    <span className="ml-2">Ad <span className="ad-span">...</span></span>
+    </div>
       {/*Main Container*/}
-      <Container className="mt-5">
+      <Container className="mt-3">
         <Row>
           {/*Larger central Column*/}
           <Col md={8}>
@@ -49,7 +56,7 @@ const MyProfile = () => {
                         </p>
                       </div>
                       <div className="section-container p-0 d-flex justify-content-between">
-                        <a className="dashboard-data1">
+                        <a className="dashboard-data1 pymk-a">
                           <span className=" d-flex d-inline-block dashboard-figure">
                             0
                           </span>
@@ -57,7 +64,7 @@ const MyProfile = () => {
                             Who viewed your profile
                           </span>
                         </a>
-                        <a className="dashboard-data">
+                        <a className="dashboard-data pymk-a">
                           <span className=" d-flex d-inline-block dashboard-figure">
                             0
                           </span>
@@ -65,7 +72,7 @@ const MyProfile = () => {
                             Post views
                           </span>
                         </a>
-                        <a className="dashboard-data">
+                        <a className="dashboard-data pymk-a">
                           <span className="d-flex d-inline-block dashboard-figure">
                             0
                           </span>
@@ -78,9 +85,9 @@ const MyProfile = () => {
                         className="section-container p-0 mt-3 mb-4 list-group list-group-flush"
                         id="dashboard-options"
                       >
-                        <a className="d-flex justify-content-left align-items-center list-group-item ">
+                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a">
                           <i class="text-muted mr-2 mb-6 bi bi-people-fill"></i>
-                          <a className="d-flex-column text-dark d-inline-block m-0">
+                          <a className="d-flex-column text-dark d-inline-block m-0 ">
                             <h6 className="dashboard-h6 m-0">
                               Creator Mode:{" "}
                               <span className="text-muted ">off</span>
@@ -91,7 +98,7 @@ const MyProfile = () => {
                             </p>
                           </a>
                         </a>
-                        <a className="d-flex justify-content-left align-items-center list-group-item  ">
+                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a ">
                           <i class="text-muted mr-2 mb-6 bi bi-people-fill"></i>
                           <a className="d-flex-column text-dark d-inline-block m-0 ">
                             <h6 className="dashboard-h6 m-0">
@@ -102,7 +109,7 @@ const MyProfile = () => {
                             </p>
                           </a>
                         </a>
-                        <a className="d-flex justify-content-left align-items-center list-group-item  ">
+                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a ">
                           <i class="text-muted mr-2 mb-6 bi bi-cash"></i>
                           <a className=" d-flex-column text-dark d-inline-block m-0 ">
                             <h6 className="dashboard-h6 m-0">
@@ -114,7 +121,7 @@ const MyProfile = () => {
                             </p>
                           </a>
                         </a>
-                        <a className="d-flex justify-content-left align-items-center list-group-item  ">
+                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a ">
                           <i class="text-muted mr-2 mb-6 bi bi-bookmark-fill"></i>
                           <a className="d-flex-column text-dark d-inline-block m-0 ">
                             <h6 className="dashboard-h6 m-0">My Items</h6>
@@ -137,7 +144,7 @@ const MyProfile = () => {
                         <h4>Activity</h4>
                         <button className="profile-button">Start a post</button>
                       </div>
-                      <p style={{ color: "blue", cursor: "pointer" }}>
+                      <p className="text-muted">
                         11 followers
                       </p>
                     </div>
@@ -158,7 +165,7 @@ const MyProfile = () => {
                   <div className="section-container mt-3">
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
-                      <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>
+                      <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>                     
                     </div>
                     <div>
                       <p>
@@ -201,9 +208,19 @@ const MyProfile = () => {
                 </div>
                 {/*edit section right column END*/}
 
+                {/* ad section */}
+                  <div className="mt-3 profile-ad list-group">
+                    <div className="list-group-item  p-0">
+                    <a href="https://www.linkedin.com/jobs/?trk=consumer_jobs_global_fallback">
+                    <img  src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" alt="" />
+                    </a>
+                    </div>
+                  </div>
+                {/* ad section */}
+
                 {/*People also viewed section */}
                 <div>
-                  <div className="mt-2 section-container">
+                  <div className="mt-3 section-container">
                     <div className="alsoViewed">
                       <h4 className="myprofileh4 text-left">
                         People also viewed
