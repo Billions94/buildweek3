@@ -53,7 +53,7 @@
 
 .navbar {
   height: 55px;
-  background-color: white;
+  background-color: white !important;
 }
 
 .navbar-li {
@@ -80,6 +80,7 @@
   border: none;
   padding-left: 43px;
   transition: ease-in-out 0.3s;
+  background-color: rgb(238, 243, 248);
 }
 
 #input-container {
@@ -214,6 +215,23 @@
 .opened-to-work {
   border-radius: 10px;
   background-color: rgb(231, 226, 221);
+}
+
+/*------------------------------Modal CSS-----------------------------*/
+.modal {
+  /* overflow: scroll; */
+  
+}
+
+.modalbtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50px;
+}
+
+.modalbtn:hover {
+  border-radius: 50px;
+  border-color: grey;
 }
 
 
