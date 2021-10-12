@@ -2,18 +2,29 @@ import { fetchUserExp } from "../../lib";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-const DisplayExp = () => {
+const DisplayExp = (props) => {
   const [data, setData] = useState([]);
+  const userId = props.id;
+  //   console.log(userId);
+
   const myUrl = `https://striveschool-api.herokuapp.com/api/profile/6163f550a890cc0015cf07e3/experiences`;
+  const myUrl2 = userId
+    ? `https://striveschool-api.herokuapp.com/api/profile/` +
+      userId.toString() +
+      `/experiences`
+    : undefined;
+  //   console.log(myUrl2.toString());
+  //   const userIdtrue = !userId ? myUrl2 : myUrl;
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchUserExp(myUrl);
+      const data = await fetchUserExp(!userId ? myUrl : myUrl2);
       setData(data);
+      console.log("here we go");
       console.log(data);
     };
     fetchData();
-  }, []);
+  }, [userId]);
 
   return data.map((exp) => (
     <>
