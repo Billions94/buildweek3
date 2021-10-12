@@ -14,6 +14,8 @@ function App() {
       <Router>
         <NavBar />
         <div>
+
+         
           <Route path="/me" exact component={MyProfile} />
           <Route path="/user/:id" exact component={UserProfile} />
 

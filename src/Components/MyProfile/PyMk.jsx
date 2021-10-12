@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import { fetchInfo } from "../../lib";
 import { Link } from "react-router-dom";
+
+
 import { Accordion, Card } from "react-bootstrap";
+
 
 
 const PyMk = () => {
   const [data, setData] = useState([]);
   const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
-
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,13 +47,15 @@ const PyMk = () => {
   
 
   return (
+
       <>
         {!data ? (
           <h1>Loading....</h1>
         ) : (slicedData.map(person => (
-          <li className="d-flex pymk-li" key={person.id}>
 
+          <li className="d-flex pymk-li" key={person.id}>
             <div class="d-flex-column align-items-center">
+
           <Link to={"/user/" + person._id}>
             <a className="d-flex pymk-a">
 
@@ -75,6 +78,7 @@ const PyMk = () => {
         
 
       </>
+
   );
 };
 
