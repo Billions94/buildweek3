@@ -1,9 +1,8 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
-
 .App {
   text-align: center;
-  background-color: rgb(243, 242, 239)
+  background-color: rgb(243, 242, 239);
 }
 
 .App-logo {
@@ -97,8 +96,12 @@
 }
 
 @keyframes expand {
-  from {width: 280px;}
-  to {width: 350px;}
+  from {
+    width: 280px;
+  }
+  to {
+    width: 350px;
+  }
 }
 
 .search:focus {
@@ -121,21 +124,21 @@
 }
 
 /*------------------------------Footer CSS------------------------------*/
-.footer-link{
+.footer-link {
   color: #00000099;
   font-weight: 500;
   font-size: 12px;
   text-align: left;
   padding: 0;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
-.footer-link:hover{
-  color: #0A66C2;
+.footer-link:hover {
+  color: #0a66c2;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.footer-copyright{
+.footer-copyright {
   font-size: 12px;
 }
 
@@ -145,39 +148,32 @@
   color: #00000099;
 }
 
-.footer-settings{
+.footer-settings {
   color: #00000099;
   font-weight: 700;
   font-size: 16px;
   text-align: left;
   padding: 0;
-  margin-bottom: 10px
-
+  margin-bottom: 10px;
 }
 
-.footer-settings:hover{
-  color: #0A66C2;
+.footer-settings:hover {
+  color: #0a66c2;
   text-decoration: underline;
   cursor: pointer;
 }
-.footer-settings-small{
+.footer-settings-small {
   color: #00000099;
   font-weight: 500;
   font-size: 13px;
   text-align: left;
   padding: 0;
-  margin-bottom: 10px
-
+  margin-bottom: 10px;
 }
 
-#languages{
+#languages {
   width: 100%;
 }
-
-
-
-
-
 
 /*------------------------------Jumbotron CSS------------------------------*/
 .jumbobtn-open-to {
@@ -194,14 +190,15 @@
 .jumbobtn-open-to:hover {
   outline: 2px solid grey;
   background-color: rgb(33, 93, 172);
-} 
+}
 
 .jumbobtn:hover {
   outline: 2px solid grey;
   background-color: rgb(221, 218, 218);
 }
 
-.jumbobtn:focus, .pymkbtn:focus  {
+.jumbobtn:focus,
+.pymkbtn:focus {
   background-color: transparent !important;
   outline: none !important;
   border: none !important;
@@ -220,11 +217,8 @@
 .location-text{
   font-size: 12px;
   color: #00000099
-/*------------------------------Modal CSS-----------------------------*/
-.modal {
-  /* overflow: scroll; */
-  
 }
+/*------------------------------Modal CSS-----------------------------*/
 
 .modalbtn {
   width: 26px;
@@ -236,7 +230,6 @@
   border-radius: 50px;
   border-color: grey;
 }
-
 
 /*------------------------------People you may know CSS------------------------*/
 .roundpic {
@@ -282,7 +275,8 @@
   background-color: rgb(221, 218, 218);
 }
 
-.pymkbtn:focus, .pymkbtn:focus  {
+.pymkbtn:focus,
+.pymkbtn:focus {
   background-color: transparent !important;
   outline: none !important;
   border: none !important;
@@ -299,11 +293,10 @@
   margin-left: -145px;
 } */
 
-
 /*------------------------------My Profile CSS-----------------------------*/
 .ad {
   text-decoration: underline;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .ad .text-primary:hover {
@@ -327,7 +320,6 @@
   line-height: 20px;
 }
 
-
 .list-group-item {
   padding-left: 12px !important;
   padding-right: 12px !important;
@@ -340,7 +332,6 @@
 .list-pad2 {
   padding-bottom: 0;
 }
-
 
 .bi-question-circle-fill {
   color: rgb(90, 90, 90);
@@ -370,13 +361,12 @@
 .dashboard-data {
   padding: 8px 12px 12px;
   flex: 1 1 0;
-  border-left: 1px solid rgb(233, 233, 233)
+  border-left: 1px solid rgb(233, 233, 233);
 }
 
 .dashboard-data1 {
   padding: 8px 12px 12px;
   flex: 1 1 0;
- 
 }
 
 .dashboard-data:hover {
@@ -469,10 +459,9 @@
   transition: background-color 0.4s linear;
 }
 
-.bi-pencil{
-  margin:-6px;
+.bi-pencil {
+  margin: -6px;
 }
-
 
 .profile-btn {
   background-color: transparent;
@@ -483,16 +472,19 @@
 .profile-btn:hover {
   background-color: rgb(187, 187, 187);
   border-radius: 50px;
-  background-color:  linear;
+  background-color: linear;
 }
 
-.profile-btn:focus, .profile-btn:active {
+.profile-btn:focus,
+.profile-btn:active {
   background-color: rgb(187, 187, 187);
   border-radius: 50px;
   background-color: linear;
 }
 
+
 .show-more-btn{
+
   background-color: #a9aaac;
   border: none;
   color: #00000099;
@@ -501,6 +493,7 @@
 }
 .show-more-btn:focus,
 .show-more-btn:active,
+
 .show-more-btn:hover{
   background-color: #a9aaac !important;
   border: none !important; 
@@ -532,10 +525,10 @@
   padding: 10px;
 }
 
-
 .flipped{
   transform: rotate(180deg);
 }
 .righted{
   transform: rotate(180deg);
 }
+
