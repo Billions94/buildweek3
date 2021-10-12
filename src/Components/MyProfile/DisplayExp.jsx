@@ -1,18 +1,20 @@
 import { fetchUserExp } from "../../lib";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import {useParams} from "react-router-dom"
 
 const DisplayExp = (props) => {
+  const params = useParams()
   const [data, setData] = useState([]);
-  const userId = props.id;
+  
   //   console.log(userId);
 
-  const myUrl = `https://striveschool-api.herokuapp.com/api/profile/6163f550a890cc0015cf07e3/experiences`;
-  const myUrl2 = userId
-    ? `https://striveschool-api.herokuapp.com/api/profile/` +
-      userId.toString() +
-      `/experiences`
-    : undefined;
+  // const myUrl = `https://striveschool-api.herokuapp.com/api/profile/6163f550a890cc0015cf07e3/experiences`;
+  // const myUrl2 = userId
+    // ? `https://striveschool-api.herokuapp.com/api/profile/` +
+    //   userId.toString() +
+    //   `/experiences`
+    // : undefined;
   //   console.log(myUrl2.toString());
   //   const userIdtrue = !userId ? myUrl2 : myUrl;
 
@@ -24,7 +26,7 @@ const DisplayExp = (props) => {
       console.log(data);
     };
     fetchData();
-  }, [userId]);
+  }, [params.]);
 
   return data.map((exp) => (
     <>
