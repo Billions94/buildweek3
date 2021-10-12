@@ -576,6 +576,11 @@
   border-radius: 50%;
 }
 
+#profile-settings{
+  flex-direction: row;
+  justify-content: center;
+}
+
 #jumbotron-banner {
   background-image: url("https://image.freepik.com/free-vector/green-data-technology-background-with-binary-code_53876-119581.jpg");
   background-position: top;
