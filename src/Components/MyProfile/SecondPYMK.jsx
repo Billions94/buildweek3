@@ -6,8 +6,8 @@ import { Accordion, Card, Button} from "react-bootstrap";
 
 const SecondPYMK = () => {
   const [data, setData] = useState([]);
+  const [toggled, setToggled] = useState(false)
   const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
-
 
 
   useEffect(() => {
@@ -28,8 +28,8 @@ const SecondPYMK = () => {
       <>
       <Accordion className="flipped" defaultActiveKey="1">
                <div >
-                 <Accordion.Toggle as={Button} className="show-more-btn" variant="link" style={{width: "100%"}} eventKey="0">
-                   <p className="flipped">Show More</p>
+                 <Accordion.Toggle as={Button} className="show-more-btn" variant="link" style={{width: "100%"}}  eventKey="0">
+                   {toggled ? <p className="flipped">Show Less <i class="bi bi-chevron-up"></i></p> : <p className="flipped">Show More <i class="bi bi-chevron-down"></i></p>}
                  </Accordion.Toggle>
                  <Accordion.Collapse eventKey="0">
         { !data ? (

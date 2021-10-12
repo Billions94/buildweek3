@@ -481,6 +481,7 @@
   border: none;
   color: #00000099;
   width: 110%;
+  height: 5vh;
 }
 .show-more-btn:focus,
 .show-more-btn:active,
@@ -489,6 +490,8 @@
   border: none !important; 
   color: #00000099 !important;
   text-decoration: none;
+  outline: none !important;
+  box-shadow: none;
 }
 
 #profile-pic {

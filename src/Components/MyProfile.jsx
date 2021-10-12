@@ -4,6 +4,9 @@ import Skills from "../Components/MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
+import SecondPYMK from "./MyProfile/SecondPYMK";
+
+
 
 const MyProfile = () => {
   const [data, setData] = useState([]);
@@ -228,6 +231,9 @@ const MyProfile = () => {
                       <ul className="ul">
                         {/*Insert generated content here!!*/}
                         <PyMk />
+                                <>
+                                <SecondPYMK/>
+                                </>
                       </ul>
                     </div>
                   </div>
@@ -239,6 +245,10 @@ const MyProfile = () => {
                       </h4>
                       <ul className="ul">
                         {/* <PyMk /> */}
+                        <PyMk />
+                         <>
+                        <SecondPYMK/>
+                         </>
                       </ul>
                     </div>
                   </div>
