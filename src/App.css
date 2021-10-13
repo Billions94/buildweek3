@@ -365,6 +365,12 @@
   font-weight: bold;
 }
 
+.ad-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .ad .text-primary:hover {
   color: black !important;
 }
@@ -574,6 +580,11 @@
   top: 20%;
   left: 25px;
   border-radius: 50%;
+}
+
+#profile-settings{
+  flex-direction: row;
+  justify-content: center;
 }
 
 #jumbotron-banner {

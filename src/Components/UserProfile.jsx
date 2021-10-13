@@ -1,3 +1,20 @@
+// /* 
+
+
+// /* </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>
+// </*NOT ACTIVE - DO NOT USE THIS PAGE!!!!!*/>; */ */
+
+
 import { useState, useEffect, setState } from "react";
 import { fetchInfo } from "../lib";
 import { Container, Row, Col } from "react-bootstrap";
@@ -42,7 +59,7 @@ const UserProfile = (props) => {
           className="ad text-center text-dark"
         >
           <a className="text-primary">Frontend Entwickle</a>
-          🚨 7000 Unternehmen suchen auf talent.io neue Mitarbeiter·innen. €60k
+          🚨 7000 Unternehmen suchens auf talent.io neue Mitarbeiter·innen. €60k
           to €120k{" "}
         </a>
         <span className="ml-2">

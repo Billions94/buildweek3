@@ -11,8 +11,10 @@ import { DesktopDatePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { postUserExp } from "../lib";
 
+
 const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
   // const [lgShow, setLgShow] = useState(false);
+
   const [checked, setChecked] = useState(false);
   // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
   console.log("hellooo" + user);
@@ -90,7 +92,7 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
         <i class="bi bi-plus-lg bi-css text-dark "></i>
       </div>
       <Modal
-        // className="modal"
+        className="modal"
         size="lg"
         show={lgShow}
         onHide={() => setLgShow(false)}
@@ -169,7 +171,6 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
                 className="mt-5 mb-2"
                 type="checkbox"
                 label="I'm currently working in this  role"
-                // onClick={() => setChecked(true)}
                 value={checked}
                 onChange={(e) => setChecked(e.target.checked)}
               />
@@ -184,121 +185,19 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
                     renderInput={(params) => <TextField {...params} />}
                   />
                 </LocalizationProvider>
-                {/* <Form.Group>
-                  <Form.Label className="text-muted dateMY">
-                    Start date
-                  </Form.Label>
-                  <Form.Control
-                    as="select"
-                    name="startDate"
-                    value={values.startDate}
-                    onChange={handleChange}
-                  >
-                    <option>Month</option>
-                    <option>January</option>
-                    <option>February</option>
-                    <option>March</option>
-                    <option>April</option>
-                    <option>May</option>
-                    <option>June</option>
-                    <option>July</option>
-                    <option>August</option>
-                    <option>September</option>
-                    <option>October</option>
-                    <option>November</option>
-                    <option>December</option>
-                  </Form.Control>
-                </Form.Group>
-                
-                
-                <Form.Group
-                  className="ml-2 dateMY"
-                  style={{ marginTop: "32px" }}
-                >
-                  <Form.Control
-                    as="select"
-                    name="startDate"
-                    value={values.startDate}
-                    onChange={handleChange}
-                  >
-                    <option>Year</option>
-                    <option>2021</option>
-                    <option>2020</option>
-                    <option>2019</option>
-                    <option>2018</option>
-                    <option>2017</option>
-                    <option>2016</option>
-                    <option>2015</option>
-                    <option>2014</option>
-                    <option>2013</option>
-                    <option>2012</option>
-                    <option>2011</option>
-                  </Form.Control>
-                </Form.Group>
-              */}
               </div>
 
-              {checked && (
-                <div className="d-flex ">
+              {!checked && (
+                <div className="d-flex mt-4">
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DesktopDatePicker
                       label="End date"
                       value={values.endDate}
-                      onChange={(date) => setFieldValue("startDate", date)}
+                      onChange={(date) => setFieldValue("endDate", date)}
                       name="endDate"
                       renderInput={(params) => <TextField {...params} />}
                     />{" "}
                   </LocalizationProvider>
-                  {/* <Form.Group>
-                  <Form.Label className="text-muted dateMY">
-                    End date
-                  </Form.Label>
-                  <Form.Control
-                    as="select"
-                    name="endDate"
-                    value={values.endDate}
-                    onChange={handleChange}
-                  >
-                    <option>Month</option>
-                    <option>January</option>
-                    <option>February</option>
-                    <option>March</option>
-                    <option>April</option>
-                    <option>May</option>
-                    <option>June</option>
-                    <option>July</option>
-                    <option>August</option>
-                    <option>September</option>
-                    <option>October</option>
-                    <option>November</option>
-                    <option>December</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group
-                  className="ml-2 dateMY"
-                  style={{ marginTop: "32px" }}
-                >
-                  <Form.Control
-                    as="select"
-                    name="endDate"
-                    value={values.endDate}
-                    onChange={handleChange}
-                  >
-                    <option>Year</option>
-                    <option>2021</option>
-                    <option>2020</option>
-                    <option>2019</option>
-                    <option>2018</option>
-                    <option>2017</option>
-                    <option>2016</option>
-                    <option>2015</option>
-                    <option>2014</option>
-                    <option>2013</option>
-                    <option>2012</option>
-                    <option>2011</option>
-                  </Form.Control>
-                </Form.Group>
-              */}
                 </div>
               )}
             </Form.Group>
@@ -368,24 +267,3 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
 
 export default ModalPop;
 
-//   const formCkeck = () => {
-//     if (
-//       values.name.length > 2 &&
-//       values.surname.length > 2 &&
-//       values.email.length > 2 &&
-//       values.password.length > 7 &&
-//       values.confirmPassword.length > 7
-//     ) {
-//       return true;
-//     }
-//   };
-//   useEffect(() => {
-//     formCkeck();
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, [
-//     values.name,
-//     values.surname,
-//     values.email,
-//     values.password,
-//     values.confirmPassword,
-//   ]);

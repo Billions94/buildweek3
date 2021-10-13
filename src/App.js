@@ -7,6 +7,7 @@ import MyFooter from "./Components/MyFooter";
 
 function App() {
   return (
+    <div className="App">
     <Router>
       <NavBar />
 
@@ -14,6 +15,7 @@ function App() {
 
       <MyFooter />
     </Router>
+    </div>
   );
 }
 
