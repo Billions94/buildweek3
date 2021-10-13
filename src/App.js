@@ -11,7 +11,7 @@ function App() {
     <div className="App">
     <Router>
       <NavBar />
-      <Route path={"/home"} exact component={Home} />
+      <Route path="/home" exact component={Home} />
 
       <Route path="/profile/:id" exact render={(props) => <MyProfile {...props} />} />
 
