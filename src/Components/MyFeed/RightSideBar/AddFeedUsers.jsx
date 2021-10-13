@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchInfo } from "../../lib";
+import { fetchInfo } from "../../../lib";
 import { Link } from "react-router-dom";
 
 import { Accordion, Card } from "react-bootstrap";

@@ -661,3 +661,31 @@
   transition: background-color 0.2s linear;
 
 }
+.course-container{
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
+.course-name{
+font-weight: bold;
+font-size: 16px;
+margin-bottom: 0 !important;
+}
+.course-name p{
+  margin-bottom: 0;
+}
+.course-owner{
+color: #00000099;
+font-size: 12px;
+margin-bottom: 5px;
+}
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.courses-container{
+  padding: 0;
+}

@@ -1,7 +1,9 @@
 import SecondPYMK from "../MyProfile/SecondPYMK";
 import PyMk from "../MyProfile/PyMk";
 import { Popover, OverlayTrigger } from "react-bootstrap";
-import AddFeedUsers from "./AddFeedUsers";
+import AddFeedUsers from "./RightSideBar/AddFeedUsers";
+import TopCourses from "./RightSideBar/TopCourses";
+import CompactFooter from "./RightSideBar/CompactFooter";
 
 const SideBarRight = () => {
   const popover = (
@@ -14,6 +16,7 @@ const SideBarRight = () => {
 
   return (
     <>
+        <div>
       <div className="pt-2 section-container">
         <div className="alsoViewed">
           <div className="d-flex justify-content-between">
@@ -32,8 +35,16 @@ const SideBarRight = () => {
           
         </div>
       </div>
+
+      <TopCourses />
+      <CompactFooter />
+      </div>
     </>
   );
 };
 
 export default SideBarRight;
+
+
+
+
