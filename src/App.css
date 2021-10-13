@@ -146,8 +146,27 @@
   text-align: left;
   padding: 0;
   margin-bottom: 10px;
+  display: inline-flex;
+  flex-wrap: nowrap;
 }
 .footer-link:hover {
+  color: #0a66c2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer-link-compact{
+  color: #00000099;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 10px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.footer-link-compact:hover {
   color: #0a66c2;
   text-decoration: underline;
   cursor: pointer;
@@ -443,7 +462,7 @@
 
 .pymkh6p {
   font-style: normal;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
 }
@@ -729,6 +748,80 @@
   transform: rotate(180deg);
 }
 
+
+
+
+/*------------------------------Home SideBar Right-----------------------------*/
+
+.learn-more-link{
+  color: #0a66c2;
+  font-weight: 500;
+}
+.learn-more-link:hover{
+  color: #0a66c2;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.info-icon{
+  color: #00000099;
+  cursor: pointer;
+  font-size:medium;
+}
+
+.view-all-recommendations{
+  font-size: small;
+  font-weight: 600;
+  color: #00000099;
+  border-radius: 5px;
+
+}
+.view-all-recommendations:hover{
+  font-size: small;
+  font-weight: 600;
+  background-color:rgb(224, 224, 224);
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+
+}
+.course-container-section{
+  overflow: hidden;
+  text-align: left;
+  padding: 10px 4px 15px 4px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.course-name{
+font-weight: 500;
+font-size: 14px;
+margin-bottom: 0 !important;
+padding: 0 16px, 
+}
+.course-name p{
+  margin-bottom: 0;
+}
+.course-owner{
+color: #00000099;
+font-size: 12px;
+margin-bottom: 5px;
+padding: 0px 0px 0px 20px; 
+}
+.truncate {
+  width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.courses-container{
+  padding: 15px;
+}
+.top-course-item:hover{
+  background-color:rgb(224, 224, 224);
+  cursor: pointer;
+}
 /* ---------------------FEED MAIN------------------- */
 
 .feedelement {
@@ -739,3 +832,4 @@
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
+
