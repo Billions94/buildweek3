@@ -41,6 +41,18 @@
 }
 
 /*------------------------------NavBar CSS-----------------------------*/
+.home {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
+
+.network {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
+
+.jobs {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
+
+.messaging {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
+
+.notifications {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
+
+.work {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
+
 .navbar-container {
   width: 100%;
   display: flex;
@@ -68,7 +80,7 @@
   background-color: rgb(233, 233, 233);
   color: rgb(153, 52, 52);
   width: 1px;
-  height: 58px;
+  height: 61px;
   margin-left: 20px;
 }
 
@@ -121,6 +133,10 @@
 
 .link-color {
   color: rgb(121, 78, 15);
+}
+
+.try-prem {
+  word-wrap: break-word;
 }
 
 /*------------------------------Footer CSS------------------------------*/
@@ -177,7 +193,8 @@
 
 /*------------------------------Jumbotron CSS------------------------------*/
 .jumbobtn-open-to {
-  border: 1px solid grey;
+  border: 1px solid rgb(33, 93, 172);
+  background-color: rgb(33, 93, 172);
   border-radius: 20px;
 }
 
@@ -189,7 +206,7 @@
 
 .jumbobtn-open-to:hover {
   outline: 2px solid grey;
-  background-color: rgb(33, 93, 172);
+  background-color: #004182;
 }
 
 .jumbobtn:hover {
@@ -217,9 +234,8 @@
 
 /*------------------------------Modal CSS-----------------------------*/
 .modal {
-  width: 749px;
-  margin-right: 588px;
-  margin-left: 588px;
+ overflow: hidden;
+
 }
 
 .input-span {
@@ -230,7 +246,7 @@
   color: #00000099
 
 }
-/*------------------------------Modal CSS-----------------------------*/
+
 
 .modalbtn {
   position: relative;

@@ -83,66 +83,117 @@
           } catch (e) {
             console.log(e);
           }
-        },
-        validationSchema: validationSchema,
-      });
 
-    return (
-      <>
-        <div className="modalbtn" onClick={() => setLgShow(true)}>
-          <i class="bi bi-plus-lg bi-css text-dark "></i>
-        </div>
-        <Modal
-          className="modal"
-          size="lg"
-          show={lgShow}
-          onHide={() => setLgShow(false)}
-          aria-labelledby="example-modal-sizes-title-lg"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">
-              Add experience
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body className="p-0">
-            <Form className="px-4">
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label className="text-muted">Title*</Form.Label>
-                <Form.Control
-                  name="role"
-                  type="text"
-                  value={values.role}
-                  onChange={handleChange}
-                  placeholder="Ex: Retail Sales Manager"
-                />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-              <Form.Group>
-                <Form.Label className="text-muted">Employment type</Form.Label>
-                <Form.Control as="select">
-                  <option>Please select</option>
-                  <option> Full-time</option>
-                  <option>Part-time</option>
-                  <option>Self-employed</option>
-                  <option>Freelance</option>
-                  <option>Contract</option>
-                  <option>Internship</option>
-                  <option>Apprenticeship</option>
-                  <option>Freiwilliges Soziales Jahr</option>
-                  <option>Verbeamtet</option>
-                  <option>Duales Studium</option>
-                  <option>Werkstudium</option>
-                </Form.Control>
-                <Form.Text className="text-muted">
-                  Country-specific employment types
-                </Form.Text>
-              </Form.Group>
-              <div className="mb-3">
-                <a href="" style={{ fontWeight: "bold" }}>
-                  Learn more
-                </a>
+        );
+        console.log(response);
+        if (response.ok) {
+          fetchExp();
+          setLgShow(false);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    validationSchema: validationSchema
+  });
+
+  return (
+    <>
+      <div className="modalbtn" onClick={() => setLgShow(true)}>
+        <i class="bi bi-plus-lg bi-css text-dark "></i>
+      </div>
+      <Modal
+        className="modal"
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Add experience
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="p-0">
+          <Form className="px-4" style={{height: '500px', overflow: 'auto'}}>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label className="text-muted">Title*</Form.Label>
+              <Form.Control
+                name="role"
+                type="text"
+                value={values.role}
+                onChange={handleChange}
+                placeholder="Ex: Retail Sales Manager"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label className="text-muted">Employment type</Form.Label>
+              <Form.Control as="select">
+                <option>Please select</option>
+                <option> Full-time</option>
+                <option>Part-time</option>
+                <option>Self-employed</option>
+                <option>Freelance</option>
+                <option>Contract</option>
+                <option>Internship</option>
+                <option>Apprenticeship</option>
+                <option>Freiwilliges Soziales Jahr</option>
+                <option>Verbeamtet</option>
+                <option>Duales Studium</option>
+                <option>Werkstudium</option>
+              </Form.Control>
+              <Form.Text className="text-muted">
+                Country-specific employment types
+              </Form.Text>
+            </Form.Group>
+            <div className="mb-3">
+              <a href="" style={{ fontWeight: "bold" }}>
+                Learn more
+              </a>
+            </div>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label className="text-muted">Company name*</Form.Label>
+              <Form.Control
+                type="text"
+                name="company"
+                value={values.company}
+                onChange={handleChange}
+                placeholder="Ex; Microsoft"
+              />
+              <Form.Text className="text-muted">
+                Country-specific employment types
+              </Form.Text>
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label className="text-muted">Location</Form.Label>
+              <Form.Control
+                type="text"
+                name="area"
+                value={values.area}
+                onChange={handleChange}
+                placeholder="Ex: London, United Kingdom"
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicCheckbox">
+              <Form.Check
+                className="mt-5 mb-2"
+                type="checkbox"
+                label="I'm currently working in this  role"
+                value={checked}
+                onChange={(e) => setChecked(e.target.checked)}
+              />
+
+              <div className="d-flex">
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <DesktopDatePicker
+                    label="Start Date"
+                    value={values.startDate}
+                    onChange={(date) => setFieldValue("startDate", date)}
+                    name="startDate"
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                </LocalizationProvider>
+
               </div>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label className="text-muted">Company name*</Form.Label>
