@@ -5,6 +5,7 @@ import Skills from "../Components/MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
+import ProfileSettings from "./UserProfile/ProfileSettings";
 
 import { useParams } from "react-router-dom";
 
