@@ -23,7 +23,7 @@ const PUTModal = ({ smShow, setSmShow, id }) => {
       );
       if (response.ok) {
         console.log(response);
-        alert("Post successfully");
+        alert("Update successfully");
       } else {
         console.log(text);
 
