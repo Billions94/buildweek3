@@ -142,63 +142,38 @@ export const deleteSingleUserExp = async (user, expId, fetchExp, setLgShow) => {
   }
 };
 
-// export const toggleSubmit = async (values, expId) =>{
+// USER PROFILES
+// FETCH
+// date 
+// function timeSince(date) {
 
-// try {
-//     const response = await fetch(
-//       `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`,
-//       {
-//         method: "POST",
-//         body: JSON.stringify(values),
-//         headers: {
-//           "Content-Type": "application/json",
-//           Authorization:
-//             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
-//         },
-//       }
-//     );
-//     console.log(response);
-//     if (response.ok) {
-//       fetchExp();
-//       setLgShow(false);
-//     }
-//   } catch (e) {
-//     console.log(e);
+//   var seconds = Math.floor((new Date() - date) / 1000);
+
+//   var interval = seconds / 31536000;
+
+//   if (interval > 1) {
+//     return Math.floor(interval) + " years";
 //   }
+//   interval = seconds / 2592000;
+//   if (interval > 1) {
+//     return Math.floor(interval) + " months";
+//   }
+//   interval = seconds / 86400;
+//   if (interval > 1) {
+//     return Math.floor(interval) + " days";
+//   }
+//   interval = seconds / 3600;
+//   if (interval > 1) {
+//     return Math.floor(interval) + " hours";
+//   }
+//   interval = seconds / 60;
+//   if (interval > 1) {
+//     return Math.floor(interval) + " minutes";
+//   }
+//   return Math.floor(seconds) + " seconds";
 // }
-// // EDIT EXPERIENCE
-
-// export const fetchExp = async (setData, id) => {
-//     try {
-//       const response = await fetch(
-//         `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
-//         {
-//           headers: {
-//             Authorization:
-//               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
-//           },
-//         }
-//       );
-//       const exp = await response.json();
-//         console.log("löl" + exp)
-//       setData(exp);
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   };
-
-// export const editExperience = async (id, user) => {
-
-// const url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${id}`
-
-// try{
-//    let exp = await fetchSinglUserExp(url)
-//     console.log(exp)
-
-// } catch (error){
-//     console.error(error)
-// }
-
-// }
+// var aDay = 24*60*60*1000;
+// console.log(timeSince(new Date(Date.now()-aDay)));
+// console.log(timeSince(new Date(Date.now()-aDay*2)));
 
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o
