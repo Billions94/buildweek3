@@ -11,7 +11,7 @@ function App() {
     <Router>
       <NavBar />
 
-      <Route path="/profile/:id" exact component={MyProfile} />
+      <Route path="/profile/:id" exact render={(props) => <MyProfile {...props} />} />
 
       <MyFooter />
     </Router>

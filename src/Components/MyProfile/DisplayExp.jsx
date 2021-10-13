@@ -8,6 +8,8 @@ import ModalPop from "../Modal";
 import { fetchExp } from "../../lib";
 
 const DisplayExp = ({ user }) => {
+  console.log(user);
+
   const [data, setData] = useState([]);
   const [lgShow, setLgShow] = useState(false);
   const [expId, setExpId] = useState("");
@@ -36,15 +38,18 @@ const DisplayExp = ({ user }) => {
     // console.log("here!!" + data);
   }, [user]);
 
+  console.log();
   return (
     <>
-      <Modal
-        user={user._id}
-        fetchExp={fetchExp}
-        lgShow={lgShow}
-        setLgShow={setLgShow}
-        expId={expId}
-      />
+      {user._id === "6163f500a890cc0015cf07e2" && (
+        <Modal
+          user={user._id}
+          fetchExp={fetchExp}
+          lgShow={lgShow}
+          setLgShow={setLgShow}
+          expId={expId}
+        />
+      )}
       {data.map((exp) => (
         <>
           <hr />
@@ -62,23 +67,25 @@ const DisplayExp = ({ user }) => {
               <br />
               <p>{exp.description}</p>
             </Col>
-            <Col md={1}>
-              <button
-                onClick={() => {
-                  PutExExp(
-                    exp._id,
-                    exp.user,
-                    lgShow,
-                    setLgShow,
-                    expId,
-                    setExpId
-                  );
-                }}
-                className="profile-button pencil-button"
-              >
-                <i class="bi bi-pencil"></i>
-              </button>
-            </Col>
+            {user._id === "6163f500a890cc0015cf07e2" && (
+              <Col md={1}>
+                <button
+                  onClick={() => {
+                    PutExExp(
+                      exp._id,
+                      exp.user,
+                      lgShow,
+                      setLgShow,
+                      expId,
+                      setExpId
+                    );
+                  }}
+                  className="profile-button pencil-button"
+                >
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </Col>
+            )}
           </Row>
         </>
       ))}{" "}
