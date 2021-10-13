@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import ProfileSettings from "../UserProfile/ProfileSettings";
 
 const MyJumbotron = ({ user }) => {
   return (
@@ -38,6 +39,7 @@ const MyJumbotron = ({ user }) => {
             </p>
             <div className="opened-to-work text-left p-2">
               <div className="mb-0">
+
                 <b className="text-dark jumbo-a">
                   Show recruiters you’re open to work
                 </b>
@@ -56,8 +58,11 @@ const MyJumbotron = ({ user }) => {
             </div>
           </Col>
           <Col className="text-right ">
-            <img src="https://strive.school/favicon.ico" width="25" />
+          <ProfileSettings user={user} />
+              <div className=" mt-2 d-flex-row align-items-right justify-content-between">
+            <img className="mr-2" src="https://strive.school/favicon.ico" width="25" />
             <b> Strive School</b>
+            </div>
           </Col>
         </Row>
       </Jumbotron>
