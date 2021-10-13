@@ -5,50 +5,55 @@ const CompactFooter = () =>{
 
     return(
         <>
-        <Row>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>About</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Accessibility</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Talent Solutions</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Community Guidelines</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Careers</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Marketing Solutions</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>
-                    {"Privacy & Terms"} <i class="bi bi-chevron-down"></i>
-                  </a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Ad Choices</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Advertising</a>
-                </Col>
 
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Sales Solutions</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Mobile</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Small Business</a>
-                </Col>
-                <Col xs={3} md={4} className="footer-link">
-                  <a>Safety Center</a>
-                </Col>
-              </Row>
+        
+          <Row className="mx-5 my-2">
+            <Col className="px-1">
+            <span className="footer-link-compact">
+              About
+            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="footer-link-compact">
+            Accessibility            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="footer-link-compact">
+              Help Center
+            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="d-flex footer-link-compact">
+            Privacy & Terms <i class="bi bi-chevron-down"></i>
+            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="footer-link-compact">
+              Ad Choices
+            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="footer-link-compact">
+            advertising  
+            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="footer-link-compact">
+              Business Services <i className="bi bi-chevron-down"></i>
+            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="footer-link-compact">
+              Get the LinkedIn App
+            </span>
+            </Col>
+            <Col className="px-1">
+            <span className="footer-link-compact">
+              More
+            </span>
+            </Col>
+          </Row>
+        
         </>
     )
 }

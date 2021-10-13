@@ -13,26 +13,26 @@ const TopCourses = () => {
 
   return (
     <>
-      <div className=" mt-2 pt-2 section-container courses-container">
+      <div className=" mt-2 pt-2 course-container-section">
         <div className="alsoViewed">
-          <div className="d-flex justify-content-between">
-            <h4 className="myprofileh4 text-left mb-3">Top Courses</h4>
+          <div className=" pl-1 pr-1 d-flex justify-content-between">
+            <h4 className="myprofileh4 text-left pl-1 pr-1 mb-3">Today's top Courses</h4>
             <OverlayTrigger trigger="click" placement="top" overlay={popover}>
               <i className="info-icon bi info-icon bi-info-square-fill"></i>
             </OverlayTrigger>
           </div>
             <div className="course-container">
-                <div className="top-course-item">
-                    <div className="course-name truncate"><p>1. How to Write an Epic Rock Song</p></div>
+                <div className=" pl-1 pr-1 top-course-item">
+                    <div className=" course-name truncate"><p>1. How to Write an Epic Rock Song</p></div>
                     <div className="course-owner truncate">Mr. Schneebly</div>
                 </div>
-                <div className="top-course-item">
-                    <div className="course-name truncate"><p>1. How to Write an Epic Rock Song</p></div>
-                    <div className="course-owner truncate">Mr. Schneebly</div>
+                <div className="pl-1 pr-1 top-course-item">
+                    <div className="course-name truncate"><p>2. Teaching and its Practices</p></div>
+                    <div className="course-owner truncate">Ciara Dunley</div>
                 </div>
-                <div className="top-course-item">
-                    <div className="course-name truncate"><p>1. How to Write an Epic Rock Song</p></div>
-                    <div className="course-owner truncate">Mr. Schneebly</div>
+                <div className=" pl-1 pr-1 top-course-item">
+                    <div className="course-name truncate"><p>3. Minfulness in Your Daily Life</p></div>
+                    <div className="course-owner truncate">Gareth Brewly</div>
                 </div>
 
             </div>
