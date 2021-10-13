@@ -5,14 +5,22 @@ const ProfileSettings = ({user}) =>{
   const [lgShow, setLgShow] = useState(false);
 const [name, setName] = useState("")
   const [settings, setSettings] = useState({
-    name: user.name,
-    surname: user.surname,
-    email: user.email,
-    bio: user.bio,
-    title: user.title,
-    area: user.area,
-
+    "_id" : user._id,
+    name: "",
+    surname: "",
+    email: "",
+    bio: "",
+    title: "",
+    area: "",
   })
+    // name: user.name,
+    // surname: user.surname,
+    // email: user.email,
+    // bio: user.bio,
+    // title: user.title,
+    // area: user.area,
+
+
 console.log(user)
 
  const updateUserSettings = async (e) => {
@@ -26,10 +34,14 @@ console.log(user)
             }
             } )
         if(response.ok) {
+            console.log("SETTINGS OBJECT AFTER UPDATE")
+            console.log(settings)
             console.log(response)
             alert("Updated successfully")
 
         } else {
+          console.log(settings)
+
             console.log(`wow... that wasn't supposed to happen... Error`)
             alert(`Woops we lost your data in the void .. try refreshing`)
         }
