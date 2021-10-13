@@ -11,10 +11,12 @@ import { useParams } from "react-router-dom";
 
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import Modal from "./Modal";
+import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 
-const MyProfile = () => {
+const MyProfile = (props) => {
   const params = useParams();
-
+  // let pathname = props.location.pathname;
+  // console.log(pathname);
   const [user, setUser] = useState([]);
 
   useEffect(() => {
