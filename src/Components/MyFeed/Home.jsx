@@ -10,7 +10,9 @@ const Home = () => {
         <Row>
           {/*----------------------- SideBarSm Section -----------------------*/}
           <Col md={3}>
-            <SideBarSm />
+
+              <SideBarSm />
+
           </Col>
           {/*----------------------- Main Feed Section -----------------------*/}
           <Col md={6}>

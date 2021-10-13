@@ -41,29 +41,9 @@
 }
 
 /*------------------------------NavBar CSS-----------------------------*/
-.home {
-  filter: opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75));
-}
 
-.network {
-  filter: opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75));
-}
+.darknavicon {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
 
-.jobs {
-  filter: opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75));
-}
-
-.messaging {
-  filter: opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75));
-}
-
-.notifications {
-  filter: opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75));
-}
-
-.work {
-  filter: opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75));
-}
 
 .navbar-container {
   width: 100%;
@@ -151,6 +131,13 @@
   word-wrap: break-word;
 }
 
+.nav-item:hover {
+  text-decoration: underline;
+}
+.nav-item:hover .darknavicon {
+  filter:  opacity(1) 
+}
+
 /*------------------------------Footer CSS------------------------------*/
 .footer-link {
   color: #00000099;
@@ -201,6 +188,118 @@
 
 #languages {
   width: 100%;
+}
+
+/*------------------------------SideBarSm CSS------------------------------*/
+/* .SideBarName {
+  font-size: "16px" !important;
+  font-weight: "600" !important; 
+  line-height: "24px" !important;
+} */
+
+.SideBarDiv {
+  border-radius: 20px;
+}
+
+.jumboSidebar {
+  background-color: white;
+  border-radius:10px;
+  margin-bottom: 8px;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-top: 12px !important;
+}
+
+.SideBarSm-row {
+  position: relative;
+}
+
+.SideBarImg {
+  position: absolute;
+  margin-left: 60px;
+}
+
+.SideBarSm-recent-btn {
+  position: relative;
+  background-color: transparent;
+  border: none;
+}
+
+.SideBarSm-recent-btn1 {
+  position: relative;
+  background-color: transparent;
+  border: none;
+}
+
+.SideBarSm-recent-btn1:hover {
+  background-color: transparent
+}
+
+.show-more-btn1{
+
+  background-color: #a9aaac;
+  border: none;
+  background-color: #00000099 !important;
+  width: 110%;
+  height: 5vh;
+}
+
+/* .SideBarSm-recent-btn::after {
+  position: absolute;
+  content: "︿";
+  height: 10px;
+
+  margin-left: 90px;
+} */
+.whoviewied-flex {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wvmpDiv:hover {
+  background-color: rgb(231, 229, 229);
+  padding: 0;
+}
+
+.toggle-rlt {
+  position: relative;
+}
+
+.dropdown-Menu {
+  width: 100% !important;
+}
+
+.div-in-acc {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mr-6 {
+  margin-right: 146px;
+}
+
+.SideBarSm-p{
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.SideBarSm-h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.SideBarSm-Hr {
+  width: 255px;
+  margin-left: -12px;
+}
+
+#SideBarHeader {
+  background-image: url("https://wallpaperaccess.com/full/1398313.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 20%;
 }
 
 /*------------------------------Jumbotron CSS------------------------------*/
