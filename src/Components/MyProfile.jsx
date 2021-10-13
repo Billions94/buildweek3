@@ -15,7 +15,7 @@ import Modal from "./Modal";
 const MyProfile = () => {
   const params = useParams();
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
     const fetchUser = async (id) => {
@@ -171,21 +171,18 @@ const MyProfile = () => {
                 </Col>
                 {/*Activity Section END*/}
 
-                {/*About Section*/}
-                <Col md={12} className="p-0">
+                {/*Exp Section*/}
+                <Col md={12} className="p-0 border rounded-lg">
                   <div className="section-container mt-3">
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
-                      <button className="profile-button pencil-button">
-                        <i class="bi bi-pencil"></i>
-                      </button>
                     </div>
                     <div>
                       <DisplayExp user={user} />
                     </div>
                   </div>
                 </Col>
-                {/*About Section END*/}
+                {/*Exp Section END*/}
 
                 {/*Skills section Start*/}
 
