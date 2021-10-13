@@ -1,10 +1,16 @@
 import { fetchUserExp } from "../../lib";
+import PutExExp from "./PutExExp";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Modal from "../Modal";
+import ModalPop from "../Modal";
+import { fetchExp } from "../../lib";
+
 const DisplayExp = ({ user }) => {
   const [data, setData] = useState([]);
+  const [lgShow, setLgShow] = useState(false);
+  const [expId, setExpId] = useState("");
 
   const fetchExp = async () => {
     try {
@@ -13,8 +19,8 @@ const DisplayExp = ({ user }) => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o"
-          }
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+          },
         }
       );
       const exp = await response.json();
@@ -27,11 +33,18 @@ const DisplayExp = ({ user }) => {
 
   useEffect(() => {
     fetchExp();
+    // console.log("here!!" + data);
   }, [user]);
 
   return (
     <>
-      <Modal user={user} fetchExp={fetchExp} />
+      <Modal
+        user={user._id}
+        fetchExp={fetchExp}
+        lgShow={lgShow}
+        setLgShow={setLgShow}
+        expId={expId}
+      />
       {data.map((exp) => (
         <>
           <hr />
@@ -39,7 +52,7 @@ const DisplayExp = ({ user }) => {
             <Col md={3}>
               <h6>{exp.company}</h6>
             </Col>
-            <Col md={9}>
+            <Col md={8}>
               <h6>{exp.role}</h6>
               <p>{exp.company}</p>
               <p>
@@ -49,6 +62,23 @@ const DisplayExp = ({ user }) => {
               <br />
               <p>{exp.description}</p>
             </Col>
+            <Col md={1}>
+              <button
+                onClick={() => {
+                  PutExExp(
+                    exp._id,
+                    exp.user,
+                    lgShow,
+                    setLgShow,
+                    expId,
+                    setExpId
+                  );
+                }}
+                className="profile-button pencil-button"
+              >
+                <i class="bi bi-pencil"></i>
+              </button>
+            </Col>
           </Row>
         </>
       ))}{" "}
@@ -57,3 +87,5 @@ const DisplayExp = ({ user }) => {
 };
 
 export default DisplayExp;
+
+// onClick={() => {editExperience(exp._id, exp.user)}}

@@ -9,10 +9,20 @@ import TextField from "@mui/material/TextField";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import { postUserExp } from "../lib";
 
-const ModalPop = ({ user, fetchExp }) => {
-  const [lgShow, setLgShow] = useState(false);
+const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
+  // const [lgShow, setLgShow] = useState(false);
   const [checked, setChecked] = useState(false);
+  // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
+  console.log("hellooo" + user);
+
+  let url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${expId}`;
+  let method = "";
+
+  {
+    expId ? (method = `PUT`) : (method = `POST`);
+  }
 
   const validationSchema = yup.object().shape({
     role: yup.string().required("Title is required"),
@@ -25,49 +35,54 @@ const ModalPop = ({ user, fetchExp }) => {
       .string()
 
       .required("End date is required"),
-    description: yup.string().required("Confirm Password is required")
+    description: yup.string().required("Confirm Password is required"),
   });
 
-  const {
-    values,
-    handleChange,
-    handleSubmit,
-    errors,
-    setFieldValue
-  } = useFormik({
-    initialValues: {
-      role: "",
-      company: "",
-      startDate: new Date(),
-      endDate: new Date(),
-      description: "",
-      area: ""
-    },
-    onSubmit: async (values) => {
-      try {
-        const response = await fetch(
-          `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`,
-          {
-            method: "POST",
+  const { values, handleChange, handleSubmit, errors, setFieldValue } =
+    useFormik({
+      initialValues: {
+        role: "",
+        company: "",
+        startDate: new Date(),
+        endDate: new Date(),
+        description: "",
+        area: "",
+      },
+      onSubmit: async (values) => {
+        // await postUserExp(url);
+        // const url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${expId}`;
+        // const method = "PUT";
+        // {
+        //   expId
+        //     ? (url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${expId}`)
+        //     : (url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/`);
+        // }
+        // {
+        //   expId ? (method = `PUT`) : (method = `PUSH`);
+        // }
+
+        try {
+          console.log("blllaaaaa" + method, url);
+          const response = await fetch(url, {
+            method: method,
             body: JSON.stringify(values),
             headers: {
               "Content-Type": "application/json",
               Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o"
-            }
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+            },
+          });
+          console.log(response);
+          if (response.ok) {
+            fetchExp();
+            setLgShow(false);
           }
-        );
-        console.log(response);
-        if (response.ok) {
-          fetchExp();
-          setLgShow(false);
+        } catch (e) {
+          console.log(e);
         }
-      } catch (e) {
-        console.log(e);
-      }
-    },
-    validationSchema: validationSchema
-  });
+      },
+      validationSchema: validationSchema,
+    });
 
   return (
     <>
@@ -326,14 +341,25 @@ const ModalPop = ({ user, fetchExp }) => {
             </Button>
           </Form>
         </Modal.Body>
+
         <Modal.Footer>
-          <Button
-            className="modal-save"
-            variant="primary"
-            onClick={() => handleSubmit()}
-          >
-            <span className="span-md-btn">Save</span>
-          </Button>
+          {expId ? (
+            <Button
+              className="modal-save"
+              variant="primary"
+              onClick={() => handleSubmit()}
+            >
+              <span className="span-md-btn">Update</span>
+            </Button>
+          ) : (
+            <Button
+              className="modal-save"
+              variant="primary"
+              onClick={() => handleSubmit()}
+            >
+              <span className="span-md-btn">Save</span>
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </>
