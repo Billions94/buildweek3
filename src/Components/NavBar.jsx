@@ -6,11 +6,11 @@ const NavBar = () => {
     <div className="navbar-container sticky-top">
         <div className="">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand m-0" href="#">
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png' width="36px"/>
+        <a className="navbar-brand" href="#">
+          <img src="./assets/linkedin.png" alt="" />
         </a>
         <button
-          className="navbar-toggler "
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -35,7 +35,7 @@ const NavBar = () => {
           <ul className="navbar-nav mr-auto">
             <div>
               <li className="nav-item active navbar-li">
-              <img className="home pt-3 ml-2" src="https://img.icons8.com/material-rounded/50/000000/home.png" width="22px"/>
+              <img className="pt-2 ml-1" src="./assets/home.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
                  <span> Home </span>
                 </a>
@@ -43,7 +43,7 @@ const NavBar = () => {
             </div>
             <div>
               <li className="nav-item active navbar-li">
-              <img className="network pt-3 ml-2" src="https://img.icons8.com/fluency-systems-filled/50/000000/myspace.png"  width="22px"/>
+              <img className="pt-2 ml-1" src="./assets/network.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
                    <span>Network</span>
                 </a>
@@ -51,7 +51,7 @@ const NavBar = () => {
             </div>
             <div>
               <li className="nav-item active navbar-li">
-              <img className="jobs pt-3 ml-2" src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-bag-airport-kiranshastry-solid-kiranshastry.png" width="22px"/>
+              <img className="pt-2 ml-2" src="./assets/briefcase.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
                    <span>Jobs</span>
                 </a>
@@ -59,15 +59,15 @@ const NavBar = () => {
             </div>
             <div>
               <li className="nav-item active navbar-li">
-              <img className="messaging pt-3 ml-2" src="https://img.icons8.com/ios-glyphs/30/000000/sms.png" width="22px"/>
+              <img className="pt-2" src="./assets/chat.png" alt=""  width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
                    <span>Messaging</span>
                 </a>
-              </li> 
+              </li>
             </div>
             <div>
               <li className="nav-item active navbar-li">
-              <img className="notifications pt-3 ml-2" src="https://img.icons8.com/glyph-neue/30/000000/appointment-reminders.png" width="22px"/>
+              <img className="pt-2" src="./assets/notification.png" alt="" width="22px"/>
                 <a className="nav-link pt-0 ml-2" href="#">
                    <span>Notifications</span>
                 </a>
@@ -87,16 +87,16 @@ const NavBar = () => {
                 <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
               </DropdownButton> */}
             </div>
-            <div className="ml-5 pt-2 ">
+            <div className="ml-5 pt-2">
                 <li className="nav-item active navbar-li">
-                <img className="work mt-2 ml-2" src="https://img.icons8.com/material-sharp/60/000000/activity-grid-2.png" width="22px"/>
+                <img className="ml-2" src="./assets/thumbnails.png" alt="" width="22px" />
                 <a className="nav-link pt-0 ml-2" href="#">
                    <span>Work</span>
                 </a>
               </li>
             </div>
-            <div className="pt-3">
-                <a className="link-color navbar-li"href="#" ><span className="try-prem d-block mb-0">Try premium for <br className="mt-0"/> free</span></a>
+            <div className="pt-2">
+                <a className="link-color navbar-li"href="#" >Try premium for free</a>
             </div>
           </ul>
         </div>
