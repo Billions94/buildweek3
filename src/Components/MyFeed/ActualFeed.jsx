@@ -30,7 +30,7 @@ const ActualFeed = () => {
     console.log(feed);
   }, []);
 
-  const slicedFeed = feed.slice(800, 850);
+  const slicedFeed = feed.slice(1588);
 
   return (
     <>

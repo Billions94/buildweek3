@@ -1,8 +1,12 @@
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import { useState } from "react";
+import POSTModal from "./POSTModal";
 
 const StartAPost = () => {
+  const [smShow, setSmShow] = useState(false);
+
   return (
     <div className="border p-2" style={{ borderRadius: "10px" }}>
       <Row className="mt-3">
@@ -17,7 +21,11 @@ const StartAPost = () => {
           />
         </Col>
         <Col>
+          <POSTModal smShow={smShow} setSmShow={setSmShow} />
           <Button
+            onClick={() => {
+              setSmShow(true);
+            }}
             className="btn btn-light border-secondary rounded-pill py-3"
             style={{ width: "100%" }}
           >
