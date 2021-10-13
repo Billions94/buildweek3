@@ -18,7 +18,7 @@ console.log(user)
  const updateUserSettings = async (e) => {
     e.preventDefault(e)
     try {
-        const response = await fetch(("https://striveschool-api.herokuapp.com/api/profile/"),{
+        const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/",{
             method: "PUT",
             body: JSON.stringify(settings),
             headers: {
