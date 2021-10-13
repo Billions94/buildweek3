@@ -336,7 +336,7 @@
 
 .pymkh6p {
   font-style: normal;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 20px;
 }
@@ -625,3 +625,39 @@
   transform: rotate(180deg);
 }
 
+
+
+/*------------------------------Home SideBar Right-----------------------------*/
+
+.learn-more-link{
+  color: #0a66c2;
+  font-weight: 500;
+}
+.learn-more-link:hover{
+  color: #0a66c2;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.info-icon{
+  color: #00000099;
+  cursor: pointer;
+  font-size:medium;
+}
+
+.view-all-recommendations{
+  font-size: small;
+  font-weight: 600;
+  color: #00000099;
+  border-radius: 10px;
+
+}
+.view-all-recommendations:hover{
+  font-size: small;
+  font-weight: 600;
+  background-color:rgb(224, 224, 224);
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+
+}

@@ -1,6 +1,7 @@
 import { withRouter } from "react-router-dom";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import SideBarSm from "./SideBarSm";
+import SideBarRight from "./SideBarRight";
 
 
 const Home = () => {
@@ -102,7 +103,12 @@ const Home = () => {
               </Carousel.Item>
             </Carousel>
           </Col>
+                      {/*----------------------- Sidebar-Right Section -----------------------*/}
+
           <Col md={3}>
+            
+
+            <SideBarRight />
             <Carousel>
               <Carousel.Item>
                 <img
