@@ -1,18 +1,10 @@
 import { Button, Modal, Form, Container } from "react-bootstrap";
-import { SetState, useState } from "react";
+import { SetState, useEffect, useState } from "react";
 
 const ProfileSettings = ({user}) =>{
   const [lgShow, setLgShow] = useState(false);
 const [name, setName] = useState("")
-  const [settings, setSettings] = useState({
-    "_id" : user._id,
-    name: "",
-    surname: "",
-    email: "",
-    bio: "",
-    title: "",
-    area: "",
-  })
+  const [settings, setSettings] = useState(user)
     // name: user.name,
     // surname: user.surname,
     // email: user.email,
@@ -30,6 +22,7 @@ console.log(user)
             method: "PUT",
             body: JSON.stringify(settings),
             headers: {
+              "Content-Type":"application/json",
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o"
             }
             } )
@@ -54,7 +47,9 @@ console.log(user)
 
 
 
-
+useEffect(()=>{
+  setSettings(user)
+}, [user] )
 
     return(
         <>
