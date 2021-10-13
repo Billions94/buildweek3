@@ -36,7 +36,7 @@ const ActualFeed = () => {
     <>
       {slicedFeed.map((elem) => (
         <div>
-          <Card className="my-3 feedelement">
+          <Card className="my-3 feedelement" id={elem.user._id} key={elem._id}>
             <Card.Header>
               <Card.Text>
                 <Row>

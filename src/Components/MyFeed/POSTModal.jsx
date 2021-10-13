@@ -23,7 +23,7 @@ const POSTModal = ({ smShow, setSmShow }) => {
       );
       if (response.ok) {
         console.log(response);
-        alert("Updated successfully");
+        alert("Post successfully");
       } else {
         console.log(text);
 
@@ -43,7 +43,6 @@ const POSTModal = ({ smShow, setSmShow }) => {
   return (
     <>
       <Modal
-        size="sm"
         show={smShow}
         onHide={() => setSmShow(false)}
         aria-labelledby="example-modal-sizes-title-sm"
