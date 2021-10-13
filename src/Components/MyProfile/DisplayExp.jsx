@@ -35,7 +35,6 @@ const DisplayExp = ({ user }) => {
 
   useEffect(() => {
     fetchExp();
-    // console.log("here!!" + data);
   }, [user]);
 
   console.log();
