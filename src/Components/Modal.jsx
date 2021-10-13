@@ -1,101 +1,81 @@
-  import Modal from "react-bootstrap/Modal";
-  import Form from "react-bootstrap/Form";
-  import Button from "react-bootstrap/Button";
-  import { useState, useEffect } from "react";
-  import { useFormik } from "formik";
-  import * as yup from "yup";
-  import { ResponsiveEmbed } from "react-bootstrap";
-  import TextField from "@mui/material/TextField";
-  import LocalizationProvider from "@mui/lab/LocalizationProvider";
-  import { DesktopDatePicker } from "@mui/lab";
-  import AdapterDateFns from "@mui/lab/AdapterDateFns";
-  import { postUserExp } from "../lib";
-  import { deleteSingleUserExp } from "../lib";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { useState, useEffect } from "react";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { ResponsiveEmbed } from "react-bootstrap";
+import TextField from "@mui/material/TextField";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { DesktopDatePicker } from "@mui/lab";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import { postUserExp } from "../lib";
+import { deleteSingleUserExp } from "../lib";
 
 
-  const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
-    // const [lgShow, setLgShow] = useState(false);
+const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
+  // const [lgShow, setLgShow] = useState(false);
 
-    const [checked, setChecked] = useState(false);
-    // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
-    console.log("hellooo" + user);
+  const [checked, setChecked] = useState(false);
+  // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
+  console.log("hellooo" + user);
 
-    let url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${expId}`;
-    let method = "";
+  let url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${expId}`;
+  let method = "";
 
-    {
-      expId ? (method = `PUT`) : (method = `POST`);
-    }
+  {
+    expId ? (method = `PUT`) : (method = `POST`);
+  }
 
-    const validationSchema = yup.object().shape({
-      role: yup.string().required("Title is required"),
-      company: yup.string().required("Company is required"),
-      startDate: yup
-        .string()
+  const validationSchema = yup.object().shape({
+    role: yup.string().required("Title is required"),
+    company: yup.string().required("Company is required"),
+    startDate: yup
+      .string()
 
-        .required("Start date is required"),
-      endDate: yup
-        .string()
+      .required("Start date is required"),
+    endDate: yup
+      .string()
 
-        .required("End date is required"),
-      description: yup.string().required("Confirm Password is required"),
-    });
-
-    const { values, handleChange, handleSubmit, errors, setFieldValue } =
-      useFormik({
-        initialValues: {
-          role: "",
-          company: "",
-          startDate: new Date(),
-          endDate: new Date(),
-          description: "",
-          area: "",
-        },
-        onSubmit: async (values) => {
-          // await postUserExp(url);
-          // const url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${expId}`;
-          // const method = "PUT";
-          // {
-          //   expId
-          //     ? (url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${expId}`)
-          //     : (url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/`);
-          // }
-          // {
-          //   expId ? (method = `PUT`) : (method = `PUSH`);
-          // }
-
-          try {
-            console.log("blllaaaaa" + method, url);
-            const response = await fetch(url, {
-              method: method,
-              body: JSON.stringify(values),
-              headers: {
-                "Content-Type": "application/json",
-                Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
-              },
-            });
-            console.log(response);
-            if (response.ok) {
-              fetchExp();
-              setLgShow(false);
-            }
-          } catch (e) {
-            console.log(e);
-          }
-
-        );
-        console.log(response);
-        if (response.ok) {
-          fetchExp();
-          setLgShow(false);
-        }
-      } catch (e) {
-        console.log(e);
-      }
-    },
-    validationSchema: validationSchema
+      .required("End date is required"),
+    description: yup.string().required("Confirm Password is required"),
   });
+
+  const { values, handleChange, handleSubmit, errors, setFieldValue } =
+    useFormik({
+      initialValues: {
+        role: "",
+        company: "",
+        startDate: new Date(),
+        endDate: new Date(),
+        description: "",
+        area: "",
+      },
+      onSubmit: async (values) => {
+
+
+        try {
+          console.log("blllaaaaa" + method, url);
+          const response = await fetch(url, {
+            method: method,
+            body: JSON.stringify(values),
+            headers: {
+              "Content-Type": "application/json",
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+            },
+          });
+          console.log(response);
+          if (response.ok) {
+            fetchExp();
+            setLgShow(false);
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      },
+      validationSchema: validationSchema,
+    });
 
   return (
     <>
@@ -125,6 +105,9 @@
                 onChange={handleChange}
                 placeholder="Ex: Retail Sales Manager"
               />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
             </Form.Group>
             <Form.Group>
               <Form.Label className="text-muted">Employment type</Form.Label>
@@ -193,136 +176,91 @@
                     renderInput={(params) => <TextField {...params} />}
                   />
                 </LocalizationProvider>
-
               </div>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label className="text-muted">Company name*</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="company"
-                  value={values.company}
-                  onChange={handleChange}
-                  placeholder="Ex; Microsoft"
-                />
-                <Form.Text className="text-muted">
-                  Country-specific employment types
-                </Form.Text>
-              </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label className="text-muted">Location</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="area"
-                  value={values.area}
-                  onChange={handleChange}
-                  placeholder="Ex: London, United Kingdom"
-                />
-              </Form.Group>
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  className="mt-5 mb-2"
-                  type="checkbox"
-                  label="I'm currently working in this  role"
-                  value={checked}
-                  onChange={(e) => setChecked(e.target.checked)}
-                />
 
-                <div className="d-flex">
+              {!checked && (
+                <div className="d-flex mt-4">
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <DesktopDatePicker
-                      label="Start Date"
-                      value={values.startDate}
-                      onChange={(date) => setFieldValue("startDate", date)}
-                      name="startDate"
+                      label="End date"
+                      value={values.endDate}
+                      onChange={(date) => setFieldValue("endDate", date)}
+                      name="endDate"
                       renderInput={(params) => <TextField {...params} />}
-                    />
+                    />{" "}
                   </LocalizationProvider>
                 </div>
+              )}
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label className="text-muted">Headline</Form.Label>
+              <Form.Control type="text" placeholder="" />
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label className="text-muted">Industry</Form.Label>
+              <Form.Control type="text" placeholder="" />
+              <Form.Text className="text-muted">
+                LinkedIn uses industry information to provide more relevant
+                recommendations
+              </Form.Text>
+            </Form.Group>
 
-                {!checked && (
-                  <div className="d-flex mt-4">
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <DesktopDatePicker
-                        label="End date"
-                        value={values.endDate}
-                        onChange={(date) => setFieldValue("endDate", date)}
-                        name="endDate"
-                        renderInput={(params) => <TextField {...params} />}
-                      />{" "}
-                    </LocalizationProvider>
-                  </div>
-                )}
-              </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label className="text-muted">Headline</Form.Label>
-                <Form.Control type="text" placeholder="" />
-              </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label className="text-muted">Industry</Form.Label>
-                <Form.Control type="text" placeholder="" />
-                <Form.Text className="text-muted">
-                  LinkedIn uses industry information to provide more relevant
-                  recommendations
-                </Form.Text>
-              </Form.Group>
+            <Form.Group>
+              <label for="description" className="text-muted">
+                Description
+              </label>
+              <Form.Control
+                as="textarea"
+                name="description"
+                value={values.description}
+                onChange={handleChange}
+                id="description"
+                rows="4"
+                cols="81"
+              />
+              <Form.Text className="text-muted text-right">0/2,000</Form.Text>
+            </Form.Group>
+            <Button
+              className="mb-3 md-add-media"
+              variant="primary"
+              type="submit"
+            >
+              <span className="text-primary span-md-btn1">
+                <i class="bi bi-plus-lg bi-css1 text-primary "></i>Add media
+              </span>
+            </Button>
+          </Form>
+        </Modal.Body>
 
-              <Form.Group>
-                <label for="description" className="text-muted">
-                  Description
-                </label>
-                <Form.Control
-                  as="textarea"
-                  name="description"
-                  value={values.description}
-                  onChange={handleChange}
-                  id="description"
-                  rows="4"
-                  cols="81"
-                />
-                <Form.Text className="text-muted text-right">0/2,000</Form.Text>
-              </Form.Group>
-              <Button
-                className="mb-3 md-add-media"
-                variant="primary"
-                type="submit"
-              >
-                <span className="text-primary span-md-btn1">
-                  <i class="bi bi-plus-lg bi-css1 text-primary "></i>Add media
-                </span>
-              </Button>
-            </Form>
-          </Modal.Body>
+        <Modal.Footer>
+          {expId ? (
+            <div>
+            <Button
+              className="modal-save"
+              variant="primary"
+              onClick={() => handleSubmit()}>
+              <span className="span-md-btn">Update</span>
+            </Button>
+            <Button
+              className="modal-save"
+              variant="danger"
+              onClick={() => deleteSingleUserExp(user, expId, fetchExp, setLgShow)}>
+              <span className="span-md-btn"><i class="bi bi-trash"></i></span>
+            </Button>
+            </div>
+          ) : (
+            <Button
+              className="modal-save"
+              variant="primary"
+              onClick={() => handleSubmit()}
+            >
+              <span className="span-md-btn">Save</span>
+            </Button>
+          )}
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
 
-          <Modal.Footer>
-            {expId ? (
-              <div>
-              <Button
-                className="modal-save"
-                variant="primary"
-                onClick={() => handleSubmit()}>
-                <span className="span-md-btn">Update</span>
-              </Button>
-              <Button
-                className="modal-save"
-                variant="danger"
-                onClick={() => deleteSingleUserExp(user, expId, fetchExp, setLgShow)}>
-                <span className="span-md-btn"><i class="bi bi-trash"></i></span>
-              </Button>
-              </div>
-            ) : (
-              <Button
-                className="modal-save"
-                variant="primary"
-                onClick={() => handleSubmit()}
-              >
-                <span className="span-md-btn">Save</span>
-              </Button>
-            )}
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
-  };
-
-  export default ModalPop;
-
+export default ModalPop;
