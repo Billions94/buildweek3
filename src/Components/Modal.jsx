@@ -88,7 +88,7 @@ const ModalPop = ({ user, fetchExp }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="p-0">
-          <Form className="px-4">
+          <Form className="px-4" style={{height: '500px', overflow: 'auto'}}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label className="text-muted">Title*</Form.Label>
               <Form.Control
@@ -98,9 +98,6 @@ const ModalPop = ({ user, fetchExp }) => {
                 onChange={handleChange}
                 placeholder="Ex: Retail Sales Manager"
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
             </Form.Group>
             <Form.Group>
               <Form.Label className="text-muted">Employment type</Form.Label>
