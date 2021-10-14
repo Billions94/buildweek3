@@ -42,8 +42,18 @@
 
 /*------------------------------NavBar CSS-----------------------------*/
 
-.darknavicon {filter:  opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75))}
+.darknavicon {
+  filter: opacity(0.5) drop-shadow(0 0 0 rgb(75, 75, 75));
+}
 
+.avatar {
+  margin-top: 14px;
+}
+
+
+.xxx {
+  width: 20px;
+}
 
 .navbar-container {
   width: 100%;
@@ -74,7 +84,29 @@
   width: 1px;
   height: 61px;
   margin-left: 20px;
+  margin-top: -70px;
 }
+
+
+
+.follow {
+  font-style: normal;
+  font-weight: 400;
+  font-size:14px;
+  line-height:16px
+}
+
+
+
+
+
+
+
+.nav-work{
+  align-items: flex-start;
+}
+
+.arrow{margin-top: -2px;}
 
 .search {
   width: 280px;
@@ -135,7 +167,8 @@
   text-decoration: underline;
 }
 .nav-item:hover .darknavicon {
-  filter:  opacity(1) 
+  filter: opacity(1);
+  cursor: pointer;
 }
 
 /*------------------------------Footer CSS------------------------------*/
@@ -154,7 +187,7 @@
   text-decoration: underline;
   cursor: pointer;
 }
-.footer-link-compact{
+.footer-link-compact {
   color: #00000099;
   font-weight: 500;
   font-size: 12px;
@@ -210,11 +243,35 @@
 }
 
 /*------------------------------SideBarSm CSS------------------------------*/
-/* .SideBarName {
-  font-size: "16px" !important;
-  font-weight: "600" !important; 
-  line-height: "24px" !important;
-} */
+.goldicon {
+  filter: opacity(0.5) drop-shadow(rgb(207, 140, 15));
+}
+
+.discover-more {
+  font-size: "16px";
+  font-weight: "600";
+ line-height: "24px";
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.mr-7 {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.accordion {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.accordion:hover .opacity {
+  opacity: 1;
+}
+
 
 .SideBarDiv {
   border-radius: 20px;
@@ -222,7 +279,7 @@
 
 .jumboSidebar {
   background-color: white;
-  border-radius:10px;
+  border-radius: 10px;
   margin-bottom: 8px;
   padding-right: 12px;
   padding-left: 12px;
@@ -231,6 +288,7 @@
 
 .SideBarSm-row {
   position: relative;
+
 }
 
 .SideBarImg {
@@ -251,16 +309,18 @@
 }
 
 .SideBarSm-recent-btn1:hover {
-  background-color: transparent
+  background-color: transparent;
 }
 
-.show-more-btn1{
-
+.show-more-btn1 {
   background-color: #a9aaac;
   border: none;
-  background-color: #00000099 !important;
   width: 110%;
   height: 5vh;
+}
+
+.mr-7 {
+  margin: 0 12px 0 5px;
 }
 
 /* .SideBarSm-recent-btn::after {
@@ -293,11 +353,16 @@
   justify-content: space-between;
 }
 
+.div-in-acc1 {
+  flex-direction: row;
+  justify-content: left;
+}
+
 .mr-6 {
   margin-right: 146px;
 }
 
-.SideBarSm-p{
+.SideBarSm-p {
   font-weight: 500;
   font-size: 12px;
 }
@@ -375,23 +440,17 @@
 }
 
 .modalbtn {
-  position: relative;
+  position: absolute;
   width: 40px;
   height: 40px;
   border-radius: 50px;
+  margin-top: -60px;
+  margin-left: 665px;
 }
 
-.modalbtn:hover {
-  border-radius: 50px;
-  border-color: grey;
-  background-color: grey;
-}
 
 .bi-css {
-  position: absolute;
-  margin-top: 8px;
-  margin-left: -8px;
-  border-radius: 50px;
+  font-size: 13px;
 }
 
 .bi-css1 {
@@ -401,6 +460,8 @@
   border-radius: 50px;
   font-size: 16px;
 }
+
+
 
 .modal-save {
   border-radius: 30px;
@@ -727,7 +788,7 @@
 }
 
 #jumbotron-banner {
-  background-image: url("https://image.freepik.com/free-vector/green-data-technology-background-with-binary-code_53876-119581.jpg");
+  background-image: url("https://wallpaperaccess.com/full/1398313.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 40%;
@@ -748,44 +809,39 @@
   transform: rotate(180deg);
 }
 
-
-
-
 /*------------------------------Home SideBar Right-----------------------------*/
 
-.learn-more-link{
+.learn-more-link {
   color: #0a66c2;
   font-weight: 500;
 }
-.learn-more-link:hover{
+.learn-more-link:hover {
   color: #0a66c2;
   font-weight: 500;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.info-icon{
+.info-icon {
   color: #00000099;
   cursor: pointer;
-  font-size:medium;
+  font-size: medium;
 }
 
-.view-all-recommendations{
+.view-all-recommendations {
   font-size: small;
   font-weight: 600;
   color: #00000099;
   border-radius: 5px;
-
 }
-.view-all-recommendations:hover{
+.view-all-recommendations:hover {
   font-size: small;
   font-weight: 600;
-  background-color:rgb(224, 224, 224);
+  background-color: rgb(224, 224, 224);
   cursor: pointer;
   transition: background-color 0.2s linear;
-
 }
-.course-container-section{
+.course-container-section {
   overflow: hidden;
   text-align: left;
   padding: 10px 4px 15px 4px;
@@ -793,20 +849,20 @@
   background-color: #ffffff;
 }
 
-.course-name{
-font-weight: 500;
-font-size: 14px;
-margin-bottom: 0 !important;
-padding: 0 16px, 
+.course-name {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 0 !important;
+  padding: 0 16px;
 }
-.course-name p{
+.course-name p {
   margin-bottom: 0;
 }
-.course-owner{
-color: #00000099;
-font-size: 12px;
-margin-bottom: 5px;
-padding: 0px 0px 0px 20px; 
+.course-owner {
+  color: #00000099;
+  font-size: 12px;
+  margin-bottom: 5px;
+  padding: 0px 0px 0px 20px;
 }
 .truncate {
   width: 240px;
@@ -815,11 +871,11 @@ padding: 0px 0px 0px 20px;
   text-overflow: ellipsis;
 }
 
-.courses-container{
+.courses-container {
   padding: 15px;
 }
-.top-course-item:hover{
-  background-color:rgb(224, 224, 224);
+.top-course-item:hover {
+  background-color: rgb(224, 224, 224);
   cursor: pointer;
 }
 /* ---------------------FEED MAIN------------------- */
@@ -831,5 +887,40 @@ padding: 0px 0px 0px 20px;
 .feedelementImg {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+}
+
+.main-feed-post {
+  width: 100%;
+  background-color: white;
+  /* outline: none; */
+}
+
+.actuall-feed-hr {
+  width: 510px;
+  margin-left: 0px;
+  margin-top: 50px;
+}
+
+.actuall-feed-interact {
+  cursor: pointer;
+}
+
+/* .actuall-feed-interact:hover{
+  background-color: red;
+} */
+
+.actuall-feed-h5 {    
+  margin-top: -12px;
+  margin-bottom: 6px;
+  background-color: transparent;
+  border-color: transparent
+  
+}
+
+.actuall-feed-h5:hover {
+  outline: none;
+  border: none;
+  background-color: rgb(224, 224, 224);
+  border-color: transparent
 }
 

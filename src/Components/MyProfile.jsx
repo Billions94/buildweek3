@@ -73,7 +73,7 @@ const MyProfile = (props) => {
                       <div className="section-container p-0 d-flex justify-content-between">
                         <a className="dashboard-data1 pymk-a">
                           <span className=" d-flex d-inline-block dashboard-figure">
-                            0
+                            46
                           </span>
                           <span className="d-flex text-dark d-inline-block">
                             Who viewed your profile
@@ -81,7 +81,7 @@ const MyProfile = (props) => {
                         </a>
                         <a className="dashboard-data pymk-a">
                           <span className=" d-flex d-inline-block dashboard-figure">
-                            0
+                            146
                           </span>
                           <span className="d-flex text-dark d-inline-block">
                             Post views
@@ -179,7 +179,7 @@ const MyProfile = (props) => {
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
                     </div>
-                    <div>
+                    <div className="position-relative">
                       <DisplayExp user={user} />
                     </div>
                   </div>
