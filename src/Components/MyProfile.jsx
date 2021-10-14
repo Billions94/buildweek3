@@ -11,8 +11,6 @@ import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
 import { useParams } from "react-router-dom";
 import ProfileDashboard from "./MyProfile/ProfileDashboard";
 
-
-
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 
@@ -21,6 +19,7 @@ const MyProfile = (props) => {
   // let pathname = props.location.pathname;
   // console.log(pathname);
   const [user, setUser] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     const fetchUser = async (id) => {
@@ -30,7 +29,7 @@ const MyProfile = (props) => {
       setUser(data);
     };
     fetchUser(params.id);
-  }, [params.id]);
+  }, [params.id, refresh]);
 
   return (
     <>
@@ -56,11 +55,18 @@ const MyProfile = (props) => {
             <Container fluid>
               <Row>
                 <Col md={12} className="p-0">
-                  {user && <MyJumbotron identification={params.id} user={user} />}
+                  {user && (
+                    <MyJumbotron
+                      identification={params.id}
+                      user={user}
+                      setRefresh={setRefresh}
+                      refresh={refresh}
+                    />
+                  )}
                 </Col>
                 {/*Your Dashboard Section*/}
 
-                {params.id === "me" ? ( <ProfileDashboard user={user} />): (<></>)}
+                {params.id === "me" ? <ProfileDashboard user={user} /> : <></>}
 
                 {/*Your Dashboard END*/}
 
@@ -70,8 +76,13 @@ const MyProfile = (props) => {
                     <div className="text-left">
                       <div className="d-flex d-inline-block justify-content-between">
                         <h4>Activity</h4>
-                      {params.id === "me" ? (<button className="profile-button">Start a post</button>
-) : (<></>)}
+                        {params.id === "me" ? (
+                          <button className="profile-button">
+                            Start a post
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                       <p className="text-muted">11 followers</p>
                     </div>
@@ -138,45 +149,37 @@ const MyProfile = (props) => {
                 {/*People also viewed section */}
                 <div>
                   <div>
-                  <div className="mt-3 section-container-viewed-list">
-                    <div className="alsoViewed">
-                      <h4 className="myprofileh4 pl-2 text-left">
-                        People also viewed
-                      </h4>
-                      <div>
-                      <ul className="ul">
-                        {/*Insert generated content here!!*/}
-                        <PyMk />
-
-                   
-                      </ul>
+                    <div className="mt-3 section-container-viewed-list">
+                      <div className="alsoViewed">
+                        <h4 className="myprofileh4 pl-2 text-left">
+                          People also viewed
+                        </h4>
+                        <div>
+                          <ul className="ul">
+                            {/*Insert generated content here!!*/}
+                            <PyMk />
+                          </ul>
+                        </div>
+                      </div>
+                      <SecondPYMK />
                     </div>
-                         
-                    </div>
-                  <SecondPYMK />
-                    </div> 
-
                   </div>
                   {/*People also viewed section END */}
                   <div>
-                  <div className="mt-3 section-container-viewed-list">
-                    <div className="alsoViewed">
-                      <h4 className="myprofileh4 pl-2 text-left">
-                        People you may know
-                      </h4>
-                      <div>
-                      <ul className="ul">
-                        {/*Insert generated content here!!*/}
-                        <PyMk />
-
-                   
-                      </ul>
+                    <div className="mt-3 section-container-viewed-list">
+                      <div className="alsoViewed">
+                        <h4 className="myprofileh4 pl-2 text-left">
+                          People you may know
+                        </h4>
+                        <div>
+                          <ul className="ul">
+                            {/*Insert generated content here!!*/}
+                            <PyMk />
+                          </ul>
+                        </div>
+                      </div>
+                      <SecondPYMK />
                     </div>
-                         
-                    </div>
-                  <SecondPYMK />
-                    </div> 
-
                   </div>
                 </div>
               </Container>
