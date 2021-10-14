@@ -57,7 +57,9 @@ const ProfileSettings = ({ user }) => {
       >
         <i class="bi bi-pencil"></i>
       </button>
-      <div className="justify-content-center" style={{ margin: "0 auto" }}>
+
+      <div className="justify-content-center" style={{width: "20vw", height: "20vh", margin: "0 auto" }}>
+        <div>
         <Modal
           id="profile-settings"
           size="lg"
@@ -67,7 +69,7 @@ const ProfileSettings = ({ user }) => {
         >
           <Modal.Header closeButton id="profile-settings">
             <Modal.Title id="example-modal-sizes-title-lg">
-              Large Modal
+              Edit intro
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -142,6 +144,7 @@ const ProfileSettings = ({ user }) => {
             </Form>
           </Modal.Body>
         </Modal>
+      </div>
       </div>
     </>
   );

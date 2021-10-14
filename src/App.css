@@ -439,6 +439,7 @@
   width: 350px;
 }
 
+
 /*------------------------------People you may know CSS------------------------*/
 .roundpic {
   border-radius: 50%;
@@ -675,6 +676,7 @@
 
 .bi-pencil {
   margin: -6px;
+  font-size: large;
 }
 
 .profile-btn {
