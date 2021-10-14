@@ -76,6 +76,7 @@ const MyProfile = (props) => {
                     <div className="text-left">
                       <div className="d-flex d-inline-block justify-content-between">
                         <h4>Activity</h4>
+
                         {params.id === "me" ? (
                           <button className="profile-button">
                             Start a post
@@ -83,6 +84,7 @@ const MyProfile = (props) => {
                         ) : (
                           <></>
                         )}
+
                       </div>
                       <p className="text-muted">11 followers</p>
                     </div>
