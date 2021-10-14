@@ -5,7 +5,6 @@ const CompactFooter = () =>{
 
     return(
         <>
-
         
           <Row className="mx-5 my-2">
             <Col className="px-1">

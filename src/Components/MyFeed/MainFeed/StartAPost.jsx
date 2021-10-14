@@ -8,7 +8,7 @@ const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
 
 
   return (
-    <div className="border p-2 bg-light " style={{ borderRadius: "10px" }}>
+    <div className="border p-2 bg-white " style={{ borderRadius: "10px" }}>
       <Row className="mt-3">
         <Col md={2}>
           {" "}
@@ -27,6 +27,7 @@ const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
             onClick={() => {
               setSmShow(true);
             }}
+
             className="btn btn-light border-secondary main-feed-post rounded-pill py-3"
             style={{ width: "100%" }}
           >

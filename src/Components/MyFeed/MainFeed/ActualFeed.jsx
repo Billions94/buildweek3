@@ -87,9 +87,7 @@ const ActualFeed = ({reversedFeed, fetchFeed }) => {
 
 
                   <Col className="text-right">
-                    <h2>
-                      <i class="bi bi-three-dots"></i>
-                    </h2>
+                 
                     {elem.user._id == "6163f500a890cc0015cf07e2" && (
                       <>
                         <Button

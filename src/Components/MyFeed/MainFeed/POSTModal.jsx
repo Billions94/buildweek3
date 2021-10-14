@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 
-
 const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
+
   const [text, setText] = useState({ text: "" });
 
   const newPost = async (e) => {
@@ -25,10 +25,10 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
       if (response.ok) {
         console.log(response);
 
+
         setText({text: ''})
         fetchFeed()
         setSmShow(false);
-
 
       } else {
         console.log(text);
