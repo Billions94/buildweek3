@@ -3,8 +3,10 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import POSTModal from "./POSTModal";
+import POSTPic from "./POSTPic";
 
 const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
+  const [pic, setPic] = useState(false);
 
 
   return (
@@ -36,14 +38,18 @@ const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
         </Col>
       </Row>
       <Row className="mt-2 p-1">
-        <Col className="act">
+        <Col className="act"  onClick={(e) => {
+          setPic(true)
+          }}>
        
           <img
             src="https://static.thenounproject.com/png/541-200.png"
-            width="25"
+            width="25" 
           />{" "}
           &nbsp;<span className="text-muted">Photo</span>
-       
+          
+          <POSTPic fetchFeed={fetchFeed} pic={pic} setPic={setPic} />
+          
         </Col>
         <Col>
 
