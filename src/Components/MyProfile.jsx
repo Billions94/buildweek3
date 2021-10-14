@@ -1,16 +1,16 @@
 import { Container, Row, Col } from "react-bootstrap";
-import MyJumbotron from "../Components/MyProfile/MyJumbotron";
-import DisplayExp from "../Components/MyProfile/DisplayExp";
-import Skills from "../Components/MyProfile/Skills";
+import MyJumbotron from "./MyProfile/MyJumbotron";
+import DisplayExp from "./MyProfile/DisplayExp";
+import Skills from "./MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
-import ProfileSettings from "./UserProfile/ProfileSettings";
+import ProfileSettings from "./MyProfile/ProfileSettings";
 
 import { useParams } from "react-router-dom";
 
 import SecondPYMK from "./MyProfile/SecondPYMK";
-import Modal from "./Modal";
+import Modal from "./MyProfile/Modal";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 
 const MyProfile = (props) => {

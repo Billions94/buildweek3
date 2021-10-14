@@ -191,7 +191,7 @@ export const deletePost = async (id) => {
     });
     if (response.ok) {
       fetchUserExp(url);
-      alert("Deleted successfully");
+      console.log("Deleted successfully");
 
     } else {
       alert("Ooops we got an error while fetching response");

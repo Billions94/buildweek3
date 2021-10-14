@@ -8,10 +8,13 @@ import Button from "react-bootstrap/Button";
 
 import { useEffect, useState } from "react";
 import PUTModal from "./PUTModal";
-import { deletePost } from "../../lib";
+import { deletePost } from "../../../lib";
 
 
-const ActualFeed = ({ reversedFeed }) => {
+const ActualFeed = ({reversedFeed, fetchFeed }) => {
+
+  const [smShow, setSmShow] = useState(false);
+
   return (
     <>
       {!reversedFeed ? (
@@ -106,6 +109,7 @@ const ActualFeed = ({ reversedFeed }) => {
                           <i class="bi bi-pencil"></i>
                         </Button>
                         <PUTModal
+                          fetchFeed={fetchFeed}
                           smShow={smShow}
                           setSmShow={setSmShow}
                           id={elem._id}

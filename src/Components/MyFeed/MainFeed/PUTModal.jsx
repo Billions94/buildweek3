@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 
-const PUTModal = ({ smShow, setSmShow, id }) => {
+const PUTModal = ({fetchFeed, smShow, setSmShow, id, }) => {
   const [text, setText] = useState({ text: "" });
 
   const updatePost = async (e) => {
@@ -23,7 +23,10 @@ const PUTModal = ({ smShow, setSmShow, id }) => {
       );
       if (response.ok) {
         console.log(response);
-        alert("Update successfully");
+        console.log("Update successfully");
+        fetchFeed()
+        setText({ text: "" })
+        setSmShow(false)
       } else {
         console.log(text);
 

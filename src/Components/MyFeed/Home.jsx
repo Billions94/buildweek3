@@ -1,8 +1,8 @@
 import { withRouter } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import SideBarSm from "./SideBarSm/SideBarSm";
-import SideBarRight from "./SideBarRight";
-import MainFeedSection from "./MainFeedSection";
+import SideBarRight from "./RightSideBar/SideBarRight";
+import MainFeedSection from "./MainFeed/MainFeedSection";
 
 
 const Home = () => {

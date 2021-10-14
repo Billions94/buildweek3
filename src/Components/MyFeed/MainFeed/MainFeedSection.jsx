@@ -17,33 +17,35 @@ const MainFeedSection = () => {
           },
         }
       );
-      const exp = await response.json();
-      if(response.ok){
-        
+     
+      if(response.ok){ 
+         const exp = await response.json();
+        let slicedFeed = exp.reverse().slice(0, 5);
+         setFeed(slicedFeed);
+         console.log(slicedFeed)
       }
-      setFeed(exp);
+     
         
     } catch (e) {
       console.log(e);
     }
   };
 
-  let slicedFeed = feed.reverse().slice(0, 188);
+ 
 
   useEffect(() => {
     fetchFeed();
-    
     console.log(feed);
-  }, [feed]);
+  }, []);
 
-  const reversedFeed = slicedFeed
+ 
 
   return (
     <>
       <StartAPost smShow={smShow} setSmShow={setSmShow} fetchFeed={fetchFeed}/>
       <br />
       <br />
-      <ActualFeed reversedFeed={reversedFeed} />
+      <ActualFeed reversedFeed={feed} fetchFeed={fetchFeed}/>
     </>
   );
 };

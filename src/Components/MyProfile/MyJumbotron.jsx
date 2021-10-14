@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ProfileSettings from "../UserProfile/ProfileSettings";
+import ProfileSettings from "./ProfileSettings";
 
 const MyJumbotron = ({ user }) => {
   return (
