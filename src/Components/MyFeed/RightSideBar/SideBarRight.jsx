@@ -1,9 +1,9 @@
-import SecondPYMK from "../MyProfile/SecondPYMK";
-import PyMk from "../MyProfile/PyMk";
+import SecondPYMK from "../../MyProfile/SecondPYMK";
+import PyMk from "../../MyProfile/PyMk";
 import { Popover, OverlayTrigger } from "react-bootstrap";
-import AddFeedUsers from "./RightSideBar/AddFeedUsers";
-import TopCourses from "./RightSideBar/TopCourses";
-import CompactFooter from "./RightSideBar/CompactFooter";
+import AddFeedUsers from "./AddFeedUsers";
+import TopCourses from "./TopCourses";
+import CompactFooter from "./CompactFooter";
 
 const SideBarRight = () => {
   const popover = (

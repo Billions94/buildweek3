@@ -5,13 +5,10 @@ import Skills from "../Components/MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
-import ProfileSettings from "./UserProfile/ProfileSettings";
 import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
 import { useParams } from "react-router-dom";
 import ProfileDashboard from "./MyProfile/ProfileDashboard";
-
 import SecondPYMK from "./MyProfile/SecondPYMK";
-import Modal from "./Modal";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 
 const MyProfile = (props) => {

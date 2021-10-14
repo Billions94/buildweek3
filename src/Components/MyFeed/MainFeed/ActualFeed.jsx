@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useEffect, useState } from "react";
 import PUTModal from "./PUTModal";
-import { deletePost } from "../../lib";
+import { deletePost } from "../../../lib"
 
 const ActualFeed = () => {
   let [feed, setFeed] = useState([]);

@@ -9,8 +9,8 @@ import TextField from "@mui/material/TextField";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import { postUserExp } from "../lib";
-import { deleteSingleUserExp } from "../lib";
+import { postUserExp } from "../../lib";
+import { deleteSingleUserExp } from "../../lib";
 
 
 const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
