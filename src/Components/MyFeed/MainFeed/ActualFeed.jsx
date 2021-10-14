@@ -7,10 +7,12 @@ import Button from "react-bootstrap/Button";
 import POSTPic from "./POSTPic";
 import { useEffect, useState } from "react";
 import PUTModal from "./PUTModal";
+
 import { deletePost } from "../../../lib";
 
 const ActualFeed = ({ reversedFeed, fetchFeed }) => {
   const [smShow, setSmShow] = useState(false);
+  const [pic, setPic] = useState(false);
 
   return (
     <>
@@ -22,7 +24,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
                 <h4 className="text-right">...</h4>
-              <Col className="text-right">
+                <Col className="text-right">
                   {elem.user._id == "6163f500a890cc0015cf07e2" && (
                     <>
                       <Button
@@ -41,10 +43,25 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                       >
                         <i class="bi bi-pencil"></i>
                       </Button>
+                      <Button
+                        variant="success"
+                        className="rounded-pill"
+                        onClick={() => {
+                          setPic(true);
+                        }}
+                      >
+                        <i class="bi bi-pencil"></i>
+                      </Button>
                       <PUTModal
                         fetchFeed={fetchFeed}
                         smShow={smShow}
                         setSmShow={setSmShow}
+                        id={elem._id}
+                      />
+                      <POSTPic
+                        fetchFeed={fetchFeed}
+                        pic={pic}
+                        setPic={setPic}
                         id={elem._id}
                       />
                     </>
@@ -68,7 +85,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                   </b>
 
                   <p className="text-left">{elem.user.title}</p>
-                  <img src={elem.image} alt=""  width="40"/>
+                  <img src={elem.image} alt="" width="40" />
                 </div>
               </div>
 
