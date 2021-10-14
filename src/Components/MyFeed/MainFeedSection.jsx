@@ -1,4 +1,3 @@
-// import { fetchFeed } from "../../lib";
 import ActualFeed from "./ActualFeed";
 import StartAPost from "./StartAPost";
 import { useState, useEffect } from "react";

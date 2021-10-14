@@ -176,4 +176,29 @@ export const deleteSingleUserExp = async (user, expId, fetchExp, setLgShow) => {
 // console.log(timeSince(new Date(Date.now()-aDay)));
 // console.log(timeSince(new Date(Date.now()-aDay*2)));
 
+// DELETE POST
+
+export const deletePost = async (id) => {
+  const url = `https://striveschool-api.herokuapp.com/api/posts/${id}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+      },
+    });
+    if (response.ok) {
+      fetchUserExp(url);
+      alert("Deleted successfully");
+
+    } else {
+      alert("Ooops we got an error while fetching response");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o

@@ -3,17 +3,16 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 
-
-const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
+const PUTModal = ({ smShow, setSmShow, id }) => {
   const [text, setText] = useState({ text: "" });
 
-  const newPost = async (e) => {
+  const updatePost = async (e) => {
     e.preventDefault(e);
     try {
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/",
+        `https://striveschool-api.herokuapp.com/api/posts/${id}`,
         {
-          method: "POST",
+          method: "PUT",
           body: JSON.stringify(text),
           headers: {
             "Content-Type": "application/json",
@@ -24,12 +23,7 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
       );
       if (response.ok) {
         console.log(response);
-
-        setText({text: ''})
-        fetchFeed()
-        setSmShow(false);
-
-
+        alert("Update successfully");
       } else {
         console.log(text);
 
@@ -54,9 +48,7 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
         aria-labelledby="example-modal-sizes-title-sm"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-            Create a post
-          </Modal.Title>
+          <Modal.Title id="example-modal-sizes-title-sm">Edit post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -64,7 +56,7 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
               <Form.Control
                 as="textarea"
                 rows={3}
-                placeholder="What do you want to talk about?"
+                placeholder="What do you ant to talk about?"
                 // name="description"
                 value={text.text}
                 onInput={(event) =>
@@ -80,9 +72,9 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
                 variant="primary"
                 type="submit"
                 className="rounded-pill"
-                onClick={(e) => newPost(e)}
+                onClick={(e) => updatePost(e)}
               >
-                Post
+                Update
               </Button>
             </div>
           </Form>
@@ -92,4 +84,4 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
   );
 };
 
-export default POSTModal;
+export default PUTModal;

@@ -1,8 +1,15 @@
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
 import Spinner from "react-bootstrap/Spinner";
+
+import Button from "react-bootstrap/Button";
+
 import { useEffect, useState } from "react";
+import PUTModal from "./PUTModal";
+import { deletePost } from "../../lib";
+
 
 const ActualFeed = ({ reversedFeed }) => {
   return (
@@ -49,6 +56,7 @@ const ActualFeed = ({ reversedFeed }) => {
                     </b>
                   </Col>
                   <Col className="px-0 actuall-feed-interact">
+
                     <b>
                     <button className="btn btn-primary actuall-feed-h5">
                         <i className="bi text-muted bi-chat-right-text"></i>&nbsp; <span className="text-muted">Comment</span>
@@ -73,6 +81,39 @@ const ActualFeed = ({ reversedFeed }) => {
                       </button>{" "}
                     </b>
                   </Col>
+
+
+                  <Col className="text-right">
+                    <h2>
+                      <i class="bi bi-three-dots"></i>
+                    </h2>
+                    {elem.user._id == "6163f500a890cc0015cf07e2" && (
+                      <>
+                        <Button
+                          variant="light"
+                          className="rounded-pill"
+                          onClick={() => deletePost(elem._id)}
+                        >
+                          <i class="bi bi-trash"></i>
+                        </Button>
+                        <Button
+                          variant="light"
+                          className="rounded-pill"
+                          onClick={() => {
+                            setSmShow(true);
+                          }}
+                        >
+                          <i class="bi bi-pencil"></i>
+                        </Button>
+                        <PUTModal
+                          smShow={smShow}
+                          setSmShow={setSmShow}
+                          id={elem._id}
+                        />
+                      </>
+                    )}
+                  </Col>{" "}
+
                 </Row>
 
             </div>
