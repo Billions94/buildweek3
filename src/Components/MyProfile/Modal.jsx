@@ -53,7 +53,6 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
       },
       onSubmit: async (values) => {
 
-
         try {
           console.log("blllaaaaa" + method, url);
           const response = await fetch(url, {
@@ -79,8 +78,10 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
 
   return (
     <>
-      <div className="modalbtn" onClick={() => setLgShow(true)}>
-        <i class="bi bi-plus-lg bi-css text-dark "></i>
+      <div className=" modalbtn">
+        <button className="profile-button pencil-button" onClick={() => setLgShow(true)}>
+          <i class="bi bi-plus-lg bi-css text-dark "></i>
+        </button>
       </div>
       <Modal
         className="modal"
@@ -95,7 +96,8 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="p-0">
-          <Form className="px-4" style={{height: '500px', overflow: 'auto'}}>
+
+          <Form className="px-4" style={{ height: "500px", overflow: "auto" }}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label className="text-muted">Title*</Form.Label>
               <Form.Control
@@ -235,18 +237,24 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
         <Modal.Footer>
           {expId ? (
             <div>
-            <Button
-              className="modal-save"
-              variant="primary"
-              onClick={() => handleSubmit()}>
-              <span className="span-md-btn">Update</span>
-            </Button>
-            <Button
-              className="modal-save"
-              variant="danger"
-              onClick={() => deleteSingleUserExp(user, expId, fetchExp, setLgShow)}>
-              <span className="span-md-btn"><i class="bi bi-trash"></i></span>
-            </Button>
+              <Button
+                className="modal-save"
+                variant="primary"
+                onClick={() => handleSubmit()}
+              >
+                <span className="span-md-btn">Update</span>
+              </Button>
+              <Button
+                className="modal-save"
+                variant="danger"
+                onClick={() =>
+                  deleteSingleUserExp(user, expId, fetchExp, setLgShow)
+                }
+              >
+                <span className="span-md-btn">
+                  <i class="bi bi-trash"></i>
+                </span>
+              </Button>
             </div>
           ) : (
             <Button
@@ -262,5 +270,6 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
     </>
   );
 };
+
 
 export default ModalPop;

@@ -56,10 +56,9 @@ const ProfileSettings = ({ user }) => {
         onClick={() => setLgShow(true)}
       >
         <i class="bi bi-pencil"></i>
-      </button>
-
-    
+      </button>    
         <div>
+
         <Modal
           id="profile-settings"
           size="lg"
@@ -70,6 +69,7 @@ const ProfileSettings = ({ user }) => {
           <Modal.Header closeButton id="profile-settings">
             <Modal.Title id="example-modal-sizes-title-lg">
               Edit intro
+
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>

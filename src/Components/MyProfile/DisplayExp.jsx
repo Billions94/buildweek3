@@ -2,9 +2,9 @@
 import PutExExp from "./PutExExp";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-//import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Modal from "./Modal";
-//import ModalPop from "./Modal";
+import ModalPop from "./Modal";
 import { fetchExp } from "../../lib";
 
 const DisplayExp = ({ user }) => {

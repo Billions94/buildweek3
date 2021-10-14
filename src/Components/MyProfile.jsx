@@ -1,14 +1,16 @@
 import { Container, Row, Col } from "react-bootstrap";
-import MyJumbotron from "../Components/MyProfile/MyJumbotron";
-import DisplayExp from "../Components/MyProfile/DisplayExp";
-import Skills from "../Components/MyProfile/Skills";
+import MyJumbotron from "./MyProfile/MyJumbotron";
+import DisplayExp from "./MyProfile/DisplayExp";
+import Skills from "./MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
 import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
+
 import { useParams } from "react-router-dom";
 import ProfileDashboard from "./MyProfile/ProfileDashboard";
 import SecondPYMK from "./MyProfile/SecondPYMK";
+import Modal from "./MyProfile/Modal";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 
 const MyProfile = (props) => {
@@ -54,9 +56,9 @@ const MyProfile = (props) => {
                   {user && <MyJumbotron identification={params.id} user={user} />}
                 </Col>
                 {/*Your Dashboard Section*/}
+
                 {params.id === "me" ? ( <ProfileDashboard user={user} />): (<></>)}
-               
-                
+
                 {/*Your Dashboard END*/}
 
                 {/*Activity Section*/}
@@ -88,7 +90,7 @@ const MyProfile = (props) => {
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
                     </div>
-                    <div>
+                    <div className="position-relative">
                       <DisplayExp user={user} />
                     </div>
                   </div>

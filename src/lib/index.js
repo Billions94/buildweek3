@@ -60,7 +60,7 @@ export const postUserExp = async (url, e, exp) => {
     });
     if (response.ok) {
       fetchUserExp(url);
-      alert("POST was a success");
+      // alert("POST was a success");
     } else {
       console.log(`Ooops we got an error while fetching response`);
       alert(`Ooops we got an error while fetching response`);
@@ -191,7 +191,7 @@ export const deletePost = async (id) => {
     });
     if (response.ok) {
       fetchUserExp(url);
-      alert("Deleted successfully");
+      console.log("Deleted successfully");
 
     } else {
       alert("Ooops we got an error while fetching response");

@@ -18,6 +18,7 @@ const MyJumbotron = ({ identification, user }) => {
           <img
             id="profile-pic"
             src={user.image}
+
             alt="ProfilePicture"
             width="130"
             height="130"

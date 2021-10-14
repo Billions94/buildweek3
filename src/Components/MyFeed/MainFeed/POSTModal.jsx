@@ -3,7 +3,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 
-const POSTModal = ({ smShow, setSmShow }) => {
+const POSTModal = ({ smShow, setSmShow, fetchFeed }) => {
+
   const [text, setText] = useState({ text: "" });
 
   const newPost = async (e) => {
@@ -23,7 +24,12 @@ const POSTModal = ({ smShow, setSmShow }) => {
       );
       if (response.ok) {
         console.log(response);
-        alert("Post successfully");
+
+
+        setText({text: ''})
+        fetchFeed()
+        setSmShow(false);
+
       } else {
         console.log(text);
 
@@ -58,7 +64,7 @@ const POSTModal = ({ smShow, setSmShow }) => {
               <Form.Control
                 as="textarea"
                 rows={3}
-                placeholder="What do you ant to talk about?"
+                placeholder="What do you want to talk about?"
                 // name="description"
                 value={text.text}
                 onInput={(event) =>
