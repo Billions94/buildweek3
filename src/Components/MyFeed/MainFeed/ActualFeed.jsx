@@ -21,6 +21,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
           <div>
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
+                <h4 className="text-right">...</h4>
               <Col className="text-right">
                   {elem.user._id == "6163f500a890cc0015cf07e2" && (
                     <>
