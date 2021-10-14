@@ -66,6 +66,7 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
           });
           console.log(response);
           if (response.ok) {
+            
             fetchExp();
             setLgShow(false);
           }

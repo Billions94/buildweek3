@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Spinner from "react-bootstrap/Spinner";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
-
+import POSTPic from "./POSTPic";
 import { useEffect, useState } from "react";
 import PUTModal from "./PUTModal";
 import { deletePost } from "../../../lib";
@@ -68,6 +68,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                   </b>
 
                   <p className="text-left">{elem.user.title}</p>
+                  <img src={elem.image} alt=""  width="40"/>
                 </div>
               </div>
 
