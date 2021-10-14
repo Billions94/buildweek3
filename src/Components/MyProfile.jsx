@@ -68,7 +68,8 @@ const MyProfile = (props) => {
                     <div className="text-left">
                       <div className="d-flex d-inline-block justify-content-between">
                         <h4>Activity</h4>
-                        <button className="profile-button">Start a post</button>
+                      {params.id === "me" ? (<button className="profile-button">Start a post</button>
+) : (<></>)}
                       </div>
                       <p className="text-muted">11 followers</p>
                     </div>
@@ -100,7 +101,7 @@ const MyProfile = (props) => {
                 {/*Skills section Start*/}
 
                 <Col md={12} className="p-0">
-                  <Skills />
+                  <Skills identification={params.id} />
                 </Col>
 
                 {/*Skills section End*/}
@@ -140,6 +141,7 @@ const MyProfile = (props) => {
                       <h4 className="myprofileh4 text-left">
                         People also viewed
                       </h4>
+                      <div>
                       <ul className="ul">
                         {/*Insert generated content here!!*/}
                         <PyMk />
@@ -149,9 +151,11 @@ const MyProfile = (props) => {
                     </div>
                          
                     </div>
-                    <SecondPYMK />
+                   
+                    </div> <SecondPYMK />
                   </div>
                   {/*People also viewed section END */}
+                  <div>
                   <div className="mt-2 section-container">
                     <div className="alsoViewed">
                       <h4 className="myprofileh4 text-left mb-3">
@@ -162,13 +166,14 @@ const MyProfile = (props) => {
                         {/* <PyMk /> */}
                         <PyMk />
                         <>
-                          <SecondPYMK />
+                         
                         </>
                       </ul>
                     </div>
                   </div>
+                    <SecondPYMK />
+                  </div>
                 </div>
-                <div></div>
               </Container>
             </Row>
           </Col>

@@ -27,7 +27,7 @@ const SecondPYMK = () => {
   return (
       <>
       <Accordion className="flipped collapse-transition" defaultActiveKey="1">
-               <div style={{backgroundColor: "white", marginTop: "-20px"}} >
+               <div style={{ marginTop: "-20px"}} >
                  <Accordion.Toggle as={Button} className="show-more-btn" onClick={e => setToggled(!toggled)} variant="link" style={{width: "100%"}}  eventKey="0">
                    {toggled ? <p className="flipped">Show Less <i class="bi bi-chevron-up"></i></p> : <p className="flipped">Show More <i class="bi bi-chevron-down"></i></p>}
                  </Accordion.Toggle>
@@ -36,7 +36,7 @@ const SecondPYMK = () => {
           <h1>Loading....</h1>
         ) :  <>
                    {(secondSlicedData.map(person => (
-          <li className="d-flex  pymk-li" key={person.id}>
+          <li className="d-flex  pymk-li-second" key={person.id}>
 
             <div class=" righted d-flex-column align-items-center">
           <Link to={"/user/" + person._id}>
@@ -48,8 +48,8 @@ const SecondPYMK = () => {
           <p className="text-muted mb-0 text-left  pymkh6p">{person.title}</p>
           </div>
             </a></Link>
-          <div className="mb-2 pymkdiv">
-          <button class="btn btn-primary pymkbtn text-muted  "><span className="pymkbtnspan">Message</span></button>
+          <div className="mb-2  pymkdiv-second">
+          <button class="btn btn-primary pymkbtn-second text-muted  "><span className="pymkbtnspan">Message</span></button>
           </div>
           </div>
           </li>
