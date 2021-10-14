@@ -78,6 +78,56 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                   <b>
                     <button className="btn btn-primary actuall-feed-h5">
 
+                        <i className="bi text-muted bi-arrow-90deg-right"></i>&nbsp; <span className="text-muted">Share</span>
+                      </button>{" "}
+                    </b>
+                  </Col>
+                  <Col className="px-0  actuall-feed-interact">
+                    <b>
+                      <button className="btn btn-primary actuall-feed-h5">
+                        <img
+                           src="https://img.icons8.com/ios-filled/50/000000/paper-plane.png"
+                          width="22"
+                        />
+                        &nbsp; <span className="text-muted">Send</span>
+                      </button>{" "}
+                    </b>
+                  </Col>
+
+
+                  <Col className="text-right">
+                 
+                    {elem.user._id == "6163f500a890cc0015cf07e2" && (
+                      <>
+                        <Button
+                          variant="light"
+                          className="rounded-pill"
+                          onClick={() => deletePost(elem._id)}
+                        >
+                          <i class="bi bi-trash"></i>
+                        </Button>
+                        <Button
+                          variant="light"
+                          className="rounded-pill"
+                          onClick={() => {
+                            setSmShow(true);
+                          }}
+                        >
+                          <i class="bi bi-pencil"></i>
+                        </Button>
+                        <PUTModal
+                          fetchFeed={fetchFeed}
+                          smShow={smShow}
+                          setSmShow={setSmShow}
+                          id={elem._id}
+                        />
+                      </>
+                    )}
+                  </Col>{" "}
+
+                </Row>
+
+
                       <img
                         src="https://img.icons8.com/ios-filled/50/000000/paper-plane.png"
                         width="22"
