@@ -26,7 +26,7 @@ const SecondPYMK = () => {
 
   return (
       <>
-      <Accordion className="flipped" defaultActiveKey="1">
+      <Accordion className="flipped collapse-transition" defaultActiveKey="1">
                <div >
                  <Accordion.Toggle as={Button} className="show-more-btn" variant="link" style={{width: "100%"}}  eventKey="0">
                    {toggled ? <p className="flipped">Show Less <i class="bi bi-chevron-up"></i></p> : <p className="flipped">Show More <i class="bi bi-chevron-down"></i></p>}
@@ -49,7 +49,7 @@ const SecondPYMK = () => {
           </div>
             </a></Link>
           <div className="mb-2 pymkdiv">
-          <button class="btn btn-primary pymkbtn text-muted mr-5"><span className="pymkbtnspan">Message</span></button>
+          <button class="btn btn-primary pymkbtn text-muted "><span className="pymkbtnspan">Message</span></button>
           </div>
           </div>
           </li>

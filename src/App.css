@@ -497,9 +497,9 @@
   line-height: 20px;
 }
 
-/* .pymkdiv {
-  margin-left: -145px;
-} */
+ .pymkdiv {
+  margin-right: 35%;
+} 
 
 /*------------------------------My Profile CSS-----------------------------*/
 .ad {
@@ -741,11 +741,14 @@
   padding: 10px;
 }
 
-.flipped {
-  transform: rotate(180deg);
-}
+
+.flipped,
 .righted {
   transform: rotate(180deg);
+}
+.collapse-transition {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .tooltip-user-profile{

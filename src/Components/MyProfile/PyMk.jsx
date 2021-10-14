@@ -49,8 +49,8 @@ const PyMk = () => {
                   </div>
                 </a>
               </Link>
-              <div className="mb-2 pymkdiv">
-                <button class="btn btn-primary pymkbtn text-muted mr-5">
+              <div className="mb-2  pymkdiv">
+                <button class="btn btn-primary pymkbtn text-muted ">
                   <span className="pymkbtnspan">Message</span>
                 </button>
               </div>
