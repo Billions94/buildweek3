@@ -5,10 +5,10 @@ import Skills from "./MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
-import ProfileSettings from "./MyProfile/ProfileSettings";
+import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
 
 import { useParams } from "react-router-dom";
-
+import ProfileDashboard from "./MyProfile/ProfileDashboard";
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import Modal from "./MyProfile/Modal";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
@@ -53,102 +53,12 @@ const MyProfile = (props) => {
             <Container fluid>
               <Row>
                 <Col md={12} className="p-0">
-                  {user && <MyJumbotron user={user} />}
+                  {user && <MyJumbotron identification={params.id} user={user} />}
                 </Col>
                 {/*Your Dashboard Section*/}
-                <Col
-                  md={12}
-                  className="mt-2 section-container"
-                  id="dashboard-container"
-                  style={{ width: "auto" }}
-                >
-                  <section className="col-12" id="dashboard">
-                    <div className="info-container">
-                      <div className="text-left">
-                        <h3 className="dashboard-title">Your Dashboard</h3>
-                        <p className="text-muted dashboard-p">
-                          <em>private to you</em>
-                        </p>
-                      </div>
-                      <div className="section-container p-0 d-flex justify-content-between">
-                        <a className="dashboard-data1 pymk-a">
-                          <span className=" d-flex d-inline-block dashboard-figure">
-                            46
-                          </span>
-                          <span className="d-flex text-dark d-inline-block">
-                            Who viewed your profile
-                          </span>
-                        </a>
-                        <a className="dashboard-data pymk-a">
-                          <span className=" d-flex d-inline-block dashboard-figure">
-                            146
-                          </span>
-                          <span className="d-flex text-dark d-inline-block">
-                            Post views
-                          </span>
-                        </a>
-                        <a className="dashboard-data pymk-a">
-                          <span className="d-flex d-inline-block dashboard-figure">
-                            0
-                          </span>
-                          <span className="d-flex text-dark d-inline-block">
-                            Search appearances
-                          </span>
-                        </a>
-                      </div>
-                      <div
-                        className="section-container p-0 mt-3 mb-4 list-group list-group-flush"
-                        id="dashboard-options"
-                      >
-                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a">
-                          <i class="text-muted mr-2 mb-6 bi bi-people-fill"></i>
-                          <a className="d-flex-column text-dark d-inline-block m-0 ">
-                            <h6 className="dashboard-h6 m-0">
-                              Creator Mode:{" "}
-                              <span className="text-muted ">off</span>
-                            </h6>
-                            <p className="text-muted mb-0">
-                              Grow your audience and get discovered by
-                              highlighting content on your profile.
-                            </p>
-                          </a>
-                        </a>
-                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a ">
-                          <i class="text-muted mr-2 mb-6 bi bi-people-fill"></i>
-                          <a className="d-flex-column text-dark d-inline-block m-0 ">
-                            <h6 className="dashboard-h6 m-0">
-                              Manage Connections
-                            </h6>
-                            <p className="text-muted mb-0">
-                              Manage your connections, events and iterests.
-                            </p>
-                          </a>
-                        </a>
-                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a ">
-                          <i class="text-muted mr-2 mb-6 bi bi-cash"></i>
-                          <a className=" d-flex-column text-dark d-inline-block m-0 ">
-                            <h6 className="dashboard-h6 m-0">
-                              Salary Insights
-                            </h6>
-                            <p className="text-muted mb-0">
-                              See how your salary compares to others in the
-                              community.
-                            </p>
-                          </a>
-                        </a>
-                        <a className="d-flex justify-content-left align-items-center list-group-item pymk-a ">
-                          <i class="text-muted mr-2 mb-6 bi bi-bookmark-fill"></i>
-                          <a className="d-flex-column text-dark d-inline-block m-0 ">
-                            <h6 className="dashboard-h6 m-0">My Items</h6>
-                            <p className="text-muted mb-0">
-                              Keep track of your jobs courses and articles.
-                            </p>
-                          </a>
-                        </a>
-                      </div>
-                    </div>
-                  </section>
-                </Col>
+
+                {params.id === "me" ? ( <ProfileDashboard user={user} />): (<></>)}
+
                 {/*Your Dashboard END*/}
 
                 {/*Activity Section*/}
@@ -157,7 +67,8 @@ const MyProfile = (props) => {
                     <div className="text-left">
                       <div className="d-flex d-inline-block justify-content-between">
                         <h4>Activity</h4>
-                        <button className="profile-button">Start a post</button>
+                      {params.id === "me" ? (<button className="profile-button">Start a post</button>
+) : (<></>)}
                       </div>
                       <p className="text-muted">11 followers</p>
                     </div>
@@ -189,7 +100,7 @@ const MyProfile = (props) => {
                 {/*Skills section Start*/}
 
                 <Col md={12} className="p-0">
-                  <Skills />
+                  <Skills identification={params.id} />
                 </Col>
 
                 {/*Skills section End*/}
@@ -204,14 +115,7 @@ const MyProfile = (props) => {
               <Container fluid>
                 {/*edit section right column*/}
                 <div className="section-container pt-0 pb-0 list-group list-group-flush">
-                  <div className=" d-flex justify-content-between list-pad1 list-group-item">
-                    <p>{"Edit public profile & URL"}</p>
-                    <i class="bi bi-question-circle-fill"></i>
-                  </div>
-                  <div className=" d-flex justify-content-between list-pad2 list-group-item">
-                    <p>{"Add profile in another language"}</p>
-                    <i class="bi bi-question-circle-fill"></i>
-                  </div>
+                  <EditSettingsRightBar />
                 </div>
                 {/*edit section right column END*/}
 
@@ -230,37 +134,48 @@ const MyProfile = (props) => {
 
                 {/*People also viewed section */}
                 <div>
-                  <div className="mt-3 section-container">
+                  <div>
+                  <div className="mt-3 section-container-viewed-list">
                     <div className="alsoViewed">
-                      <h4 className="myprofileh4 text-left">
+                      <h4 className="myprofileh4 pl-2 text-left">
                         People also viewed
                       </h4>
+                      <div>
                       <ul className="ul">
                         {/*Insert generated content here!!*/}
                         <PyMk />
 
-                        <SecondPYMK />
+                   
                       </ul>
                     </div>
+                         
+                    </div>
+                  <SecondPYMK />
+                    </div> 
+
                   </div>
                   {/*People also viewed section END */}
-                  <div className="mt-2 section-container">
+                  <div>
+                  <div className="mt-3 section-container-viewed-list">
                     <div className="alsoViewed">
-                      <h4 className="myprofileh4 text-left mb-3">
+                      <h4 className="myprofileh4 pl-2 text-left">
                         People you may know
                       </h4>
-
+                      <div>
                       <ul className="ul">
-                        {/* <PyMk /> */}
+                        {/*Insert generated content here!!*/}
                         <PyMk />
-                        <>
-                          <SecondPYMK />
-                        </>
+
+                   
                       </ul>
                     </div>
+                         
+                    </div>
+                  <SecondPYMK />
+                    </div> 
+
                   </div>
                 </div>
-                <div></div>
               </Container>
             </Row>
           </Col>

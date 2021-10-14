@@ -27,6 +27,7 @@ const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
             onClick={() => {
               setSmShow(true);
             }}
+
             className="btn btn-light border-secondary main-feed-post rounded-pill py-3"
             style={{ width: "100%" }}
           >

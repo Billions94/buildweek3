@@ -71,7 +71,7 @@ const AddFeedUsers = (props) => {
                 </a>
               </Link>
               <div className="mb-2 pymkdiv">
-                <button class="btn btn-primary pymkbtn text-muted mr-5">
+                <button class="btn btn-primary pymkbtn text-muted ml-4">
                   <span className="pymkbtnspan">
                     <i className="bi bi-plus-lg"></i> Follow
                   </span>

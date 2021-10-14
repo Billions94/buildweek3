@@ -46,6 +46,7 @@ const MainFeedSection = () => {
       <br />
       <br />
       <ActualFeed reversedFeed={feed} fetchFeed={fetchFeed}/>
+
     </>
   );
 };

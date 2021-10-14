@@ -500,6 +500,7 @@
   width: 350px;
 }
 
+
 /*------------------------------People you may know CSS------------------------*/
 .roundpic {
   border-radius: 50%;
@@ -515,6 +516,13 @@
 
 .pymk-li {
   flex-direction: column;
+  padding: 0px 32px ;
+  
+}
+.pymk-li-second {
+  flex-direction: column;
+  padding: 0px 32px ;
+  
 }
 
 .pymk-a:hover {
@@ -523,12 +531,23 @@
 
 .pymkh6p {
   font-style: normal;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20px;
 }
 
 .pymkbtn {
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 20px;
+  height: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 95px;
+  /* line-height: -3rem; */
+}
+
+.pymkbtn- {
   background-color: transparent;
   border: 1px solid grey;
   border-radius: 20px;
@@ -558,9 +577,9 @@
   line-height: 20px;
 }
 
-/* .pymkdiv {
-  margin-left: -145px;
-} */
+ .pymkdiv {
+  margin-right: 80px;
+} 
 
 /*------------------------------My Profile CSS-----------------------------*/
 .ad {
@@ -616,6 +635,12 @@
   border-radius: 10px;
   background-color: #ffffff;
   padding: 24px 16px 16px;
+}
+.section-container-viewed-list {
+  border-radius: 10px 10px 10px 10px;
+  background-color: #ffffff;
+  padding: 24px 0px 0px;
+
 }
 
 #dashboard-container {
@@ -736,6 +761,7 @@
 
 .bi-pencil {
   margin: -6px;
+  font-size: large;
 }
 
 .profile-btn {
@@ -758,16 +784,20 @@
 }
 
 .show-more-btn {
-  background-color: #a9aaac;
-  border: none;
+  background-color: white;
+  border-bottom: 0.5px solid #dadada;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   color: #00000099;
-  width: 110%;
-  height: 5vh;
+  height: 44px;
+  font-weight: 600;
+  padding-top: 10px;
+
 }
 .show-more-btn:focus,
 .show-more-btn:active,
 .show-more-btn:hover {
-  background-color: #a9aaac !important;
+  background-color: #dadada !important;
   border: none !important;
   color: #00000099 !important;
   text-decoration: none;
@@ -802,12 +832,57 @@
   padding: 10px;
 }
 
-.flipped {
-  transform: rotate(180deg);
-}
+
+.flipped,
 .righted {
   transform: rotate(180deg);
 }
+.collapse-transition {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.tooltip-user-profile{
+  width:90%;
+  height: 15%;
+  box-shadow: 0px 2px 5px #58585899;
+}
+
+.edit-text-link{
+  color:#52525299;
+  font-weight: 600;
+}
+.edit-text-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pymkbtn-second {
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 20px;
+  height: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 95px;
+  /* line-height: -3rem; */
+}
+
+
+.pymkbtn-second:hover {
+  outline: 1px solid grey;
+  background-color: rgb(221, 218, 218);
+}
+
+.pymkbtn-second:focus,
+.pymkbtn-second:focus {
+  background-color: transparent !important;
+  outline: none !important;
+  border: none !important;
+}
+.pymkdiv-second {
+  margin-right: 32%;
+} 
 
 /*------------------------------Home SideBar Right-----------------------------*/
 
@@ -877,6 +952,12 @@
 .top-course-item:hover {
   background-color: rgb(224, 224, 224);
   cursor: pointer;
+}
+
+.accordion-body-background{
+   background-color: "white";
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
 }
 /* ---------------------FEED MAIN------------------- */
 

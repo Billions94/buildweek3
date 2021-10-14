@@ -1,4 +1,4 @@
-import { fetchUserExp } from "../../lib";
+//import { fetchUserExp } from "../../lib";
 import PutExExp from "./PutExExp";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";

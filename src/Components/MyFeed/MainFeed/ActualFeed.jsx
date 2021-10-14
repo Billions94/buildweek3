@@ -1,7 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
 import Spinner from "react-bootstrap/Spinner";
 
 import Button from "react-bootstrap/Button";
@@ -78,6 +77,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                 <Col className="px-0  actuall-feed-interact">
                   <b>
                     <button className="btn btn-primary actuall-feed-h5">
+
                       <img
                         src="https://img.icons8.com/ios-filled/50/000000/paper-plane.png"
                         width="22"
