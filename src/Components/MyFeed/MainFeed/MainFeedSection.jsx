@@ -1,6 +1,7 @@
 import ActualFeed from "./ActualFeed";
 import StartAPost from "./StartAPost";
 import { useState, useEffect } from "react";
+import { token } from "../../../lib";
 
 const MainFeedSection = () => {
   let [feed, setFeed] = useState([]);
@@ -12,8 +13,7 @@ const MainFeedSection = () => {
         `https://striveschool-api.herokuapp.com/api/posts/`,
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+            Authorization:token,
           },
         }
       );
@@ -42,10 +42,10 @@ const MainFeedSection = () => {
 
   return (
     <>
-      <StartAPost smShow={smShow} setSmShow={setSmShow} fetchFeed={fetchFeed}/>
+      <StartAPost smShow={smShow} setSmShow={setSmShow} fetchFeed={fetchFeed} token={token}/>
       <br />
       <br />
-      <ActualFeed reversedFeed={feed} fetchFeed={fetchFeed}/>
+      <ActualFeed reversedFeed={feed} fetchFeed={fetchFeed} token={token}/>
 
     </>
   );

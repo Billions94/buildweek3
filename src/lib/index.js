@@ -1,14 +1,11 @@
-// "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o"
-
-// USER PROFILES
-// FETCH
-// console.log(`hey there`)
+export const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTY4NTg1ODZmMGM3MTAwMTUwZWE3NWMiLCJpYXQiOjE2MzQyMjgzMTIsImV4cCI6MTYzNTQzNzkxMn0.6WKtLFuH3GFlmDS_pvZ8CGdhQyNczQ_ipXvj9a6eQHk"
+export const me = "616858586f0c7100150ea75c"
+// FETCH USER PROFILES
 export const fetchInfo = async (url) => {
   try {
     const response = await fetch(url, {
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+        Authorization:token,
       },
     });
     if (response.ok) {
@@ -30,8 +27,7 @@ export const fetchUserExp = async (url) => {
   try {
     const response = await fetch(url, {
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+        Authorization:token,
       },
     });
     if (response.ok) {
@@ -54,8 +50,7 @@ export const postUserExp = async (url, e, exp) => {
       method: "POST",
       body: JSON.stringify(exp),
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+        Authorization:token,
       },
     });
     if (response.ok) {
@@ -76,8 +71,7 @@ export const fetchSinglUserExp = async (url) => {
   try {
     const response = await fetch(url, {
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+        Authorization:token,
       },
     });
     if (response.ok) {
@@ -101,8 +95,7 @@ export const putSinglUserExp = async (url, e, exp) => {
       method: "PUT",
       body: JSON.stringify(exp),
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+        Authorization:token,
       },
     });
     if (response.ok) {
@@ -124,8 +117,7 @@ export const deleteSingleUserExp = async (user, expId, fetchExp, setLgShow) => {
     const response = await fetch(url, {
       method: "DELETE",
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+        Authorization:token,
       },
     });
     if (response.ok) {
@@ -185,8 +177,7 @@ export const deletePost = async (id , fetchFeed) => {
     const response = await fetch(url, {
       method: "DELETE",
       headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+        Authorization:token,
       },
     });
     if (response.ok) {

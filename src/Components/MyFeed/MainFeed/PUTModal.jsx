@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 
 
-const PUTModal = ({ fetchFeed, smShow, setSmShow, id }) => {
+const PUTModal = ({ fetchFeed, smShow, setSmShow, id, token}) => {
   const [text, setText] = useState({ text: "" });
 
   const updatePost = async (e) => {
@@ -17,8 +17,7 @@ const PUTModal = ({ fetchFeed, smShow, setSmShow, id }) => {
           body: JSON.stringify(text),
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+            Authorization:token,
           },
         }
       );

@@ -3,9 +3,26 @@ import { Container, Row, Col } from "react-bootstrap";
 import SideBarSm from "./SideBarSm/SideBarSm";
 import SideBarRight from "./RightSideBar/SideBarRight";
 import MainFeedSection from "./MainFeed/MainFeedSection";
+import { useState, useEffect } from "react";
+import { fetchInfo } from "../../lib";
 
 
 const Home = () => {
+  // const params = useParams();
+
+  // const [user, setUser] = useState([]);
+  // const [refresh, setRefresh] = useState(false);
+
+  // useEffect(() => {
+  //   const fetchUser = async (id) => {
+  //     const url = `https://striveschool-api.herokuapp.com/api/profile/${id}`;
+  //     const data = await fetchInfo(url);
+  //     console.log({ data });
+  //     setUser(data);
+  //   };
+  //   fetchUser(params.id);
+  // }, [params.id, refresh]);
+
   return (
     <>
       <Container className="mt-5">

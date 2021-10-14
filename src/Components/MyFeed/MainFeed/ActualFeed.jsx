@@ -8,9 +8,9 @@ import POSTPic from "./POSTPic";
 import { useEffect, useState } from "react";
 import PUTModal from "./PUTModal";
 
-import { deletePost } from "../../../lib";
+import { deletePost, me } from "../../../lib";
 
-const ActualFeed = ({ reversedFeed, fetchFeed }) => {
+const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
   const [smShow, setSmShow] = useState(false);
   const [pic, setPic] = useState(false);
 
@@ -26,18 +26,18 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                 <h4 className="text-right">...</h4>
 
                 <Col className="text-right">
-                  {elem.user._id == "6163f500a890cc0015cf07e2" && (
+                  {elem.user._id == me && (
                     <>
                       <Button
                         variant="light"
-                        className="rounded-pill"
+                        className="rounded-pill mr-1" style={{width:"40px", height:"42px"}}
                         onClick={() => deletePost(elem._id, fetchFeed)}
                       >
                         <i class="bi bi-trash"></i>
                       </Button>
                       <Button
                         variant="light"
-                        className="rounded-pill"
+                        className="rounded-pill mr-1" style={{width:"40px"}}
                         onClick={() => {
                           setSmShow(true);
                         }}
@@ -46,7 +46,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                       </Button>
                       <Button
                         variant="success"
-                        className="rounded-pill"
+                        className="rounded-pill" style={{width:"40px"}}
                         onClick={() => {
                           setPic(true);
                         }}
@@ -58,12 +58,14 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                         smShow={smShow}
                         setSmShow={setSmShow}
                         id={elem._id}
+                        token={token}
                       />
                       <POSTPic
                         fetchFeed={fetchFeed}
                         pic={pic}
                         setPic={setPic}
                         id={elem._id}
+                        token={token}
                       />
                     </>
                   )}
@@ -90,7 +92,6 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                 </div>
               </div>
               <img className="img-fluid" src={elem.image} alt="" />
-
               <div>
                 <p>{elem.text}</p>
               </div>

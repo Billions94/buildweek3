@@ -5,16 +5,15 @@ import Skills from "./MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
-
 import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
-
 import { useParams } from "react-router-dom";
 import ProfileDashboard from "./MyProfile/ProfileDashboard";
-
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
+import {token , me} from "../lib"
 
 const MyProfile = (props) => {
+ 
   const params = useParams();
   // let pathname = props.location.pathname;
   // console.log(pathname);
@@ -25,7 +24,7 @@ const MyProfile = (props) => {
     const fetchUser = async (id) => {
       const url = `https://striveschool-api.herokuapp.com/api/profile/${id}`;
       const data = await fetchInfo(url);
-      console.log({ data });
+      console.log(`this are the users`,{ data });
       setUser(data);
     };
     fetchUser(params.id);
@@ -66,7 +65,7 @@ const MyProfile = (props) => {
                 </Col>
                 {/*Your Dashboard Section*/}
 
-                {params.id === "me" ? <ProfileDashboard user={user} /> : <></>}
+                {params.id === me ? <ProfileDashboard user={user} /> : <></>}
 
                 {/*Your Dashboard END*/}
 
@@ -77,14 +76,13 @@ const MyProfile = (props) => {
                       <div className="d-flex d-inline-block justify-content-between">
                         <h4>Activity</h4>
 
-                        {params.id === "me" ? (
+                        {params.id === me ? (
                           <button className="profile-button">
                             Start a post
                           </button>
                         ) : (
                           <></>
                         )}
-
                       </div>
                       <p className="text-muted">11 followers</p>
                     </div>
@@ -101,13 +99,13 @@ const MyProfile = (props) => {
                 {/*Activity Section END*/}
 
                 {/*Exp Section*/}
-                <Col md={12} className="p-0 border rounded-lg">
+                <Col md={12} className="p-0 rounded-lg">
                   <div className="section-container mt-3">
                     <div className="d-flex d-inline-block justify-content-between">
                       <h4>Experience</h4>
                     </div>
                     <div className="position-relative">
-                      <DisplayExp user={user} />
+                      <DisplayExp user={user} token={token} me={me} />
                     </div>
                   </div>
                 </Col>
