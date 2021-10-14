@@ -20,8 +20,8 @@ export const fetchInfo = async (url) => {
   }
 };
 
-// USER EXPERIENCES
-// FETCH
+
+// FETCH USER EXPERIENCES
 
 export const fetchUserExp = async (url) => {
   try {
@@ -99,7 +99,7 @@ export const putSinglUserExp = async (url, e, exp) => {
       },
     });
     if (response.ok) {
-      fetchUserExp(url);
+      fetchUserExp(url)
     } else {
       console.log(`Ooops we got an error while fetching response`);
     }
@@ -122,7 +122,7 @@ export const deleteSingleUserExp = async (user, expId, fetchExp, setLgShow) => {
     });
     if (response.ok) {
       fetchUserExp(url);
-      alert("Deleted successfully");
+      console.log("Deleted successfully");
       fetchExp();
       setLgShow(false);
     } else {

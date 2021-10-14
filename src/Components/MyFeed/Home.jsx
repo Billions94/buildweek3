@@ -10,18 +10,18 @@ import { fetchInfo } from "../../lib";
 const Home = () => {
   // const params = useParams();
 
-  // const [user, setUser] = useState([]);
-  // const [refresh, setRefresh] = useState(false);
+  const [user, setUser] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchUser = async (id) => {
-  //     const url = `https://striveschool-api.herokuapp.com/api/profile/${id}`;
-  //     const data = await fetchInfo(url);
-  //     console.log({ data });
-  //     setUser(data);
-  //   };
-  //   fetchUser(params.id);
-  // }, [params.id, refresh]);
+  useEffect(() => {
+    const fetchUser = async (id) => {
+      const url = `https://striveschool-api.herokuapp.com/api/profile/${id}`;
+      const data = await fetchInfo(url);
+      console.log({ data });
+      setUser(data);
+    };
+    fetchUser();
+  }, []);
 
   return (
     <>
@@ -29,7 +29,7 @@ const Home = () => {
         <Row>
 {/*----------------------- SideBarSm Section -----------------------*/}
           <Col md={3} >
-              <SideBarSm />
+              <SideBarSm user={user} />
           </Col>
 {/*----------------------- Main Feed Section -----------------------*/}
           <Col md={6}>

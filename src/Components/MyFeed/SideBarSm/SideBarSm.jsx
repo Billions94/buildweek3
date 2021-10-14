@@ -2,11 +2,11 @@ import FirstSideBar from "./FirstSideBar"
 import SecondSideBar from "./SecondSideBar"
 
 
-const SideBarSm = () => {
+const SideBarSm = ({ user }) => {
   return (
     <>
       {/*-------First SideBarSm Section------*/}
-      <FirstSideBar />
+      <FirstSideBar user={user}/>
       {/*-------Second SideBarSm Section------*/}
       <SecondSideBar />
     </>
