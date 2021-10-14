@@ -5,8 +5,9 @@ import SecondSideBar from "./SecondSideBar"
 const SideBarSm = () => {
   return (
     <>
+      {/*-------First SideBarSm Section------*/}
       <FirstSideBar />
-      {/*-------------------------Second SideBarSm Section--------------------*/}
+      {/*-------Second SideBarSm Section------*/}
       <SecondSideBar />
     </>
   );

@@ -15,7 +15,7 @@ const MyJumbotron = ({ user }) => {
         <Row>
           <img
             id="profile-pic"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNdh_lxtlEr00s_eTQExT-4e2eN1rDREDTQ&usqp=CAU"
+            src="http://localhost:3000/assets/alex.jpeg"
             alt="ProfilePicture"
             width="130"
             height="130"
