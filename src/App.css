@@ -748,7 +748,11 @@
   transform: rotate(180deg);
 }
 
-
+.tooltip-user-profile{
+  width:90%;
+  height: 15%;
+  box-shadow: 0px 2px 5px #58585899;
+}
 
 
 /*------------------------------Home SideBar Right-----------------------------*/

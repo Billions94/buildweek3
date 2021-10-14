@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
 import ProfileSettings from "./UserProfile/ProfileSettings";
-
+import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
 import { useParams } from "react-router-dom";
 
 import SecondPYMK from "./MyProfile/SecondPYMK";
@@ -204,14 +204,7 @@ const MyProfile = (props) => {
               <Container fluid>
                 {/*edit section right column*/}
                 <div className="section-container pt-0 pb-0 list-group list-group-flush">
-                  <div className=" d-flex justify-content-between list-pad1 list-group-item">
-                    <p>{"Edit public profile & URL"}</p>
-                    <i class="bi bi-question-circle-fill"></i>
-                  </div>
-                  <div className=" d-flex justify-content-between list-pad2 list-group-item">
-                    <p>{"Add profile in another language"}</p>
-                    <i class="bi bi-question-circle-fill"></i>
-                  </div>
+                  <EditSettingsRightBar />
                 </div>
                 {/*edit section right column END*/}
 
