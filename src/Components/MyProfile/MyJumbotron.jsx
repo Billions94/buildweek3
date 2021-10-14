@@ -4,7 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ProfileSettings from "../UserProfile/ProfileSettings";
 
-const MyJumbotron = ({ user }) => {
+const MyJumbotron = ({ identification, user }) => {
+
+  console.log("WTF HAHAHAH", identification)
   return (
     <>
       <Jumbotron
@@ -15,7 +17,7 @@ const MyJumbotron = ({ user }) => {
         <Row>
           <img
             id="profile-pic"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNdh_lxtlEr00s_eTQExT-4e2eN1rDREDTQ&usqp=CAU"
+            src={user.image}
             alt="ProfilePicture"
             width="130"
             height="130"
@@ -57,9 +59,9 @@ const MyJumbotron = ({ user }) => {
               </div>
             </div>
           </Col>
-          <Col className="text-right ">
-          <ProfileSettings user={user} />
-              <div className=" mt-2 d-flex-row align-items-right justify-content-between">
+          <Col className=" d-flex-row text-right justify-content-right">
+          {identification === "me" ? (<ProfileSettings user={user} />) : (<></>)}
+              <div className=" mt-2 d-flex-row align-items-center">
             <img className="mr-2" src="https://strive.school/favicon.ico" width="25" />
             <b> Strive School</b>
             </div>

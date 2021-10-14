@@ -58,7 +58,7 @@ const ProfileSettings = ({ user }) => {
         <i class="bi bi-pencil"></i>
       </button>
 
-      <div className="justify-content-center" style={{width: "20vw", height: "20vh", margin: "0 auto" }}>
+    
         <div>
         <Modal
           id="profile-settings"
@@ -144,7 +144,6 @@ const ProfileSettings = ({ user }) => {
             </Form>
           </Modal.Body>
         </Modal>
-      </div>
       </div>
     </>
   );

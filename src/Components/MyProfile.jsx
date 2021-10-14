@@ -53,7 +53,7 @@ const MyProfile = (props) => {
             <Container fluid>
               <Row>
                 <Col md={12} className="p-0">
-                  {user && <MyJumbotron user={user} />}
+                  {user && <MyJumbotron identification={params.id} user={user} />}
                 </Col>
                 {/*Your Dashboard Section*/}
                 <Col

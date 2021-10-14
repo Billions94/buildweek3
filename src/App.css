@@ -759,6 +759,14 @@
   box-shadow: 0px 2px 5px #58585899;
 }
 
+.edit-text-link{
+  color:#52525299;
+  font-weight: 600;
+}
+.edit-text-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 /*------------------------------Home SideBar Right-----------------------------*/
 
