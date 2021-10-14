@@ -1,6 +1,7 @@
 import { Button, Modal, Form, Container } from "react-bootstrap";
 import { SetState, useEffect, useState } from "react";
 import { fetchInfo } from "../../lib";
+import { token } from "../../lib";
 
 const ProfileSettings = ({ user, setRefresh, refresh }) => {
   const [lgShow, setLgShow] = useState(false);
@@ -37,8 +38,7 @@ const ProfileSettings = ({ user, setRefresh, refresh }) => {
           method: "POST",
           body: formData,
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+            Authorization:token,
           },
         }
       );
@@ -69,8 +69,7 @@ const ProfileSettings = ({ user, setRefresh, refresh }) => {
           body: JSON.stringify(settings),
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+            Authorization:token,
           },
         }
       );
@@ -214,7 +213,7 @@ const ProfileSettings = ({ user, setRefresh, refresh }) => {
                   <Button
                     variant="primary"
                     type="submit"
-                    className="rounded-pill"
+                    className="rounded-pill ml-2"
                     onClick={(e) => submitImage(e)}
                   >
                     Update picture

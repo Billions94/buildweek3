@@ -9,11 +9,11 @@ import TextField from "@mui/material/TextField";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import { postUserExp } from "../../lib";
-import { deleteSingleUserExp } from "../../lib";
+import { deleteSingleUserExp, token } from "../../lib";
 
 const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
   // const [lgShow, setLgShow] = useState(false);
+
 
   const [checked, setChecked] = useState(false);
   // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
@@ -58,8 +58,7 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
             body: JSON.stringify(values),
             headers: {
               "Content-Type": "application/json",
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+              Authorization:token,
             },
           });
           console.log(response);
@@ -223,6 +222,7 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
               <Form.Text className="text-muted text-right">0/2,000</Form.Text>
             </Form.Group>
             <Form.Control
+              placeholder="jinx"
               className="mb-3 md-add-media"
               type="file"
             ></Form.Control>

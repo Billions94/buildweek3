@@ -60,19 +60,19 @@ const AddFeedUsers = (props) => {
                     height="50px"
                   />
                   <div class="ml-2">
-                    <h3 className="text-dark m-0 text-left pymkh6p">
+                    <h3 className="text-dark m-0 text-left pymkh6p2">
                       <strong>{person.name}</strong>{" "}
                       <strong>{person.surname}</strong>
                     </h3>
-                    <p className="text-muted title-resize mb-0 text-left  pymkh6p">
+                    <p className="text-muted title-resize mb-0 text-left  pymkh6p2">
                       {person.title}
                     </p>
                   </div>
                 </a>
               </Link>
-              <div className="mb-2 pymkdiv">
+              <div className="mb-2 pymkdiv2">
                 <button class="btn btn-primary pymkbtn text-muted ml-4">
-                  <span className="pymkbtnspan">
+                  <span className="pymkbtnspan2">
                     <i className="bi bi-plus-lg"></i> Follow
                   </span>
                 </button>

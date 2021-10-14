@@ -5,7 +5,7 @@ import { useState } from "react";
 import POSTModal from "./POSTModal";
 import POSTPic from "./POSTPic";
 
-const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
+const StartAPost = ({ smShow, setSmShow, fetchFeed, token}) => {
   const [pic, setPic] = useState(false);
 
 
@@ -24,7 +24,7 @@ const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
           />
         </Col>
         <Col className="mr-1">
-          <POSTModal  smShow={smShow} setSmShow={setSmShow} fetchFeed={fetchFeed} />
+          <POSTModal  smShow={smShow} setSmShow={setSmShow} fetchFeed={fetchFeed} token={token}/>
           <Button
             onClick={() => {
               setSmShow(true);

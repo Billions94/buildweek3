@@ -536,6 +536,13 @@
   line-height: 20px;
 }
 
+.pymkh6p2 {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
 .pymkbtn {
   background-color: transparent;
   border: 1px solid grey;
@@ -577,9 +584,21 @@
   line-height: 20px;
 }
 
+.pymkbtnspan2 {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+
  .pymkdiv {
   margin-right: 80px;
 } 
+
+.pymkdiv2 {
+  margin-right: 0px;
+}
 
 /*------------------------------My Profile CSS-----------------------------*/
 .ad {

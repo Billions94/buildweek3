@@ -1,8 +1,5 @@
-import { putSinglUserExp } from "../../lib";
 import { fetchSinglUserExp } from "../../lib";
-// import { fetchExp } from "../../lib";
-// import ModalPop from "../Modal";
-// import Modal from "../Modal";
+
 
 const PutExExp = async (id, user, lgShow, setLgShow, expId, setExpId) => {
   const url = `https://striveschool-api.herokuapp.com/api/profile/${user}/experiences/${id}`;

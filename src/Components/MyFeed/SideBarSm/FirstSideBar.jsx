@@ -8,7 +8,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const FirstSideBar = () => {
+const FirstSideBar = ({ user }) => {
   return (
     <div className="row mb-0">
       <Container>

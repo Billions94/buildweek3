@@ -1,13 +1,10 @@
-//import { fetchUserExp } from "../../lib";
 import PutExExp from "./PutExExp";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Modal from "./Modal";
-import ModalPop from "./Modal";
-import { fetchExp } from "../../lib";
 
-const DisplayExp = ({ user }) => {
+
+const DisplayExp = ({ user, token, me }) => {
   console.log(user);
 
   const [data, setData] = useState([]);
@@ -20,8 +17,7 @@ const DisplayExp = ({ user }) => {
         `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences`,
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o",
+            Authorization:token,
           },
         }
       );
@@ -40,7 +36,7 @@ const DisplayExp = ({ user }) => {
   console.log();
   return (
     <>
-      {user._id === "6163f500a890cc0015cf07e2" && (
+      {user._id === me && (
         <Modal
           user={user._id}
           fetchExp={fetchExp}
@@ -66,7 +62,7 @@ const DisplayExp = ({ user }) => {
               <br />
               <p>{exp.description}</p>
             </Col>
-            {user._id === "6163f500a890cc0015cf07e2" && (
+            {user._id === me && (
               <Col md={1}>
                 <button
                   onClick={() => {
@@ -94,4 +90,4 @@ const DisplayExp = ({ user }) => {
 
 export default DisplayExp;
 
-// onClick={() => {editExperience(exp._id, exp.user)}}
+
