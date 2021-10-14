@@ -178,7 +178,7 @@ export const deleteSingleUserExp = async (user, expId, fetchExp, setLgShow) => {
 
 // DELETE POST
 
-export const deletePost = async (id) => {
+export const deletePost = async (id , fetchFeed) => {
   const url = `https://striveschool-api.herokuapp.com/api/posts/${id}`;
 
   try {
@@ -190,7 +190,8 @@ export const deletePost = async (id) => {
       },
     });
     if (response.ok) {
-      fetchUserExp(url);
+        fetchFeed()
+
       console.log("Deleted successfully");
 
     } else {

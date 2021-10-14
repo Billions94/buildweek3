@@ -11,10 +11,7 @@ import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
 import { useParams } from "react-router-dom";
 import ProfileDashboard from "./MyProfile/ProfileDashboard";
 
-import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
 
-import { useParams } from "react-router-dom";
-import ProfileDashboard from "./MyProfile/ProfileDashboard";
 
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
