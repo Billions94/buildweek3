@@ -39,7 +39,8 @@ const MyJumbotron = ({ identification, user }) => {
                 More
               </Button>
             </p>
-            <div className="opened-to-work text-left p-2">
+            {identification === "me" ? 
+            (<div className="opened-to-work text-left p-2">
               <div className="mb-0">
 
                 <b className="text-dark jumbo-a">
@@ -57,7 +58,7 @@ const MyJumbotron = ({ identification, user }) => {
                   Get started
                 </a>
               </div>
-            </div>
+            </div>) : (<></>)}
           </Col>
           <Col className=" d-flex-row text-right justify-content-right">
           {identification === "me" ? (<ProfileSettings user={user} />) : (<></>)}
