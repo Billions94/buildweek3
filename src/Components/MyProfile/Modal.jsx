@@ -12,7 +12,6 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { postUserExp } from "../../lib";
 import { deleteSingleUserExp } from "../../lib";
 
-
 const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
   // const [lgShow, setLgShow] = useState(false);
 
@@ -52,7 +51,6 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
         area: "",
       },
       onSubmit: async (values) => {
-
         try {
           console.log("blllaaaaa" + method, url);
           const response = await fetch(url, {
@@ -66,7 +64,6 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
           });
           console.log(response);
           if (response.ok) {
-            
             fetchExp();
             setLgShow(false);
           }
@@ -80,7 +77,10 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
   return (
     <>
       <div className=" modalbtn">
-        <button className="profile-button pencil-button" onClick={() => setLgShow(true)}>
+        <button
+          className="profile-button pencil-button"
+          onClick={() => setLgShow(true)}
+        >
           <i class="bi bi-plus-lg bi-css text-dark "></i>
         </button>
       </div>
@@ -97,7 +97,6 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="p-0">
-
           <Form className="px-4" style={{ height: "500px", overflow: "auto" }}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label className="text-muted">Title*</Form.Label>
@@ -223,15 +222,10 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
               />
               <Form.Text className="text-muted text-right">0/2,000</Form.Text>
             </Form.Group>
-            <Button
+            <Form.Control
               className="mb-3 md-add-media"
-              variant="primary"
-              type="submit"
-            >
-              <span className="text-primary span-md-btn1">
-                <i class="bi bi-plus-lg bi-css1 text-primary "></i>Add media
-              </span>
-            </Button>
+              type="file"
+            ></Form.Control>
           </Form>
         </Modal.Body>
 
@@ -271,6 +265,5 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
     </>
   );
 };
-
 
 export default ModalPop;
