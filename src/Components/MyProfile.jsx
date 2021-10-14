@@ -5,14 +5,17 @@ import Skills from "./MyProfile/Skills";
 import { useState, useEffect } from "react";
 import { fetchInfo } from "../lib";
 import PyMk from "./MyProfile/PyMk";
-<<<<<<< HEAD
-import { useParams } from "react-router-dom";
-=======
+
 import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
 
 import { useParams } from "react-router-dom";
 import ProfileDashboard from "./MyProfile/ProfileDashboard";
->>>>>>> 0d33987a0371bc7bd1677fe646c285137b273a47
+
+import EditSettingsRightBar from "./MyProfile/EditSettingsRightBar";
+
+import { useParams } from "react-router-dom";
+import ProfileDashboard from "./MyProfile/ProfileDashboard";
+
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 
