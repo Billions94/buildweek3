@@ -138,7 +138,7 @@ const MyProfile = (props) => {
                   <div>
                   <div className="mt-3 section-container-viewed-list">
                     <div className="alsoViewed">
-                      <h4 className="myprofileh4 text-left">
+                      <h4 className="myprofileh4 pl-2 text-left">
                         People also viewed
                       </h4>
                       <div>
@@ -151,27 +151,30 @@ const MyProfile = (props) => {
                     </div>
                          
                     </div>
-                   
-                    </div> <SecondPYMK />
+                  <SecondPYMK />
+                    </div> 
+
                   </div>
                   {/*People also viewed section END */}
                   <div>
-                  <div className="mt-2 section-container">
+                  <div className="mt-3 section-container-viewed-list">
                     <div className="alsoViewed">
-                      <h4 className="myprofileh4 text-left mb-3">
+                      <h4 className="myprofileh4 pl-2 text-left">
                         People you may know
                       </h4>
-
+                      <div>
                       <ul className="ul">
-                        {/* <PyMk /> */}
+                        {/*Insert generated content here!!*/}
                         <PyMk />
-                        <>
-                         
-                        </>
+
+                   
                       </ul>
                     </div>
-                  </div>
-                    <SecondPYMK />
+                         
+                    </div>
+                  <SecondPYMK />
+                    </div> 
+
                   </div>
                 </div>
               </Container>

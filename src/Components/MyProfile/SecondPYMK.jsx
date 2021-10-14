@@ -26,12 +26,13 @@ const SecondPYMK = () => {
 
   return (
       <>
-      <Accordion className="flipped collapse-transition" defaultActiveKey="1">
-               <div style={{ marginTop: "-20px"}} >
+      <Accordion className="flipped collapse-transition accordion-body-background" defaultActiveKey="1">
+               <div className="accordion-body-background" >
                  <Accordion.Toggle as={Button} className="show-more-btn" onClick={e => setToggled(!toggled)} variant="link" style={{width: "100%"}}  eventKey="0">
                    {toggled ? <p className="flipped">Show Less <i class="bi bi-chevron-up"></i></p> : <p className="flipped">Show More <i class="bi bi-chevron-down"></i></p>}
                  </Accordion.Toggle>
                  <Accordion.Collapse eventKey="0">
+                   <div style={{backgroundColor: "white"}}>
         { !data ? (
           <h1>Loading....</h1>
         ) :  <>
@@ -56,7 +57,7 @@ const SecondPYMK = () => {
         ))
           
                    )} </>}
-        
+            </div>
           </Accordion.Collapse>
                </div>
              </Accordion>
