@@ -455,6 +455,7 @@
 
 .pymk-li {
   flex-direction: column;
+  padding: 0px 16px ;
 }
 
 .pymk-a:hover {
@@ -556,6 +557,11 @@
   border-radius: 10px;
   background-color: #ffffff;
   padding: 24px 16px 16px;
+}
+.section-container-viewed-list {
+  border-radius: 10px 10px 0px 0px;
+  background-color: #ffffff;
+  padding: 24px 16px 0px;
 }
 
 #dashboard-container {
@@ -699,16 +705,16 @@
 }
 
 .show-more-btn {
-  background-color: #a9aaac;
+  background-color: white;
   border: none;
   color: #00000099;
-  width: 110%;
   height: 5vh;
+  font-weight: 600;
 }
 .show-more-btn:focus,
 .show-more-btn:active,
 .show-more-btn:hover {
-  background-color: #a9aaac !important;
+  background-color: #dadada !important;
   border: none !important;
   color: #00000099 !important;
   text-decoration: none;
