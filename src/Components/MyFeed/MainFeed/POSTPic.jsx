@@ -21,7 +21,7 @@ const POSTPic = ({ fetchFeed, pic, setPic }) => {
       formData.append("post", image)
 
       const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/posts/616826c46f0c7100150ea6f9",
+        "https://striveschool-api.herokuapp.com/api/posts/61682f946f0c7100150ea713",
         {
           method: "POST",
           body: formData,

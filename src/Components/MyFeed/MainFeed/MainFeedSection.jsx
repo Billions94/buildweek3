@@ -20,7 +20,7 @@ const MainFeedSection = () => {
      
       if(response.ok){ 
          const exp = await response.json();
-        let slicedFeed = exp.reverse().slice(0, 5);
+        let slicedFeed = exp.reverse().slice(0, 50);
          setFeed(slicedFeed);
          console.log(slicedFeed)
       }

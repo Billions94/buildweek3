@@ -17,7 +17,7 @@ const StartAPost = ({smShow, setSmShow, fetchFeed}) => {
           <img
             className="ml-2"
             style={{ borderRadius: "50%" }}
-            src="http://localhost:3000/assets/alex.jpeg"
+            // src={}
             alt="ProfilePicture"
             width="60"
             height="60"

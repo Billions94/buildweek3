@@ -22,7 +22,8 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
                 <h4 className="text-right">...</h4>
-              <Col className="text-right">
+
+                <Col className="text-right">
                   {elem.user._id == "6163f500a890cc0015cf07e2" && (
                     <>
                       <Button
@@ -68,9 +69,9 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                   </b>
 
                   <p className="text-left">{elem.user.title}</p>
-                  <img src={elem.image} alt=""  width="40"/>
                 </div>
               </div>
+              <img className="img-fluid" src={elem.image} alt="" />
 
               <div>
                 <p>{elem.text}</p>
@@ -113,34 +114,6 @@ const ActualFeed = ({ reversedFeed, fetchFeed }) => {
                     </button>{" "}
                   </b>
                 </Col>
-                {/* <Col className="text-right">
-                  {elem.user._id == "6163f500a890cc0015cf07e2" && (
-                    <>
-                      <Button
-                        variant="light"
-                        className="rounded-pill"
-                        onClick={() => deletePost(elem._id)}
-                      >
-                        <i class="bi bi-trash"></i>
-                      </Button>
-                      <Button
-                        variant="light"
-                        className="rounded-pill"
-                        onClick={() => {
-                          setSmShow(true);
-                        }}
-                      >
-                        <i class="bi bi-pencil"></i>
-                      </Button>
-                      <PUTModal
-                        fetchFeed={fetchFeed}
-                        smShow={smShow}
-                        setSmShow={setSmShow}
-                        id={elem._id}
-                      />
-                    </>
-                  )}
-                </Col>{" "} */}
               </Row>
             </div>
           </div>
