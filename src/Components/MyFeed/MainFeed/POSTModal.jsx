@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const POSTModal = ({ smShow, setSmShow, fetchFeed, token }) => {
 
   const [text, setText] = useState({ text: "" });
+  const [photo, setPhoto] = useState([])
 
   const newPost = async (e) => {
     e.preventDefault(e);
@@ -22,9 +23,12 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed, token }) => {
         }
       );
       if (response.ok) {
-        console.log(`we are venom`,response);
+        let post = await response.json();
+        console.log(`this is the post`,post);
+        
 
 
+        postPhoto(post._id)
         setText({text: ''})
         fetchFeed()
         setSmShow(false);
@@ -45,6 +49,31 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed, token }) => {
     console.log(text);
   }, [text]);
 
+  const postPhoto = async(id) => {
+  let formData = new FormData();
+  formData.append("post", photo);
+
+  const response = await fetch(
+    `https://striveschool-api.herokuapp.com/api/posts/${id}`,
+
+    {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization: token,
+      },
+    }
+  );
+  if (response.ok) {
+    console.log(response);
+
+    fetchFeed();
+    setPhoto(false);
+  } else {
+    console.log();
+  }
+}
+  
   return (
     <>
       <Modal
@@ -75,6 +104,10 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed, token }) => {
               />
             </Form.Group>
             <div className="d-flex justify-content-end">
+            <Form.Group className="mb-3" controlId="#1">
+              <Form.Control type="file" onChange={(e)=> setPhoto(e.target.files[0])} />
+              </Form.Group>
+                
               <Button
                 variant="primary"
                 type="submit"

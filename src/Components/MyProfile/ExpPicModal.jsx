@@ -33,8 +33,10 @@ const POSTPic = ({ expId, userId, picExp, setPicExp }) => {
       );
       if (response.ok) {
         console.log(response);
+        
 
-        // fetchFeed();
+
+      
         setPicExp(false);
       } else {
         console.log();
@@ -47,7 +49,7 @@ const POSTPic = ({ expId, userId, picExp, setPicExp }) => {
     }
   };
 
-  // useEffect(() => {}, []);
+
 
   return (
     <>

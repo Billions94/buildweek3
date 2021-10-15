@@ -13,7 +13,7 @@ import { deleteSingleUserExp, token } from "../../lib";
 
 const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
   // const [lgShow, setLgShow] = useState(false);
-
+  const [upload, setUpload] = useState([]);
   const [checked, setChecked] = useState(false);
   // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
   console.log("hellooo" + user);
@@ -62,6 +62,9 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
           });
           console.log(response);
           if (response.ok) {
+           let postResponse = await response.json();
+           console.log(`this is the post response`, postResponse);
+           await submitImage(postResponse.user, postResponse._id )
             fetchExp();
             setLgShow(false);
             setFieldValue({
@@ -79,6 +82,41 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
       },
       validationSchema: validationSchema,
     });
+
+    const submitImage = async (userId, expId,) => {
+      
+      try {
+        let formData = new FormData();
+        formData.append("experience", upload );
+  
+        const response = await fetch(
+          `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${expId}/picture`,
+  
+          {
+            method: "POST",
+            body: formData,
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        if (response.ok) {
+          console.log(response);
+          
+  
+  
+        
+          setUpload(false);
+        } else {
+          console.log();
+  
+          console.log(`wow... that wasn't supposed to happen... Error`);
+          alert(`Woops we lost your data in the void .. try refreshing`);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
   return (
     <>
@@ -228,12 +266,13 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
               />
               <Form.Text className="text-muted text-right">0/2,000</Form.Text>
             </Form.Group>
-            {/* <Form.Control
+            <Form.Control
+              onChange={(e)=> setUpload(e.target.files[0])}
               placeholder="jinx"
               className="mb-3 md-add-media"
               type="file"
-            ></Form.Control> */}
-          </Form>
+            />
+          </Form> 
         </Modal.Body>
 
         <Modal.Footer>
