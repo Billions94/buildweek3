@@ -37,25 +37,25 @@ const DisplayExp = ({ user, token, me }) => {
   console.log();
   return (
     <>
+      {user._id === me && (
+        <Modal
+          user={user._id}
+          fetchExp={fetchExp}
+          lgShow={lgShow}
+          setLgShow={setLgShow}
+          expId={expId}
+        />
+      )}
       {data.map((exp) => (
         <>
           {user._id === me && (
-            <>
-              <Modal
-                user={user._id}
-                fetchExp={fetchExp}
-                lgShow={lgShow}
-                setLgShow={setLgShow}
-                expId={expId}
-              />
-              <ExpPicModal
-                expId={exp._id}
-                userId={user._id}
-                picExp={picExp}
-                setPicExp={setPicExp}
-                fetchExp={fetchExp}
-              />
-            </>
+            <ExpPicModal
+              expId={exp._id}
+              userId={user._id}
+              picExp={picExp}
+              setPicExp={setPicExp}
+              fetchExp={fetchExp}
+            />
           )}
           <hr />
           <Row key={exp._id} className="text-left">
