@@ -88,18 +88,12 @@
 }
 
 
-
 .follow {
   font-style: normal;
   font-weight: 400;
   font-size:14px;
   line-height:16px
 }
-
-
-
-
-
 
 
 .nav-work{
@@ -163,9 +157,9 @@
   word-wrap: break-word;
 }
 
-.nav-item:hover {
-  text-decoration: underline;
-}
+/* .nav-item:hover {
+  text-decoration: underline;   
+} */
 .nav-item:hover .darknavicon {
   filter: opacity(1);
   cursor: pointer;
@@ -383,7 +377,7 @@
   background-image: url("https://wallpaperaccess.com/full/1398313.jpg");
   background-position: top;
   background-repeat: no-repeat;
-  background-size: 100% 20%;
+  background-size: 100% 15%;
 }
 
 /*------------------------------Jumbotron CSS------------------------------*/

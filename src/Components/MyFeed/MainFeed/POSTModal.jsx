@@ -22,7 +22,7 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed, token }) => {
         }
       );
       if (response.ok) {
-        console.log(response);
+        console.log(`we are venom`,response);
 
 
         setText({text: ''})

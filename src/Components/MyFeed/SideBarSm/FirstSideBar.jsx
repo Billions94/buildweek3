@@ -18,7 +18,7 @@ const FirstSideBar = ({ user }) => {
               <img
                 className="SideBarImg"
                 id="profile-pic"
-                src="http://localhost:3000/assets/alex.jpeg"
+                src={user.image}
                 alt="ProfilePicture"
                 width="80"
                 height="80"
@@ -32,12 +32,12 @@ const FirstSideBar = ({ user }) => {
                   to={"/profile/me"}
                   className="text-center text-dark d-block"
                   style={{
-                    fontSize: "16px",
+                    fontSize: "18px",
                     fontWeight: "600",
                     lineHeight: "24px",
                   }}
                 >
-                  Egbedi Ejiroghene <br /> Alexander
+                  {user.surname} <br /> {user.name}
                 </Link>
               </div>
               <p className="SideBarSm-p text-center text-muted mt-0">

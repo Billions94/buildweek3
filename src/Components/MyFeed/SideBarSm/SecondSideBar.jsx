@@ -30,22 +30,34 @@ const SecondSideBar = () => {
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey="0">
                     <div>
-                      <div>
+                    <div className="d-flex mt-1">
+                        <div>
+                      <img className="d-block ml-3  mr-2" src="https://img.icons8.com/fluency-systems-filled/30/000000/queue.png" width="15px"/>
+                      </div>
                         <h3 className="text-muted SideBarSm-h3 wvmpDiv">
                           JavaScript
                         </h3>
                       </div>
-                      <div>
+                      <div className="d-flex">
+                        <div>
+                      <img className="d-block ml-3 mr-2" src="https://img.icons8.com/fluency-systems-filled/30/000000/queue.png" width="15px"/>
+                      </div>
                         <h3 className="text-muted SideBarSm-h3 wvmpDiv">
                           Full-stack web developer
                         </h3>
                       </div>
-                      <div>
+                      <div className="d-flex">
+                        <div>
+                      <img className="d-block ml-3 mr-2" src="https://img.icons8.com/fluency-systems-filled/30/000000/queue.png" width="15px"/>
+                      </div>
                         <h3 className="text-muted SideBarSm-h3 wvmpDiv">
                           Frontend developer and web...
                         </h3>
                       </div>
-                      <div>
+                      <div className="d-flex">
+                        <div>
+                      <img className="d-block ml-3 mr-2" src="https://img.icons8.com/fluency-systems-filled/30/000000/queue.png" width="15px"/>
+                      </div>
                         <h3 className="text-muted SideBarSm-h3 wvmpDiv">
                           React Developers ReactJS...
                         </h3>
@@ -79,17 +91,26 @@ const SecondSideBar = () => {
                           JavaScript
                         </h3>
                       </div>
-                      <div>
+                      <div className="d-flex">
+                        <div>
+                      <img className="d-block ml-3 mr-2" src="https://img.icons8.com/fluency-systems-filled/30/000000/queue.png" width="15px"/>
+                      </div>
                         <h3 className="text-muted SideBarSm-h3 wvmpDiv">
                           Full-stack web developer
                         </h3>
                       </div>
-                      <div>
+                      <div className="d-flex">
+                        <div>
+                      <img className="d-block ml-3 mr-2" src="https://img.icons8.com/fluency-systems-filled/30/000000/queue.png" width="15px"/>
+                      </div>
                         <h3 className="text-muted SideBarSm-h3 wvmpDiv">
                           Frontend developer and web...
                         </h3>
                       </div>
-                      <div>
+                      <div className="d-flex">
+                        <div>
+                      <img className="d-block ml-3 mr-2" src="https://img.icons8.com/fluency-systems-filled/30/000000/queue.png" width="15px"/>
+                      </div>
                         <h3 className="text-muted SideBarSm-h3 wvmpDiv">
                           React Developers ReactJS...
                         </h3>

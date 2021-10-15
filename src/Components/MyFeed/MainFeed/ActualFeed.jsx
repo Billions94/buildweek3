@@ -46,14 +46,18 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
                         <i class="bi bi-pencil"></i>
                       </Button>
                       <Button
+
                         variant="light"
                         className="rounded-pill"
                         style={{ width: "40px" }}
+
                         onClick={() => {
                           setPic(true);
                         }}
                       >
+
                         <i class="bi bi-image"></i>
+
                       </Button>
                       <PUTModal
                         fetchFeed={fetchFeed}

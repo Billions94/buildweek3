@@ -12,7 +12,7 @@ import SecondPYMK from "./MyProfile/SecondPYMK";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 import {token , me} from "../lib"
 
-const MyProfile = (props) => {
+const MyProfile = ({setCurrentUser}) => {
  
   const params = useParams();
   // let pathname = props.location.pathname;
@@ -26,6 +26,7 @@ const MyProfile = (props) => {
       const data = await fetchInfo(url);
       console.log(`this are the users`,{ data });
       setUser(data);
+      setCurrentUser(data);
     };
     fetchUser(params.id);
   }, [params.id, refresh]);

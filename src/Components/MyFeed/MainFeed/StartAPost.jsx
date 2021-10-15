@@ -5,7 +5,10 @@ import { useState } from "react";
 import POSTModal from "./POSTModal";
 import POSTPic from "./POSTPic";
 
-const StartAPost = ({ smShow, setSmShow, fetchFeed, token }) => {
+
+
+const StartAPost = ({ smShow, setSmShow, fetchFeed, token, user}) => {
+
   const [pic, setPic] = useState(false);
 
   return (
@@ -16,7 +19,7 @@ const StartAPost = ({ smShow, setSmShow, fetchFeed, token }) => {
           <img
             className="ml-2"
             style={{ borderRadius: "50%" }}
-            // src={}
+            src={user.image}
             alt="ProfilePicture"
             width="60"
             height="60"
