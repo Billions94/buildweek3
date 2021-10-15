@@ -1,21 +1,22 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Skills = () => {
+const Skills = ({identification}) => {
   return (
     <div id="skills">
 
       <Row className="mb-3">
         <Col className="d-flex justify-content-between">
           <h5 > Featured Skills & Endorsements</h5>
-          <div>
+          {identification === "me" ? (<div>
             <button className="profile-button">
             <span className="mr-3">
             Add a new skill
             </span>
             </button>
             <button className="profile-button pencil-button"><i class="bi bi-pencil"></i></button>
-          </div>
+          </div>) : (<></>)}
+          
         </Col>
       </Row>
       <Row>
