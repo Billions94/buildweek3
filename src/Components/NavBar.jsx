@@ -85,11 +85,13 @@ render(){
             <ul className="navbar-nav mr-auto">
               <div>
                 <li className="nav-item active navbar-li">
+                  <Link to={"/home"}>
                   <img
                     className="darknavicon pt-3 ml-2"
                     src="https://img.icons8.com/material-rounded/50/000000/home.png"
                     width="22px"
                   />
+                  </Link>
                   <Link
                     to={"/home"}
                     className="nav-link pt-0 ml-2 active"
@@ -148,12 +150,14 @@ render(){
                 </li>
               </div>
               <div className="xx  ">
+                <Link to={"/profile/me"}>
                 <Avatar
                   // src={currentUser.image}
                   className="d-block avatar"
                   alt=""
                   sx={{ width: 24, height: 24 }}
                 />
+                </Link>
                 <div className="d-flex darknavicon mb-2 nav-work">
                   <div id="link">
                     <Link

@@ -157,9 +157,9 @@
   word-wrap: break-word;
 }
 
-.nav-item:hover {
+/* .nav-item:hover {
   text-decoration: underline;   
-}
+} */
 .nav-item:hover .darknavicon {
   filter: opacity(1);
   cursor: pointer;

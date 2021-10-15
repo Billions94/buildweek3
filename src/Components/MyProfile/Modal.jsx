@@ -233,11 +233,11 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
           {expId ? (
             <div>
               <Button
-                className="modal-save"
+                className="modal-save mr-1"
                 variant="primary"
                 onClick={() => handleSubmit()}
               >
-                <span className="span-md-btn">Update</span>
+                <span className="span-md-btn " style={{marginLeft:"-6px"}}>Update</span>
               </Button>
               <Button
                 className="modal-save"
