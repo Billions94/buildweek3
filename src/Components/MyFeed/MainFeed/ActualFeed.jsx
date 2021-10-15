@@ -20,7 +20,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
         <Spinner animation="border" variant="primary" />
       ) : (
         reversedFeed.map((elem) => (
-          <div>
+          <div key={elem._id}>
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
                 <h4 className="text-right">...</h4>
