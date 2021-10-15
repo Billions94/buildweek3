@@ -6,9 +6,10 @@ import POSTModal from "./POSTModal";
 import POSTPic from "./POSTPic";
 
 
-const StartAPost = ({ smShow, setSmShow, fetchFeed, token, user}) => {
-  const [pic, setPic] = useState(false);
 
+const StartAPost = ({ smShow, setSmShow, fetchFeed, token, user}) => {
+
+  const [pic, setPic] = useState(false);
 
   return (
     <div className="border p-2 bg-white " style={{ borderRadius: "10px" }}>
@@ -25,12 +26,16 @@ const StartAPost = ({ smShow, setSmShow, fetchFeed, token, user}) => {
           />
         </Col>
         <Col className="mr-1">
-          <POSTModal  smShow={smShow} setSmShow={setSmShow} fetchFeed={fetchFeed} token={token}/>
+          <POSTModal
+            smShow={smShow}
+            setSmShow={setSmShow}
+            fetchFeed={fetchFeed}
+            token={token}
+          />
           <Button
             onClick={() => {
               setSmShow(true);
             }}
-
             className="btn btn-light border-secondary main-feed-post rounded-pill py-3"
             style={{ width: "100%" }}
           >
@@ -39,23 +44,16 @@ const StartAPost = ({ smShow, setSmShow, fetchFeed, token, user}) => {
         </Col>
       </Row>
       <Row className="mt-2 p-1">
-        <Col className="act"  onClick={(e) => {
-          setPic(true)
-          }}>
-       
+        <Col className="act">
           <img
             src="https://static.thenounproject.com/png/541-200.png"
-            width="25" 
+            width="25"
           />{" "}
           &nbsp;<span className="text-muted">Photo</span>
-          
           <POSTPic fetchFeed={fetchFeed} pic={pic} setPic={setPic} />
-          
         </Col>
         <Col>
-
           <img src="https://img.icons8.com/nolan/48/video.png" width="25" />
-          
           &nbsp;<span className="text-muted">Video</span>
         </Col>
         <Col>

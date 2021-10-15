@@ -1,14 +1,15 @@
+import ExpPicModal from "./ExpPicModal";
 import PutExExp from "./PutExExp";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
-
 
 const DisplayExp = ({ user, token, me }) => {
   console.log(user);
 
   const [data, setData] = useState([]);
   const [lgShow, setLgShow] = useState(false);
+  const [picExp, setPicExp] = useState(false);
   const [expId, setExpId] = useState("");
 
   const fetchExp = async () => {
@@ -17,7 +18,7 @@ const DisplayExp = ({ user, token, me }) => {
         `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences`,
         {
           headers: {
-            Authorization:token,
+            Authorization: token,
           },
         }
       );
@@ -47,10 +48,19 @@ const DisplayExp = ({ user, token, me }) => {
       )}
       {data.map((exp) => (
         <>
+          {user._id === me && (
+            <ExpPicModal
+              expId={exp._id}
+              userId={user._id}
+              picExp={picExp}
+              setPicExp={setPicExp}
+              fetchExp={fetchExp}
+            />
+          )}
           <hr />
           <Row key={exp._id} className="text-left">
             <Col md={3}>
-              <h6>{exp.company}</h6>
+              <img src={exp.image} width="100" />
             </Col>
             <Col md={8}>
               <h6>{exp.role}</h6>
@@ -79,6 +89,22 @@ const DisplayExp = ({ user, token, me }) => {
                 >
                   <i class="bi bi-pencil"></i>
                 </button>
+                <button
+                  onClick={() => {
+                    setPicExp(true);
+                    // ExpPicModal(
+                    //   exp._id,
+                    //   exp.user,
+                    //   picExp,
+                    //   setPicExp
+                    // expId,
+                    // setExpId
+                    // );
+                  }}
+                  className="profile-button pencil-button"
+                >
+                  <i class="bi bi-image"></i>
+                </button>
               </Col>
             )}
           </Row>
@@ -89,5 +115,3 @@ const DisplayExp = ({ user, token, me }) => {
 };
 
 export default DisplayExp;
-
-

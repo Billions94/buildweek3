@@ -14,7 +14,6 @@ import { deleteSingleUserExp, token } from "../../lib";
 const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
   // const [lgShow, setLgShow] = useState(false);
 
-
   const [checked, setChecked] = useState(false);
   // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
   console.log("hellooo" + user);
@@ -52,19 +51,27 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
       },
       onSubmit: async (values) => {
         try {
-          console.log("blllaaaaa" + method, url);
+          // console.log("blllaaaaa" + method, url);
           const response = await fetch(url, {
             method: method,
             body: JSON.stringify(values),
             headers: {
               "Content-Type": "application/json",
-              Authorization:token,
+              Authorization: token,
             },
           });
           console.log(response);
           if (response.ok) {
             fetchExp();
             setLgShow(false);
+            setFieldValue({
+              role: "",
+              company: "",
+              startDate: new Date(),
+              endDate: new Date(),
+              description: "",
+              area: "",
+            });
           }
         } catch (e) {
           console.log(e);
@@ -221,11 +228,11 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
               />
               <Form.Text className="text-muted text-right">0/2,000</Form.Text>
             </Form.Group>
-            <Form.Control
+            {/* <Form.Control
               placeholder="jinx"
               className="mb-3 md-add-media"
               type="file"
-            ></Form.Control>
+            ></Form.Control> */}
           </Form>
         </Modal.Body>
 

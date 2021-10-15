@@ -24,20 +24,21 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
                 <h4 className="text-right">...</h4>
-
                 <Col className="text-right">
                   {elem.user._id == me && (
                     <>
                       <Button
                         variant="light"
-                        className="rounded-pill mr-1" style={{width:"40px", height:"42px"}}
+                        className="rounded-pill mr-1"
+                        style={{ width: "40px", height: "42px" }}
                         onClick={() => deletePost(elem._id, fetchFeed)}
                       >
                         <i class="bi bi-trash"></i>
                       </Button>
                       <Button
                         variant="light"
-                        className="rounded-pill mr-1" style={{width:"40px"}}
+                        className="rounded-pill mr-1"
+                        style={{ width: "40px" }}
                         onClick={() => {
                           setSmShow(true);
                         }}
@@ -45,13 +46,18 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
                         <i class="bi bi-pencil"></i>
                       </Button>
                       <Button
-                        variant="info"
-                        className="rounded-pill" style={{width:"40px"}}
+
+                        variant="light"
+                        className="rounded-pill"
+                        style={{ width: "40px" }}
+
                         onClick={() => {
                           setPic(true);
                         }}
                       >
-                        <i class="bi bi-image-fill"></i>
+
+                        <i class="bi bi-image"></i>
+
                       </Button>
                       <PUTModal
                         fetchFeed={fetchFeed}
@@ -88,7 +94,6 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
                   </b>
 
                   <p className="text-left">{elem.user.title}</p>
-
                 </div>
               </div>
               <img className="img-fluid" src={elem.image} alt="" />
