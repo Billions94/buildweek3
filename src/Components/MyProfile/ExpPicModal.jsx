@@ -2,14 +2,15 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
+import { token } from "../../lib";
 
-const POSTPic = ({ fetchFeed, pic, setPic, id, token }) => {
-  const [image, setImage] = useState(null);
+const POSTPic = ({ expId, userId, picExp, setPicExp }) => {
+  const [imageExp, setImageExp] = useState(null);
 
   const target = (e) => {
     console.log(e.target.files[0]);
     if (e.target && e.target.files[0]) {
-      setImage(e.target.files[0]);
+      setImageExp(e.target.files[0]);
     }
   };
 
@@ -17,10 +18,10 @@ const POSTPic = ({ fetchFeed, pic, setPic, id, token }) => {
     e.preventDefault();
     try {
       let formData = new FormData();
-      formData.append("post", image);
+      formData.append("experience", imageExp);
 
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/${id}`,
+        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences/${expId}/picture`,
 
         {
           method: "POST",
@@ -33,8 +34,8 @@ const POSTPic = ({ fetchFeed, pic, setPic, id, token }) => {
       if (response.ok) {
         console.log(response);
 
-        fetchFeed();
-        setPic(false);
+        // fetchFeed();
+        setPicExp(false);
       } else {
         console.log();
 
@@ -46,18 +47,18 @@ const POSTPic = ({ fetchFeed, pic, setPic, id, token }) => {
     }
   };
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   return (
     <>
       <Modal
-        show={pic}
-        onHide={() => setPic(false)}
+        show={picExp}
+        onHide={() => setPicExp(false)}
         aria-labelledby="example-modal-sizes-title-sm"
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-sm">
-            Add an image to your post
+            Add an image
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
