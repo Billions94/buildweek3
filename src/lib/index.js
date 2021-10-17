@@ -88,25 +88,29 @@ export const fetchSinglUserExp = async (url) => {
 
 // PUT SINGLE EXPERIENCE
 
-export const putSinglUserExp = async (url, e, exp) => {
-  e.preventDefault(e);
-  try {
-    const response = await fetch(url, {
-      method: "PUT",
-      body: JSON.stringify(exp),
-      headers: {
-        Authorization:token,
-      },
-    });
-    if (response.ok) {
-      fetchUserExp(url)
-    } else {
-      console.log(`Ooops we got an error while fetching response`);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-};
+// export const putSinglUserExp = async (url, exp) => {
+//   // e.preventDefault(e);
+//   try {
+//     const response = await fetch(url, {
+//       method: "PUT",
+//       body: JSON.stringify(exp),
+//       headers: {
+//         Authorization:token,
+//       },
+//     });
+//     console.log(`experience response ------------`, response)
+//     if (response.ok) {
+//       fetchUserExp(url)
+//     } else {
+//       console.log(`Ooops we got an error while fetching response`);
+//     }
+//   } catch (error) {
+//     console.error(`we caught you`, error);
+//   }
+// };
+
+
+
 
 // DELETE SINGLE EXPERIENCE
 
@@ -193,4 +197,3 @@ export const deletePost = async (id , fetchFeed) => {
   }
 };
 
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZjUwMGE4OTBjYzAwMTVjZjA3ZTIiLCJpYXQiOjE2MzM5NDA3MzcsImV4cCI6MTYzNTE1MDMzN30.b4fHuXDwJcxn6c0Vu-wZ1dWzMlTBO6elAUs0C_9xB4o

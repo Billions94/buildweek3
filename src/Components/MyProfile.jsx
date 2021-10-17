@@ -11,6 +11,7 @@ import ProfileDashboard from "./MyProfile/ProfileDashboard";
 import SecondPYMK from "./MyProfile/SecondPYMK";
 import { areDayPropsEqual } from "@mui/lab/PickersDay/PickersDay";
 import {token , me} from "../lib"
+import Activity from "./Activity";
 
 const MyProfile = ({setCurrentUser}) => {
  
@@ -66,18 +67,21 @@ const MyProfile = ({setCurrentUser}) => {
                 </Col>
                 {/*Your Dashboard Section*/}
 
-                {params.id === me ? <ProfileDashboard user={user} /> : <></>}
+                {params.id === "me" ? <ProfileDashboard user={user} /> : <></>}
 
                 {/*Your Dashboard END*/}
 
                 {/*Activity Section*/}
+                  
+                
+
                 <Col md={12} className="p-0">
                   <div className="section-container mt-3">
                     <div className="text-left">
                       <div className="d-flex d-inline-block justify-content-between">
                         <h4>Activity</h4>
 
-                        {params.id === me ? (
+                        {params.id === "me" ? (
                           <button className="profile-button">
                             Start a post
                           </button>
@@ -87,14 +91,15 @@ const MyProfile = ({setCurrentUser}) => {
                       </div>
                       <p className="text-muted">11 followers</p>
                     </div>
-                    <div>
+                    <Activity user={user} />
+                    {/* <div>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Suspendisse id libero ac est egestas tincidunt. Proin
                         nec interdum massa. Orci varius natoque penatibus et
                         magnis dis parturient montes, nascetur ridiculus mus
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </Col>
                 {/*Activity Section END*/}

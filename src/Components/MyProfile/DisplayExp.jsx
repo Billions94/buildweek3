@@ -3,6 +3,7 @@ import PutExExp from "./PutExExp";
 import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
+import { format, parseISO } from 'date-fns';
 
 const DisplayExp = ({ user, token, me }) => {
   console.log(user);
@@ -44,6 +45,7 @@ const DisplayExp = ({ user, token, me }) => {
           lgShow={lgShow}
           setLgShow={setLgShow}
           expId={expId}
+          setExpId={setExpId}
         />
       )}
       {data.map((exp) => (
@@ -66,7 +68,7 @@ const DisplayExp = ({ user, token, me }) => {
               <h6>{exp.role}</h6>
               <p>{exp.company}</p>
               <p>
-                {exp.startDate} - {exp.endDate}
+                {format(parseISO(exp.startDate), 'MMMM do yyyy | HH:mm')} - {format(parseISO(exp.endDate), 'MMMM do yyyy | HH:mm')}
               </p>
               <p>{exp.area}</p>
               <br />

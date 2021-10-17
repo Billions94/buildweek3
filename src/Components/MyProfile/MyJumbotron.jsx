@@ -25,8 +25,10 @@ const MyJumbotron = ({ identification, user, setRefresh, refresh }) => {
         </Row>
         <Row className="p-2" style={{ marginTop: "250px" }}>
           <Col className="text-left ">
-            <h5>{user.name}</h5>
-            <p className="mb-0">{user.title}</p>
+            <h3 className="nameHeader">{user.name} {user.surname}</h3>
+            <h6 className="mb-0">{user.title}</h6>
+            <p className="mb-0">{user.area}</p>
+            
             <br />
             <p>
               <Button variant="primary" className="jumbobtn-open-to">
@@ -72,13 +74,23 @@ const MyJumbotron = ({ identification, user, setRefresh, refresh }) => {
             ) : (
               <></>
             )}
-            <div className=" mt-2 d-flex-row align-items-center">
+            <div className="d-flex eduandexp">
+            <div className=" mt-1 mr-5 d-flex-row align-items-center">
               <img
                 className="mr-2"
                 src="https://strive.school/favicon.ico"
                 width="25"
               />
               <b> Strive School</b>
+            </div>
+            <div className=" mt-1 mr-5 d-flex-row align-items-center">
+              <img
+                className="mr-2"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1P8Bkt8I5AyDwCNPCaueTGsgvn7xYOpdyT7wapupWYEVGcUqmBrJzAqHQL-3Jy3sND2k&usqp=CAU"
+                width="25"
+              />
+              <b>Amazon</b>
+            </div>
             </div>
           </Col>
         </Row>

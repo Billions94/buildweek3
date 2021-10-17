@@ -21,7 +21,7 @@ const ProfileDashboard = ({user}) =>{
                       <div className="section-container p-0 d-flex justify-content-between">
                         <a className="dashboard-data1 pymk-a">
                           <span className=" d-flex d-inline-block dashboard-figure">
-                            0
+                            46
                           </span>
                           <span className="d-flex text-dark d-inline-block">
                             Who viewed your profile
@@ -29,7 +29,7 @@ const ProfileDashboard = ({user}) =>{
                         </a>
                         <a className="dashboard-data pymk-a">
                           <span className=" d-flex d-inline-block dashboard-figure">
-                            0
+                            146
                           </span>
                           <span className="d-flex text-dark d-inline-block">
                             Post views

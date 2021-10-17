@@ -7,6 +7,8 @@ import Button from "react-bootstrap/Button";
 import POSTPic from "./POSTPic";
 import { useEffect, useState } from "react";
 import PUTModal from "./PUTModal";
+import { format, parseISO } from 'date-fns';
+import {Link} from "react-router-dom"
 
 import { deletePost, me } from "../../../lib";
 
@@ -16,21 +18,27 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
 
   return (
     <>
+    <hr className="mt-0" />
       {!reversedFeed ? (
         <Spinner animation="border" variant="primary" />
       ) : (
         reversedFeed.map((elem) => (
+<<<<<<< Updated upstream
           <div key={elem._id}>
+=======
+          <div key={elem._id} id={elem._id}>
+>>>>>>> Stashed changes
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
-                <h4 className="text-right">...</h4>
+                {/* <h4 className="text-right">...</h4> */}
+                <h6 style={{fontSize:"12px"}} >Posted {format(parseISO(elem.updatedAt),  'MMMM do yyyy | HH:mm')}</h6>
                 <Col className="text-right">
                   {elem.user._id == me && (
                     <>
                       <Button
                         variant="light"
                         className="rounded-pill mr-1"
-                        style={{ width: "40px", height: "42px" }}
+                        style={{ width: "40px" }}
                         onClick={() => deletePost(elem._id, fetchFeed)}
                       >
                         <i class="bi bi-trash"></i>
@@ -61,6 +69,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
                       </Button>
                       <PUTModal
                         fetchFeed={fetchFeed}
+                        reversedFeed={reversedFeed}
                         smShow={smShow}
                         setSmShow={setSmShow}
                         id={elem._id}
@@ -89,17 +98,20 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
                   />{" "}
                 </div>
                 <div>
-                  <b className="text-left">
-                    {elem.user.name} {elem.user.surname}
-                  </b>
+                  <Link to={"/profile/" + elem.user._id} 
+                  className="text-left text-dark  text-decoration-none">
+                   <b className="text-left">{elem.user.name} {elem.user.surname}</b>
+                  </Link>
 
-                  <p className="text-left">{elem.user.title}</p>
+                  <span className="text-left text-muted d-block"
+                  style={{fontSize: "12px", fontWeight: "500"}} >
+                    {elem.user.title}</span>
                 </div>
               </div>
-              <img className="img-fluid" src={elem.image} alt="" />
               <div>
-                <p>{elem.text}</p>
+                <p className="text-left mb-0 mt-2">{elem.text}</p>
               </div>
+              <img className="img-fluid " src={elem.image} alt="" style={{width: "100%"}} />
 
               <hr className="actuall-feed-hr mt-0" />
               <Row>

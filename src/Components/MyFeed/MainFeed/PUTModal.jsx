@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useState, useEffect } from "react";
 
 
-const PUTModal = ({ fetchFeed, smShow, setSmShow, id, token}) => {
+const PUTModal = ({ fetchFeed, reversedFeed, smShow, setSmShow, id, token}) => {
   const [text, setText] = useState({ text: "" });
 
   const updatePost = async (e) => {

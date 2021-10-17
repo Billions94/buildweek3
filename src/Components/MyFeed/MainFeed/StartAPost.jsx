@@ -12,7 +12,7 @@ const StartAPost = ({ smShow, setSmShow, fetchFeed, token, user}) => {
   const [pic, setPic] = useState(false);
 
   return (
-    <div className="border p-2 bg-white " style={{ borderRadius: "10px" }}>
+    <div className="border mb-0 p-2 bg-white " style={{ borderRadius: "10px" }}>
       <Row className="mt-3">
         <Col md={2}>
           {" "}
@@ -21,8 +21,8 @@ const StartAPost = ({ smShow, setSmShow, fetchFeed, token, user}) => {
             style={{ borderRadius: "50%" }}
             src={user.image}
             alt="ProfilePicture"
-            width="60"
-            height="60"
+            width="50"
+            height="50"
           />
         </Col>
         <Col className="mr-1">

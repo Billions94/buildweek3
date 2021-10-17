@@ -1,7 +1,7 @@
 import { Link, withRouter } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import { Accordion, Card, Button } from "react-bootstrap";
-import { token } from "../lib";
+import { me } from "../lib";
 import { useState, useEffect } from "react";
 import { Component } from "react";
 
@@ -151,8 +151,11 @@ render(){
               </div>
               <div className="xx  ">
                 <Link to={"/profile/me"}>
-                <Avatar
-                  // src={currentUser.image}
+                  {
+                    this.props.currentUser === me
+                  }
+                <Avatar 
+                 src={this.props.currentUser.image}
                   className="d-block avatar"
                   alt=""
                   sx={{ width: 24, height: 24 }}

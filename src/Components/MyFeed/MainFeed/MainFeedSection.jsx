@@ -43,8 +43,7 @@ const MainFeedSection = ({user}) => {
   return (
     <>
       <StartAPost smShow={smShow} setSmShow={setSmShow} fetchFeed={fetchFeed} token={token} user={user}/>
-      <br />
-      <br />
+      <br /> 
       <ActualFeed reversedFeed={feed} fetchFeed={fetchFeed} token={token}/>
 
     </>

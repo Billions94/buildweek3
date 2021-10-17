@@ -11,9 +11,9 @@ import { DesktopDatePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { deleteSingleUserExp, token } from "../../lib";
 
-const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
+const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId, setExpId }) => {
   // const [lgShow, setLgShow] = useState(false);
-  const [upload, setUpload] = useState([]);
+  const [upload, setUpload] = useState(null);
   const [checked, setChecked] = useState(false);
   // const url = `https://striveschool-api.herokuapp.com/api/profile/${user.id}/experiences`;
   console.log("hellooo" + user);
@@ -64,7 +64,7 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
           if (response.ok) {
            let postResponse = await response.json();
            console.log(`this is the post response`, postResponse);
-           await submitImage(postResponse.user, postResponse._id )
+            await submitImage(postResponse.user, postResponse._id )
             fetchExp();
             setLgShow(false);
             setFieldValue({
@@ -118,6 +118,12 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
       }
     };
 
+    useEffect(() => {
+      if(lgShow === false) {
+        setExpId('')
+      }
+    },[lgShow])
+
   return (
     <>
       <div className=" modalbtn">
@@ -133,6 +139,7 @@ const ModalPop = ({ user, fetchExp, lgShow, setLgShow, expId }) => {
         size="lg"
         show={lgShow}
         onHide={() => setLgShow(false)}
+        
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Modal.Header closeButton>

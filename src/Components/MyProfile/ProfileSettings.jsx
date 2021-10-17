@@ -184,8 +184,9 @@ const ProfileSettings = ({ user, setRefresh, refresh }) => {
                     placeholder="Where are you based?"
                   />
 
-                  <Button onClick={(e) => updateUserSettings(e)}>Save</Button>
+                  <Button className="mr-2 mt-3" onClick={(e) => updateUserSettings(e)}>Save</Button>
                   <Button
+                  className="mr-2 mt-3"
                     onClick={(e) => {
                       setPic(true);
                     }}

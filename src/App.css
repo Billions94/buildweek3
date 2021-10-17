@@ -50,7 +50,6 @@
   margin-top: 14px;
 }
 
-
 .xxx {
   width: 20px;
 }
@@ -87,20 +86,20 @@
   margin-top: -70px;
 }
 
-
 .follow {
   font-style: normal;
   font-weight: 400;
-  font-size:14px;
-  line-height:16px
+  font-size: 14px;
+  line-height: 16px;
 }
 
-
-.nav-work{
+.nav-work {
   align-items: flex-start;
 }
 
-.arrow{margin-top: -2px;}
+.arrow {
+  margin-top: -2px;
+}
 
 .search {
   width: 280px;
@@ -162,6 +161,12 @@
 } */
 .nav-item:hover .darknavicon {
   filter: opacity(1);
+  cursor: pointer;
+}
+
+.file {
+  border-radius: 50%;
+  padding: 6px 12px;
   cursor: pointer;
 }
 
@@ -244,7 +249,7 @@
 .discover-more {
   font-size: "16px";
   font-weight: "600";
- line-height: "24px";
+  line-height: "24px";
 }
 
 .opacity {
@@ -266,7 +271,6 @@
   opacity: 1;
 }
 
-
 .SideBarDiv {
   border-radius: 20px;
 }
@@ -282,7 +286,6 @@
 
 .SideBarSm-row {
   position: relative;
-
 }
 
 .SideBarImg {
@@ -387,6 +390,19 @@
   border-radius: 20px;
 }
 
+.nameHeader {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  font-style: normal;
+}
+
+.eduandexp {
+  flex-direction: column;
+  align-items: baseline;
+  margin-left: 120px;
+}
+
 .jumbobtn {
   background-color: transparent;
   border: 1px solid grey;
@@ -442,7 +458,6 @@
   margin-left: 665px;
 }
 
-
 .bi-css {
   font-size: 13px;
 }
@@ -454,8 +469,6 @@
   border-radius: 50px;
   font-size: 16px;
 }
-
-
 
 .modal-save {
   border-radius: 30px;
@@ -494,7 +507,6 @@
   width: 350px;
 }
 
-
 /*------------------------------People you may know CSS------------------------*/
 .roundpic {
   border-radius: 50%;
@@ -510,13 +522,11 @@
 
 .pymk-li {
   flex-direction: column;
-  padding: 0px 32px ;
-  
+  padding: 0px 32px;
 }
 .pymk-li-second {
   flex-direction: column;
-  padding: 0px 32px ;
-  
+  padding: 0px 32px;
 }
 
 .pymk-a:hover {
@@ -585,10 +595,9 @@
   line-height: 20px;
 }
 
-
- .pymkdiv {
+.pymkdiv {
   margin-right: 80px;
-} 
+}
 
 .pymkdiv2 {
   margin-right: 0px;
@@ -653,7 +662,6 @@
   border-radius: 10px 10px 10px 10px;
   background-color: #ffffff;
   padding: 24px 0px 0px;
-
 }
 
 #dashboard-container {
@@ -805,7 +813,6 @@
   height: 44px;
   font-weight: 600;
   padding-top: 10px;
-
 }
 .show-more-btn:focus,
 .show-more-btn:active,
@@ -823,6 +830,7 @@
   top: 20%;
   left: 25px;
   border-radius: 50%;
+  border: 3px solid white;
 }
 
 #profile-settings {
@@ -834,7 +842,7 @@
   background-image: url("https://wallpaperaccess.com/full/1398313.jpg");
   background-position: top;
   background-repeat: no-repeat;
-  background-size: 100% 40%;
+  background-size: 100% 37%;
 }
 
 #skills {
@@ -845,7 +853,6 @@
   padding: 10px;
 }
 
-
 .flipped,
 .righted {
   transform: rotate(180deg);
@@ -855,17 +862,17 @@
   transition: none;
 }
 
-.tooltip-user-profile{
-  width:90%;
+.tooltip-user-profile {
+  width: 90%;
   height: 15%;
   box-shadow: 0px 2px 5px #58585899;
 }
 
-.edit-text-link{
-  color:#52525299;
+.edit-text-link {
+  color: #52525299;
   font-weight: 600;
 }
-.edit-text-link:hover{
+.edit-text-link:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -881,7 +888,6 @@
   /* line-height: -3rem; */
 }
 
-
 .pymkbtn-second:hover {
   outline: 1px solid grey;
   background-color: rgb(221, 218, 218);
@@ -895,7 +901,7 @@
 }
 .pymkdiv-second {
   margin-right: 32%;
-} 
+}
 
 /*------------------------------Home SideBar Right-----------------------------*/
 
@@ -967,10 +973,10 @@
   cursor: pointer;
 }
 
-.accordion-body-background{
-   background-color: "white";
-    border-radius: 10px 10px 0px 0px;
-    width: 100%;
+.accordion-body-background {
+  background-color: "white";
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
 }
 /* ---------------------FEED MAIN------------------- */
 
@@ -1003,18 +1009,16 @@
   background-color: red;
 } */
 
-.actuall-feed-h5 {    
+.actuall-feed-h5 {
   margin-top: -12px;
   margin-bottom: 6px;
   background-color: transparent;
-  border-color: transparent
-  
+  border-color: transparent;
 }
 
 .actuall-feed-h5:hover {
   outline: none;
   border: none;
   background-color: rgb(224, 224, 224);
-  border-color: transparent
+  border-color: transparent;
 }
-
