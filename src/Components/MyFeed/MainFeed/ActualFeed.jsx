@@ -23,11 +23,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
         <Spinner animation="border" variant="primary" />
       ) : (
         reversedFeed.map((elem) => (
-<<<<<<< Updated upstream
-          <div key={elem._id}>
-=======
           <div key={elem._id} id={elem._id}>
->>>>>>> Stashed changes
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
                 {/* <h4 className="text-right">...</h4> */}
