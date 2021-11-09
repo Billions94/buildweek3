@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 
 const PUTModal = ({ fetchFeed, reversedFeed, smShow, setSmShow, id, token}) => {
   const [text, setText] = useState({ text: "" });
+  
+  console.log('i am the id', id)
 
   const updatePost = async (e) => {
     e.preventDefault(e);

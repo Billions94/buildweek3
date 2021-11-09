@@ -6,7 +6,7 @@ import ProfileSettings from "./ProfileSettings";
 import { useState } from "react";
 
 const MyJumbotron = ({ identification, user, setRefresh, refresh }) => {
-  console.log("WTF HAHAHAH", identification);
+  console.log("WTF HAHAHAH", user);
   return (
     <>
       <Jumbotron
@@ -27,8 +27,8 @@ const MyJumbotron = ({ identification, user, setRefresh, refresh }) => {
           <Col className="text-left ">
             <h3 className="nameHeader">{user.name} {user.surname}</h3>
             <h6 className="mb-0">{user.title}</h6>
-            <p className="mb-0">{user.area}</p>
-            
+            <p className="mb-1">{user.area}</p>
+            <p className="mb-0">{user.bio}</p>
             <br />
             <p>
               <Button variant="primary" className="jumbobtn-open-to">

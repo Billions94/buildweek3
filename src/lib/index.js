@@ -1,5 +1,5 @@
-export const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTY4NTg1ODZmMGM3MTAwMTUwZWE3NWMiLCJpYXQiOjE2MzQyMjgzMTIsImV4cCI6MTYzNTQzNzkxMn0.6WKtLFuH3GFlmDS_pvZ8CGdhQyNczQ_ipXvj9a6eQHk"
-export const me = "616858586f0c7100150ea75c"
+export const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThhZDQyYTNhZTFlMzAwMTUwZmZjM2MiLCJpYXQiOjE2MzY0ODgyMzQsImV4cCI6MTYzNzY5NzgzNH0.e1_gaWWn7P8VROpB1TTGwkaUPTrUxhDoJFppEtRt5x0"
+export const me = "618ad42a3ae1e300150ffc3c"
 // FETCH USER PROFILES
 export const fetchInfo = async (url) => {
   try {
@@ -141,42 +141,40 @@ export const deleteSingleUserExp = async (user, expId, fetchExp, setLgShow) => {
 // USER PROFILES
 // FETCH
 // date 
-// function timeSince(date) {
 
-//   var seconds = Math.floor((new Date() - date) / 1000);
+export const postTimer = (x) => {
+  const postedDateISO = x;
+  const postedDate = new Date(postedDateISO).getTime();
+  const dateToday = new Date().getTime();
+  const milliseconds = Math.abs(dateToday - postedDate).toString();
 
-//   var interval = seconds / 31536000;
+  const minutes = parseInt(milliseconds / 1000 / 60);
+  const hours = parseInt(minutes / 60);
+  const days = parseInt(hours / 24);
+  const weeks = parseInt(days / 7)
+  let date;
 
-//   if (interval > 1) {
-//     return Math.floor(interval) + " years";
-//   }
-//   interval = seconds / 2592000;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " months";
-//   }
-//   interval = seconds / 86400;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " days";
-//   }
-//   interval = seconds / 3600;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " hours";
-//   }
-//   interval = seconds / 60;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " minutes";
-//   }
-//   return Math.floor(seconds) + " seconds";
-// }
-// var aDay = 24*60*60*1000;
-// console.log(timeSince(new Date(Date.now()-aDay)));
-// console.log(timeSince(new Date(Date.now()-aDay*2)));
+  if (weeks > 0) {
+    //console.log(${days}d);
+    date = `${weeks}w`
+   } else if (days > 0) {
+    date = `${days}d`;
+  } else if (days == 0 && hours >= 1) {
+    //console.log(${hours}hr);
+    date = `${hours}hr`;
+  } else if (hours < 1) {
+    //console.log(${minutes}min);
+    date = `${minutes}min`;
+  }
+  return date;
+};
 
 // DELETE POST
 
 export const deletePost = async (id , fetchFeed) => {
   const url = `https://striveschool-api.herokuapp.com/api/posts/${id}`;
 
+  console.log(token)
   try {
     const response = await fetch(url, {
       method: "DELETE",

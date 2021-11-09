@@ -3,7 +3,7 @@ import { fetchInfo } from "../../lib";
 import { Link } from "react-router-dom";
 
 
-const PyMk = () => {
+const PyMk = ({ refresh, setRefresh}) => {
   const [data, setData] = useState([]);
   const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
 
@@ -26,7 +26,7 @@ const PyMk = () => {
         <h1>Loading....</h1>
       ) : (
         slicedData.map((person) => (
-          <li className="d-flex pymk-li" key={person.id}>
+          <li className="d-flex pymk-li" key={person._id}>
             <div class="d-flex-column align-items-center">
               <Link to={"/profile/" + person._id}>
                 <a className="d-flex pymk-a">
@@ -39,7 +39,7 @@ const PyMk = () => {
                   />
                   <div class="ml-2">
                     <h3 className="text-dark m-0 text-left pymkh6p">
-                      <strong>{person.name}</strong>{" "}
+                    <strong>{person.name}</strong>{" "}
                       <strong>{person.surname}</strong>
                     </h3>
                     <p className="text-muted mb-0 text-left  pymkh6p">

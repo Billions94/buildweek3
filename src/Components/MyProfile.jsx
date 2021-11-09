@@ -163,7 +163,7 @@ const MyProfile = ({setCurrentUser}) => {
                         <div>
                           <ul className="ul">
                             {/*Insert generated content here!!*/}
-                            <PyMk />
+                            <PyMk refresh={refresh} setRefresh={setRefresh}/>
                           </ul>
                         </div>
                       </div>

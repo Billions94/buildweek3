@@ -3,6 +3,7 @@ import SecondSideBar from "./SecondSideBar"
 
 
 const SideBarSm = ({ user }) => {
+  console.log('i am the user', user)
   return (
     <>
       {/*-------First SideBarSm Section------*/}

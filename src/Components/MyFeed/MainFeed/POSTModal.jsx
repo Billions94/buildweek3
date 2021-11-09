@@ -25,19 +25,38 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed, token }) => {
       if (response.ok) {
         let post = await response.json();
         console.log(`this is the post`,post);
+
+        try {
+          let formData = new FormData();
+          formData.append("post", photo);
         
+          const response = await fetch(
+            `https://striveschool-api.herokuapp.com/api/posts/${post._id}`,
+        
+            {
+              method: "POST",
+              body: formData,
+              headers: {
+                Authorization: token,
+              },
+            }
+          );
+          if (response.ok) {
+            console.log(response);
+        
+            fetchFeed();
+            setPhoto(false);
+            setText({text: ''})
+            fetchFeed()
+            setSmShow(false);
 
-
-        postPhoto(post._id)
-        setText({text: ''})
-        fetchFeed()
-        setSmShow(false);
-
-      } else {
-        console.log(text);
-
-        console.log(`wow... that wasn't supposed to happen... Error`);
-        alert(`Woops we lost your data in the void .. try refreshing`);
+          } else {
+            console.log(`wow... that wasn't supposed to happen... Error`);
+            alert(`Woops we lost your data in the void .. try refreshing`);
+          }
+        } catch (error) {
+          console.error(error);
+        }
       }
     } catch (error) {
       console.error(error);
@@ -49,30 +68,30 @@ const POSTModal = ({ smShow, setSmShow, fetchFeed, token }) => {
     console.log(text);
   }, [text]);
 
-  const postPhoto = async(id) => {
-  let formData = new FormData();
-  formData.append("post", photo);
+//   const postPhoto = async(id) => {
+//   let formData = new FormData();
+//   formData.append("post", photo);
 
-  const response = await fetch(
-    `https://striveschool-api.herokuapp.com/api/posts/${id}`,
+//   const response = await fetch(
+//     `https://striveschool-api.herokuapp.com/api/posts/${id}`,
 
-    {
-      method: "POST",
-      body: formData,
-      headers: {
-        Authorization: token,
-      },
-    }
-  );
-  if (response.ok) {
-    console.log(response);
+//     {
+//       method: "POST",
+//       body: formData,
+//       headers: {
+//         Authorization: token,
+//       },
+//     }
+//   );
+//   if (response.ok) {
+//     console.log(response);
 
-    fetchFeed();
-    setPhoto(false);
-  } else {
-    console.log();
-  }
-}
+//     fetchFeed();
+//     setPhoto(false);
+//   } else {
+//     console.log('we got an error');
+//   }
+// }
   
   return (
     <>

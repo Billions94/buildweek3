@@ -46,7 +46,9 @@ console.log(`this is the id`,id)
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    
+  }, []);
 
   return (
     <>

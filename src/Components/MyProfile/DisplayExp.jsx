@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import { format, parseISO } from 'date-fns';
+import { postTimer } from "../../lib/index.js";
 
 const DisplayExp = ({ user, token, me }) => {
   console.log(user);
@@ -68,7 +69,7 @@ const DisplayExp = ({ user, token, me }) => {
               <h6>{exp.role}</h6>
               <p>{exp.company}</p>
               <p>
-                {format(parseISO(exp.startDate), 'MMMM do yyyy | HH:mm')} - {format(parseISO(exp.endDate), 'MMMM do yyyy | HH:mm')}
+                {postTimer(exp.startDate)} - {postTimer(exp.endDate)}
               </p>
               <p>{exp.area}</p>
               <br />

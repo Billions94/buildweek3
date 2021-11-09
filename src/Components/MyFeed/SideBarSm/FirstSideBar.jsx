@@ -41,7 +41,7 @@ const FirstSideBar = ({ user }) => {
                 </Link>
               </div>
               <p className="SideBarSm-p text-center text-muted mt-0">
-                Aspiring FullStack Web Developer
+                {user.bio}
               </p>
             </Col>
           </Row>

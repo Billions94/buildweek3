@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import PUTModal from "./PUTModal";
 import { format, parseISO } from 'date-fns';
 import {Link} from "react-router-dom"
-
+import { postTimer } from "../../../lib/index.js";
 import { deletePost, me } from "../../../lib";
 
 const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
@@ -27,7 +27,7 @@ const ActualFeed = ({ reversedFeed, fetchFeed, token }) => {
             <div className="section-container pt-2 pb-0 mb-2 list-group list-group-flush">
               <div className=" d-flex justify-content-between list-pad1 ">
                 {/* <h4 className="text-right">...</h4> */}
-                <h6 style={{fontSize:"12px"}} >Posted {format(parseISO(elem.updatedAt),  'MMMM do yyyy | HH:mm')}</h6>
+                <h6 style={{fontSize:"12px"}} >Posted {postTimer(elem.updatedAt)} ago</h6>
                 <Col className="text-right">
                   {elem.user._id == me && (
                     <>
