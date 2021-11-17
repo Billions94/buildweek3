@@ -15,7 +15,7 @@ const DisplayExp = ({ user, token, me }) => {
   const fetchExp = async () => {
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${user._id}/experiences`,
+        `http://localhost:3001/users/${user._id}/experiences`,
         {
           headers: {
             Authorization: token,

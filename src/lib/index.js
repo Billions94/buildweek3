@@ -1,4 +1,5 @@
-export const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTY4NTg1ODZmMGM3MTAwMTUwZWE3NWMiLCJpYXQiOjE2MzQyMjgzMTIsImV4cCI6MTYzNTQzNzkxMn0.6WKtLFuH3GFlmDS_pvZ8CGdhQyNczQ_ipXvj9a6eQHk"
+export const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MThhZDQyYTNhZTFlMzAwMTUwZmZjM2MiLCJpYXQiOjE2MzY0ODgyMzQsImV4cCI6MTYzNzY5NzgzNH0.e1_gaWWn7P8VROpB1TTGwkaUPTrUxhDoJFppEtRt5x0"
+
 export const me = "616858586f0c7100150ea75c"
 // FETCH USER PROFILES
 export const fetchInfo = async (url) => {

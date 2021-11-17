@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { fetchInfo } from "../../lib";
 import { Link } from "react-router-dom";
 
-
 const PyMk = () => {
   const [data, setData] = useState([]);
-  const myUrl = `https://striveschool-api.herokuapp.com/api/profile/`;
+  const myUrl = `http://localhost:3001:users`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +18,7 @@ const PyMk = () => {
   console.log(`hey it's me`, data);
 
   const slicedData = data.slice(0, 6);
-  
+
   return (
     <>
       {!data ? (
